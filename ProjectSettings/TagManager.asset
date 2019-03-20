@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - BulletPool
+  - Weapon
+  - Icon
+  - enemy
+  - Projectile
+  - EnemyProjectile
+  - SpawnPoint
+  - EnemyPool
+  - SpawnPoint
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Interactable
+  - Projectiles
+  - EnemyProjectiles
+  - Enemies
+  - Player
+  - Paredes
+  - Deco
+  - Suelo
+  - Mesa
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Suelo
+    uniqueID: 3009443759
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Enemies
+    uniqueID: 813792163
+    locked: 0
+  - name: Projectiles
+    uniqueID: 1042557433
+    locked: 0
+  - name: Pickups
+    uniqueID: 1158689107
+    locked: 0
+  - name: Player
+    uniqueID: 3015276917
+    locked: 0
+  - name: Paredes
+    uniqueID: 365646999
+    locked: 0
+  - name: Deco
+    uniqueID: 1388635919
+    locked: 0
