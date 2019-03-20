@@ -5,7 +5,8 @@ using UnityEngine;
 public class MeleeEnemy : MonoBehaviour
 {
     // variables públicas (velocidad, daño rango de ataque y tiempo de ataque) y privadas (ángulo de movimiento y booleano que indica cuando ataca y cuando no)
-    public int speed,damagerange,attackrange, attackTime,damage;
+    public float speed, attackrange, attackTime, casttime;
+    public int damage;
     GameObject player;
     private Vector2 angle;
     private bool attacking;
@@ -20,30 +21,41 @@ public class MeleeEnemy : MonoBehaviour
     {
         //comparación de la posición del jugador y el enemigo
         angle = player.transform.position - transform.position;
-        if (Vector2.Distance(player.transform.position,transform.position) <=attackrange && !attacking)
+        // Si está cerca del jugador y no está atacando, inicia la secuencia de ataque
+        if (Vector2.Distance(player.transform.position, transform.position) <= attackrange && !attacking)
         {
-            
-            attack();
-            GameManager.instance.ChangeHealth(-damage, player.gameObject);
+            Attack();
         }
+
         // mientras no está atacando, va hacia el jugador
-        if(!attacking)
+        if (!attacking)
         {
             transform.Translate(angle.normalized * speed * Time.deltaTime);
-        }  
+        }
     }
 
-    //Cambia la variable de ataque, ataca e invoca el método de reseteo, que devuelve el ataque a false y hace que el enemigo siga de nuevo al jugador
-    public void attack()
-    {        
+    //Cambia la variable de ataque, y tras un pequeño lapso de tiempo comienza la animación de ataque, y tras ella, otro lapso de tiempo que precede al reseteo del movimiento
+    public void Attack()
+    {
         attacking = true;
         //aquí va la animación
-        Invoke("resetmove", attackTime);
+        Invoke("Damage", casttime);
+        Invoke("Resetmove", attackTime);
     }
 
-    // resetea el movimiento
-    public void resetmove()
-    {        
+    // Si tras el "casteo" del ataque el jugador se encuentra en rango, es dañado
+    public void Damage()
+    {
+        if (Vector2.Distance(player.transform.position, transform.position) <= attackrange)
+        {
+            GameManager.instance.ChangeHealth(-damage, player.gameObject);
+        }
+
+    }
+
+    //Despúes de atacar, haya dañado o no al jugador, vuelve a moverse
+    public void Resetmove()
+    {
         attacking = false;
     }
 
