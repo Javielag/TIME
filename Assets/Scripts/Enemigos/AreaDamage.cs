@@ -6,7 +6,7 @@ public class AreaDamage : MonoBehaviour {
 
     public float rad,knock;
     public int dmg;
-    public LayerMask PlayerLayer;
+    public LayerMask TargetLayer;
 
     public void PushArea()
     {
@@ -25,10 +25,10 @@ public class AreaDamage : MonoBehaviour {
     }
     public void DealDamage()
     {
-        Collider2D col = Physics2D.OverlapCircle(transform.position, rad,PlayerLayer);
-        if (col)
+        Collider2D[] col = Physics2D.OverlapCircleAll(transform.position, rad,TargetLayer);
+        foreach(Collider2D hit in col)
         {
-            GameManager.instance.ChangeHealth(-dmg, GameManager.instance.player);
+            GameManager.instance.ChangeHealth(-dmg,hit.gameObject);
         }
         
     }

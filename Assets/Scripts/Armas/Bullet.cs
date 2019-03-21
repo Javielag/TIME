@@ -13,10 +13,6 @@ public class Bullet : MonoBehaviour
         rb.velocity = speed * transform.right;
     }
 
-    void FixedUpdate()
-    {
-
-    }
     //al ser llamado, cambia la derecha de la bala para que esta coincida con su sprite
     public void PointAt(Vector2 newDirection,float spread)
     {
