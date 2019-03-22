@@ -7,6 +7,7 @@ public class RangeEnemy : MonoBehaviour
 
     public int speed, rangeMax, rangeMin;
     GameObject player;
+    [SerializeField]bool debugging = false;
     public bool timer = true;
     float a = 0;
     private void Start()
@@ -44,6 +45,10 @@ public class RangeEnemy : MonoBehaviour
             }
         }
         else timer = true;
+        if (debugging)
+        {
+            Debug.Log(Vector2.Distance(player.transform.position, transform.position));
+        }
 
     }
 }
