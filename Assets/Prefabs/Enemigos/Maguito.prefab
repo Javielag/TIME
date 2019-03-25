@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PortalMagoPrefab: {fileID: 114516110711493162, guid: df42a009f3c8cd443ac65f04c2256821,
     type: 2}
-  tiempoCasteo: 0
+  tiempoCasteo: 2
 --- !u!212 &212695917168491104
 SpriteRenderer:
   m_ObjectHideFlags: 1
