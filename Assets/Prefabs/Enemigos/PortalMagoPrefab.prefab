@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212225498941538794}
   - component: {fileID: 114516110711493162}
   - component: {fileID: 58501839923757194}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: PortalMagoPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

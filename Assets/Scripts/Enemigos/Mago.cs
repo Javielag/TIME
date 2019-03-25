@@ -14,7 +14,9 @@ public class Mago : MonoBehaviour {
     }
     void CreaPortales()
     {
-        PortalMago portalAtacante = Instantiate(PortalMagoPrefab, player.transform.position, Quaternion.identity);
+        PortalMago portalOfensivo = Instantiate(PortalMagoPrefab, player.transform.position, Quaternion.identity);
         PortalMago portalDefensivo = Instantiate(PortalMagoPrefab, transform.position, Quaternion.identity);
+        portalOfensivo.SetOtherPortal(portalDefensivo.transform.position);
+        portalDefensivo.SetOtherPortal(portalOfensivo.transform.position);
     }
 }
