@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114990945906791508}
   - component: {fileID: 50214297674968282}
   m_Layer: 0
-  m_Name: Maguito
+  m_Name: MaguitoKomaeda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

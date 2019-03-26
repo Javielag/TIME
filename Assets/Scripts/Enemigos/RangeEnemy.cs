@@ -8,6 +8,7 @@ public class RangeEnemy : MonoBehaviour
     public int speed, rangeMax, rangeMin;
     GameObject player;
     [SerializeField]bool debugging = false;
+    bool isMoving = false, canMove = true;
     public bool timer = true;
     float a = 0;
     private void Start()
@@ -19,36 +20,52 @@ public class RangeEnemy : MonoBehaviour
         Vector2 pos = player.transform.position - transform.position;
 
         pos = pos.normalized;
-
-        if (Vector2.Distance(player.transform.position, transform.position) >= rangeMax)
+        if (canMove)
         {
-            if (timer)
+            if (Vector2.Distance(player.transform.position, transform.position) >= rangeMax)
             {
-                a = Time.time;
-                timer = false;
+                if (timer)
+                {
+                    a = Time.time;
+                    timer = false;
+                }
+                if (Time.time - a >= 2)
+                {
+                    transform.Translate(pos * speed * Time.deltaTime);
+                    isMoving = true;
+                }
             }
-            if (Time.time - a >= 2)
+            else if (Vector2.Distance(player.transform.position, transform.position) <= rangeMin)
             {
-                transform.Translate(pos * speed * Time.deltaTime);
+                if (timer)
+                {
+                    a = Time.time;
+                    timer = false;
+                }
+                if (Time.time - a >= 0.5)
+                {
+                    transform.Translate(-pos * speed * Time.deltaTime);
+                    isMoving = true;
+                }
             }
-        }
-        else if (Vector2.Distance(player.transform.position, transform.position) <= rangeMin)
-        {
-            if (timer)
+            else
             {
-                a = Time.time;
-                timer = false;
+                timer = true;
+                isMoving = false;
             }
-            if (Time.time - a >= 0.5)
-            {
-                transform.Translate(-pos * speed * Time.deltaTime);
-            }
-        }
-        else timer = true;
+        }       
         if (debugging)
         {
-            Debug.Log(Vector2.Distance(player.transform.position, transform.position));
+            Debug.Log(isMoving);
         }
 
+    }
+    public bool Moving()
+    {
+        return isMoving;
+    }
+    public void SetCanMove(bool state)
+    {
+        canMove = state;
     }
 }

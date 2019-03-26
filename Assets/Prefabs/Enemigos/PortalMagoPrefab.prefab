@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212225498941538794}
   - component: {fileID: 114516110711493162}
   - component: {fileID: 58501839923757194}
+  - component: {fileID: 114160896100916756}
   m_Layer: 13
   m_Name: PortalMagoPrefab
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1073974199830738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1957211, y: 0.10417021, z: -0.015261828}
+  m_LocalPosition: {x: 3.2092943, y: 1.9195547, z: -0.015261828}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -54,9 +55,21 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.01935029, y: -0.19350386}
   serializedVersion: 2
-  m_Radius: 1.6
+  m_Radius: 1.4258463
+--- !u!114 &114160896100916756
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1073974199830738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1ac6badbd964e46a881f2ac01f375b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seconds: 3
 --- !u!114 &114516110711493162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69,6 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
+  hasTeleported: 0
 --- !u!212 &212225498941538794
 SpriteRenderer:
   m_ObjectHideFlags: 1
