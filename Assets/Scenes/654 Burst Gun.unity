@@ -12081,7 +12081,7 @@ GameObject:
   m_Component:
   - component: {fileID: 371339484}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: EnemyPool
   m_TagString: EnemyPool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83527,7 +83527,7 @@ MonoBehaviour:
   magSize: 21
   projectiles: 1
   rate: 0.6
-  range: 15
+  range: 5000
   reload: 2
   maxSpread: 0
   bulletSpeed: 5
@@ -83535,7 +83535,7 @@ MonoBehaviour:
   canShoot: 1
   isReloading: 0
   bulletsLeft: 21
-  bulletPrefab: {fileID: 114686799706429918, guid: 5b2f5e2e6e02829419476d4668310b17,
+  bulletPrefab: {fileID: 114610924738208548, guid: cb498a7691fa2a74aa82f6540308eb0c,
     type: 2}
 --- !u!1 &1508544144
 GameObject:
@@ -83608,6 +83608,12 @@ MonoBehaviour:
   generadorOleadas: {fileID: 2028180154}
   player: {fileID: 1936691964}
   enemyCount: 0
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 262144
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 131072
   oleadaActual: 0
   delayOleada: 3
   UI: {fileID: 0}
@@ -84809,7 +84815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbedf1e1b40daa1479059937f40532cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 500
+  maxHealth: 500000
   health: 0
 --- !u!1 &1963167817
 GameObject:
