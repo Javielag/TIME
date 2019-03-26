@@ -117,7 +117,7 @@ MonoBehaviour:
   speed: 5
   rangeMax: 5
   rangeMin: 3
-  player: {fileID: 0}
+  debugging: 0
   timer: 1
 --- !u!114 &114598924422342524
 MonoBehaviour:
