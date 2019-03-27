@@ -9,7 +9,7 @@ public class ExplodeAfterSeconds : MonoBehaviour {
     private void Start()
     {
         areaDamage = GetComponent<AreaDamage>();
-        
+        Invoke("Explosion", time);
     }
     private void Explosion()
     {
