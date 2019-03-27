@@ -53,7 +53,7 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1793075531721430}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -127,9 +127,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  damagerange: 1
-  attackrange: 1
+  attackrange: 2
   attackTime: 3
+  casttime: 1
   damage: 10
 --- !u!114 &114768542660947250
 MonoBehaviour:

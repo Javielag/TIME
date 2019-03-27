@@ -18,7 +18,29 @@ public class Health : MonoBehaviour
         if (health <= 0)
         {
             health = 0;
-            Destroy(this.gameObject);
+
+            //ENEMIGO KAMIKAZE
+            //Si Health registra el compoonente kamikaze se ejecuta el siguiente código
+            if (this.GetComponent<KamikazeEnemy>())
+            {
+                //Kamikazing() devuelve un booleano que indica su estado (enemigo normal/ kamikaze)
+                if (!this.GetComponent<KamikazeEnemy>().Kamikazing())
+                {
+                    //Si devuelve false (está en modo normal) ejecuta el método kamikaze, que induce al enemigo en su estado de kamikaze y le otorga una pequeña cantidad de vida
+                    this.GetComponent<KamikazeEnemy>().Kamikaze();
+                    health = 50;
+                }
+                //Si devuelve true, ya está en estado kamikaze, y ñe hace explotar
+                else
+                {
+                    this.GetComponent<KamikazeEnemy>().Explode();
+                }
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
+                    
         }
         else if (health > maxHealth) health = maxHealth;
     }
