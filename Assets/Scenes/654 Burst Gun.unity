@@ -83535,7 +83535,7 @@ MonoBehaviour:
   canShoot: 1
   isReloading: 0
   bulletsLeft: 21
-  bulletPrefab: {fileID: 114610924738208548, guid: cb498a7691fa2a74aa82f6540308eb0c,
+  bulletPrefab: {fileID: 114686799706429918, guid: 5b2f5e2e6e02829419476d4668310b17,
     type: 2}
 --- !u!1 &1508544144
 GameObject:

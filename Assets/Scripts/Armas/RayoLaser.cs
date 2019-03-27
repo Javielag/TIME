@@ -23,10 +23,8 @@ public class RayoLaser : MonoBehaviour {
         {
             end = wall.point;
             Debug.Log("Dibujado");
-            Debug.DrawLine(transform.position, end, Color.green, 2);
+            Debug.DrawLine(transform.position, end, Color.green, 2,false);
             //Debug.DrawRay(transform.position, transform.right, Color.red, 2);
-            if (wall.collider.CompareTag("Pared"))
-                Debug.Log("Pared");
         }
         return end;
     }
@@ -43,6 +41,7 @@ public class RayoLaser : MonoBehaviour {
         {
             i++;
             Debug.Log("Lazered " + hit.name + " " + i);
+            GameManager.instance.ChangeHealth(-dmg,hit.gameObject);
         }
     }
 }
