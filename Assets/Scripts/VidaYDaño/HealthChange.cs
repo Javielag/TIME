@@ -10,14 +10,26 @@ public class HealthChange : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Si la variable de Enemy barrera es true, makedamage es false -> no deja hacer daño con los proyectiles y viceversa
+        if (collision.GetComponent<Enemy>().barrera)
+        {
+            makeDamage = false;
+        }
+        else
+        {
+            makeDamage = true;
+        }
+
+
         if (makeDamage == true)
         {
             GameManager.instance.ChangeHealth(-damage, collision.gameObject); //Aquí van cosas de enemigos, de momento hacen daño por contacto
-            if(gameObject.tag == "Projectile")
+            if (gameObject.tag == "Projectile")
             {
+                collision.GetComponent<Enemy>().invbarrera = false;  //Cuando hace daño la var de Enemy barrera inversa que convierte en false
                 Destroy(this.gameObject);
             }
-        }         
+        }
     }
     public void SetDamage(int newDamage)
     {
