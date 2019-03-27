@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class MoveTowards : MonoBehaviour
+public class Pathfinder : MonoBehaviour
 {
     NavMeshAgent agent;
     public GameObject WaypointManager;
@@ -32,7 +32,7 @@ public class MoveTowards : MonoBehaviour
         if (hit.collider.gameObject.transform != player) //Si no ve al jugador
         {
             wp = CloseWaypoint(this.transform);
-            if (Vector3.Distance(this.transform.position, waypoints[wp].transform.position) > 1)
+            if (Vector3.Distance(this.transform.position, waypoints[wp].transform.position) > 10)
             {
                 transform.position = Vector2.MoveTowards(this.transform.position, waypoints[wp].transform.position, speed); //Va al waypoint más cercano
             }
@@ -57,7 +57,6 @@ public class MoveTowards : MonoBehaviour
                     transform.position = Vector2.MoveTowards(this.transform.position, waypoints[wp].closeWaypoints[0].position, speed);
                 }
             }
-
         }
         else 
         {
