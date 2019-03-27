@@ -14,6 +14,7 @@ public class HealthChange : MonoBehaviour
         if (collision.GetComponent<Barreras>().barrera)
         {
             makeDamage = false;
+            Destroy(this.gameObject);
         }
         else
         {
