@@ -5,65 +5,44 @@ using UnityEngine;
 public class RayoLaser : MonoBehaviour {
 
     public int dmg;
-    public float ancho,knockForce;
-    Ray2D limit, laser;
-    ContactFilter2D myFilter;
-    //layer 17 paredes layer 18 enemigos
-    public LayerMask enemyLayer,wallLayer;
-    Vector2 ctr, size,end;
-    public void Start()
-    {
-        end = FindEnd();
-        ctr = new Vector2(transform.position.x + (end.x-transform.position.x) / 2,transform.position.y + (end.y - transform.position.y) / 2);
-        size = new Vector2(Vector2.Distance(end, transform.position) / 2, ancho);
-        Shoot(FindEnd());
-    }
-    private Vector2 FindEnd()
-    {
-        
-        //float distance = 100f;
-        Vector2 end = transform.right*100;
-        int mask = 1 << wallLayer.value;
-        RaycastHit2D leHit = Physics2D.Raycast(transform.position,transform.right,mask);       
+    public float ancho, knock;
+    Collider2D hitBox;
 
-        if (leHit)
-        {  
-           // distance = Vector2.Distance(leHit.point,transform.position);
-            end = leHit.point;
+    private void Start()
+    {
+        hitBox = GetComponent<Collider2D>();
+        findEnd();
+        Shoot(findEnd());
+    }
+    private Vector2 findEnd()
+    {
+        Vector2 end = new Vector2 (100,100);
+        LayerMask mask = LayerMask.GetMask("Paredes");
+        RaycastHit2D wall = Physics2D.Raycast(transform.position, transform.right, 100, mask);
+        if (wall)
+        {
+            end = wall.point;
+            Debug.Log("Dibujado");
+            Debug.DrawLine(transform.position, end, Color.green, 2);
+            //Debug.DrawRay(transform.position, transform.right, Color.red, 2);
+            if (wall.collider.CompareTag("Pared"))
+                Debug.Log("Pared");
         }
-        Debug.DrawLine(transform.position,end,Color.cyan,2);
         return end;
-        
+    }
+    private Vector2 Centre(Vector2 p1,Vector2 p2)
+    {
+        return (new Vector2(p1.x + (p2.x - p1.x) / 2, p1.y + (p2.y - p1.y) / 2));
     }
     private void Shoot(Vector2 end)
     {
-              
-        Collider2D[] lesHits = Physics2D.OverlapBoxAll(ctr, size,0);
-        
-        print("hit enemies: " + lesHits.Length);
-        foreach (Collider2D hit in lesHits)
+        Collider2D[] hits = Physics2D.OverlapBoxAll(Centre(transform.position,end),new Vector2(Vector2.Distance(transform.position,end),ancho)
+            ,Vector2.Angle(transform.right,new Vector2(1,0)));
+        int i = 0;
+        foreach (Collider2D hit in hits)
         {
-            if (hit.CompareTag("Enemy"))
-            {
-                Health hp = hit.GetComponent<Health>();
-                if (hp)
-                {
-                    hp.ChangeHealth(-dmg);
-                }
-                PlayKnockback knock = hit.GetComponent<PlayKnockback>();
-                if (knock)
-                {
-                    knock.KnockThis(transform.right, knockForce);
-                }
-            }
+            i++;
+            Debug.Log("Lazered " + hit.name + " " + i);
         }
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.cyan;
-        //Gizmos.DrawWireSphere(ctr,5);
-        Gizmos.DrawCube(ctr, size);
-    }
-    //https://answers.unity.com/questions/416919/making-raycast-ignore-multiple-layers.html
-
 }
