@@ -30,8 +30,6 @@ public class Mago : MonoBehaviour {
     {
         PortalMago portalOfensivo = Instantiate(PortalMagoPrefab, player.transform.position, Quaternion.identity, bulletPool);
         PortalMago portalDefensivo = Instantiate(PortalMagoPrefab, transform.position, Quaternion.identity, bulletPool);                //Crea ambos portales
-        portalOfensivo.SetOtherPortal(portalDefensivo.transform.position);                                                              //Les informa de la existencia del otro
-        portalDefensivo.SetOtherPortal(portalOfensivo.transform.position);
         coroutine = ActivaPortales(portalOfensivo, portalDefensivo);
         StartCoroutine(coroutine);
         
@@ -39,7 +37,7 @@ public class Mago : MonoBehaviour {
     IEnumerator ActivaPortales(PortalMago portal1, PortalMago portal2)
     {
         yield return new WaitForSeconds(tiempoCasteo);                          //Espera el tiempo indicado
-        portal1.SetActive(true); portal2.SetActive(true);                       //Los activa
+        portal1.Teleport(portal2.transform.position); portal2.Teleport(portal1.transform.position);                 //Realiza el teletransporte
         thisEnemy.SetCanMove(true);                                             //Les deja moverse
         Invoke("PuedeGenerar", tiempoCasteo);                                   //Tras un tiempo puede volver a crear portales
     }
