@@ -10,7 +10,9 @@ public class Pathfinder : MonoBehaviour
     [SerializeField] Waypoint[] waypoints;
     Transform player;   
     public float speed = 0.5f;
-    int sala = -1, wp = -1;
+    [SerializeField] int sala = -1, wp = -1;
+    bool isInRoute = false;
+    [SerializeField] int playerSala;
 
     // Use this for initialization
     void Start()
@@ -32,14 +34,19 @@ public class Pathfinder : MonoBehaviour
         if (hit.collider.gameObject.transform != player) //Si no ve al jugador
         {
             wp = CloseWaypoint(this.transform);
-            if (Vector3.Distance(this.transform.position, waypoints[wp].transform.position) > 10)
-            {
+            if (Vector3.Distance(this.transform.position, waypoints[wp].transform.position) > 2 && !isInRoute)
+            {                
                 transform.position = Vector2.MoveTowards(this.transform.position, waypoints[wp].transform.position, speed); //Va al waypoint más cercano
             }
             else //De ahí va a la sala en la que está el player pasando por los waypoints
             {
-                this.sala = waypoints[wp].sala; //Coge la sala del waypoint más cercano
-                int playerSala = waypoints[CloseWaypoint(player)].sala; //Coge la sala del jugador
+                isInRoute = true;
+                if (Vector3.Distance(this.transform.position, waypoints[wp].transform.position) < 3)
+                {
+                    this.sala = waypoints[wp].sala; //Coge la sala del waypoint más cercano
+                    playerSala = waypoints[CloseWaypoint(player)].sala; //Coge la sala del jugador
+
+                }
                 if (playerSala % 3 > this.sala % 3) //Si está a la derecha
                 {
                     transform.position = Vector2.MoveTowards(this.transform.position, waypoints[wp].closeWaypoints[1].position, speed);
@@ -61,7 +68,11 @@ public class Pathfinder : MonoBehaviour
         else 
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed);
+            this.sala = waypoints[wp].sala; //Coge la sala del waypoint más cercano
+            playerSala = waypoints[CloseWaypoint(player)].sala; //Coge la sala del jugador
+            isInRoute = false;
         }
+        Debug.Log(wp);
     }
         
     int CloseWaypoint(Transform transform)
@@ -73,6 +84,7 @@ public class Pathfinder : MonoBehaviour
             float distActual = Vector2.Distance(transform.position, waypoints[i].transform.position);
             if (distCercano > distActual)
             {
+                distCercano = distActual;
                 wpCercano = i;
             }
         }

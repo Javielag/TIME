@@ -12039,7 +12039,7 @@ MonoBehaviour:
   closeWaypoints:
   - {fileID: 890826272}
   - {fileID: 1206571537}
-  - {fileID: 0}
+  - {fileID: 354750865}
   - {fileID: 1797977314}
   sala: 7
 --- !u!1 &360374188
@@ -81525,10 +81525,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closeWaypoints:
-  - {fileID: 0}
+  - {fileID: 786052092}
   - {fileID: 2057546661}
   - {fileID: 1237540845}
-  - {fileID: 0}
+  - {fileID: 786052092}
   sala: 0
 --- !u!1 &789344403
 GameObject:
@@ -81886,7 +81886,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 892882638}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.9, y: -17.5, z: 0}
+  m_LocalPosition: {x: 26, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -81906,6 +81906,9 @@ MonoBehaviour:
   WaypointManager: {fileID: 371339483}
   waypoints: []
   speed: 0.1
+  sala: -1
+  wp: -1
+  playerSala: 0
 --- !u!1 &913437718
 GameObject:
   m_ObjectHideFlags: 0
@@ -82864,8 +82867,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closeWaypoints:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1162144269}
+  - {fileID: 1162144269}
   - {fileID: 1412421836}
   - {fileID: 1446958632}
   sala: 2
@@ -82912,8 +82915,8 @@ MonoBehaviour:
   closeWaypoints:
   - {fileID: 1979344335}
   - {fileID: 1797977314}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1175635438}
+  - {fileID: 1175635438}
   sala: 6
 --- !u!1 &1176643615
 GameObject:
@@ -83037,8 +83040,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   closeWaypoints:
   - {fileID: 1730601703}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1206571537}
+  - {fileID: 1206571537}
   - {fileID: 354750865}
   sala: 8
 --- !u!1 &1236271194
@@ -83113,7 +83116,7 @@ MonoBehaviour:
   - {fileID: 786052092}
   - {fileID: 1510789421}
   - {fileID: 1979344335}
-  - {fileID: 0}
+  - {fileID: 1237540845}
   sala: 3
 --- !u!1 &1237566307
 GameObject:
@@ -83729,7 +83732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   closeWaypoints:
   - {fileID: 1162144269}
-  - {fileID: 0}
+  - {fileID: 1412421836}
   - {fileID: 1414555925}
   - {fileID: 1162144269}
   sala: 2
@@ -83775,7 +83778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   closeWaypoints:
   - {fileID: 1412421836}
-  - {fileID: 0}
+  - {fileID: 1414555925}
   - {fileID: 1730601703}
   - {fileID: 1730601703}
   sala: 5
@@ -83924,7 +83927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closeWaypoints:
-  - {fileID: 0}
+  - {fileID: 1446958632}
   - {fileID: 1162144269}
   - {fileID: 2007420553}
   - {fileID: 2057546661}
@@ -85027,7 +85030,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   closeWaypoints:
   - {fileID: 1414555925}
-  - {fileID: 0}
+  - {fileID: 1730601703}
   - {fileID: 1206571537}
   - {fileID: 512439459}
   sala: 5
@@ -85186,7 +85189,7 @@ MonoBehaviour:
   closeWaypoints:
   - {fileID: 890826272}
   - {fileID: 354750865}
-  - {fileID: 0}
+  - {fileID: 1797977314}
   - {fileID: 1175635438}
   sala: 7
 --- !u!1 &1802504908
@@ -85561,7 +85564,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1936691964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.6, y: -2.6, z: 0}
+  m_LocalPosition: {x: -47.5, y: 18.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 175729589}
@@ -85878,7 +85881,7 @@ MonoBehaviour:
   - {fileID: 1237540845}
   - {fileID: 1237540845}
   - {fileID: 1175635438}
-  - {fileID: 0}
+  - {fileID: 1979344335}
   sala: 3
 --- !u!1 &1996938288
 GameObject:
@@ -85949,7 +85952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closeWaypoints:
-  - {fileID: 0}
+  - {fileID: 2007420553}
   - {fileID: 1446958632}
   - {fileID: 885542457}
   - {fileID: 2057546661}
@@ -86085,7 +86088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closeWaypoints:
-  - {fileID: 0}
+  - {fileID: 2057546661}
   - {fileID: 1446958632}
   - {fileID: 2007420553}
   - {fileID: 786052092}
