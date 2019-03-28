@@ -149,9 +149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12e8044cf25703e45ae2e5108972add9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barrera: 0
-  invbarrera: 1
-  pompa: {fileID: 1113013653724522}
 --- !u!114 &114578011135773906
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -187,6 +184,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c802e1389fa2514397cb009ab112d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barrera: 0
+  invbarrera: 1
+  pompa: {fileID: 1113013653724522}
 --- !u!212 &212140996580048658
 SpriteRenderer:
   m_ObjectHideFlags: 1

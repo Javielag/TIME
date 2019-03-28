@@ -36,13 +36,13 @@ public class PlayerMelee : MonoBehaviour {
         foreach (Collider2D hit in attack)
         {
             
-            if (hit.GetComponent<Barreras>().barrera) //Al golpear con el melee se elimina la barrera -> barrera se vuelve false
+            if (hit.GetComponent<Enemy>().barrera) //Al golpear con el melee se elimina la barrera -> barrera se vuelve false
             {
-                hit.GetComponent<Barreras>().barrera = false;
-                hit.GetComponent<Barreras>().DestroyPompa();
+                hit.GetComponent<Enemy>().barrera = false;
+                hit.GetComponent<Enemy>().DestroyPompa();
             }
 
-            if (!hit.GetComponent<Barreras>().invbarrera) //Hace daño solo si la barrera inversa es false
+            if (!hit.GetComponent<Enemy>().invbarrera) //Hace daño solo si la barrera inversa es false
             {
                 Health hp = hit.GetComponent<Health>();
                 if (hp)
