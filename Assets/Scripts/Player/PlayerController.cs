@@ -48,6 +48,10 @@ public class PlayerController : MonoBehaviour {
                         wm.ChangeWeapon(interactingWith);
                         print(interactingWith);
                     }
+                    else if (interactingWith.GetComponent<PickUp_Vida>())
+                    {
+                        interactingWith.GetComponent<PickUp_Vida>().Interacted();
+                    }
                     if (interactingWith.GetComponent<DestroyOnInteraction>())
                     {
                         Destroy(interactingWith.gameObject);

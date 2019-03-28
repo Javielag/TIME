@@ -33,11 +33,11 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void ChangeHealth(int damage, GameObject target)
+    public void ChangeHealth(int value, GameObject target)
     {
         Health tgHealth = target.GetComponent<Health>();
         if (tgHealth){
-            tgHealth.ChangeHealth(damage);
+            tgHealth.ChangeHealth(value);
             //si es el jugadir quien ha recibido daño
             if (tgHealth.GetComponent<PlayerController>())
             {

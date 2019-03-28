@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour {
     void Start ()
     {
         GameManager.instance.SetUI(this.gameObject);
-        maxHealth = GameManager.instance.player.GetComponent<Health>().maxHealth;
+        maxHealth = GameManager.instance.player.GetComponent<Health>().GetMaxHealth();
         UpdateHealth(maxHealth);
 	}
 	
