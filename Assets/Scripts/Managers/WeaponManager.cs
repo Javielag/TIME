@@ -120,4 +120,16 @@ public class WeaponManager : MonoBehaviour {
     {
         StartCoroutine("SwitchWeapon", changeTime);
     }
+    public void UpgradeFireRate(float percentage)
+    {
+        foreach(Transform child in transform)
+        {
+            Gun gun = child.GetComponentInChildren<Gun>();
+            if (gun)
+            {
+                Debug.Log(gun.iAmWeapon + " upgraded");
+                gun.rate = gun.rate - gun.rate * (percentage / 100);
+            }
+        }
+    }
 }
