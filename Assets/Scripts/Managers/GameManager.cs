@@ -115,4 +115,8 @@ public class GameManager : MonoBehaviour
     {
         UI.ReloadingWeapon(state);
     }
+    public void UpdateSecondaryAmmo(int ammo, int maxAmmo)
+    {
+        UI.UpdateSecondaryAmmo(ammo, maxAmmo);
+    }
 }

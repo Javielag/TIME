@@ -6,10 +6,10 @@ public class WeaponManager : MonoBehaviour {
 
     Gun weapon;
     float changeTime;
-    public bool isSwitching = false;
+    public bool isSwitching = false, first = true;
     [SerializeField]int currentWeapon=0;
     IEnumerator reload;
-    Weapon[] equipadas = new Weapon[] {Weapon.pistola,Weapon.revolver};
+    Weapon[] equipadas = new Weapon[] {Weapon.pistola, Weapon.nothing};
     private void Start()
     {
         changeTime = GetComponentInParent<PlayerController>().changeTime;
@@ -18,18 +18,23 @@ public class WeaponManager : MonoBehaviour {
     public IEnumerator SwitchWeapon(float changeTime)
     {
         Debug.Log("Cambiando arma");
-        currentWeapon = (currentWeapon + 1) % equipadas.Length;
-        weapon = GetComponentInChildren<Gun>();
-        weapon.CannotShoot();
-        GameManager.instance.SwitchingWeaponUI();
-        if (IsReloading())
+        //first = variable de seguridad para evitar errores la primera vez que se realiza(que siempre tiene nothing de secundaria)
+        if(first || equipadas[(currentWeapon + 1) % equipadas.Length] != Weapon.nothing)
         {
-            Debug.Log("Recarga cancelada");
-            CancelReload();
-        }
-        isSwitching = true;
-        yield return new WaitForSeconds(changeTime);
-        SelectWeapon(currentWeapon);
+            currentWeapon = (currentWeapon + 1) % equipadas.Length;
+            weapon = GetComponentInChildren<Gun>();
+            weapon.CannotShoot();
+            GameManager.instance.SwitchingWeaponUI();
+            if (IsReloading())
+            {
+                Debug.Log("Recarga cancelada");
+                CancelReload();
+            }
+            isSwitching = true;
+            yield return new WaitForSeconds(changeTime);
+            weapon.Switched();
+            SelectWeapon(currentWeapon);
+        }      
     }
     public void ChangeWeapon(Collider2D wpCol)
     {
@@ -38,7 +43,15 @@ public class WeaponManager : MonoBehaviour {
             WeaponPickup wpPick = wpCol.GetComponent<WeaponPickup>();
             if (wpPick)
             {
-                equipadas[currentWeapon] = wpPick.WhatWeapon();
+                if(equipadas[(currentWeapon + 1) % equipadas.Length] == Weapon.nothing)
+                {
+                    equipadas[(currentWeapon + 1) % equipadas.Length] = wpPick.WhatWeapon();
+                    StartCoroutine("SwitchWeapon", 0);
+                }
+                else
+                {
+                    equipadas[currentWeapon] = wpPick.WhatWeapon();
+                }
                 SelectWeapon(currentWeapon);
                 wpPick.OnPicked();
             }
