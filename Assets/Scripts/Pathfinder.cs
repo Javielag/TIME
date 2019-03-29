@@ -5,18 +5,18 @@ using UnityEngine.AI;
 
 public class Pathfinder : MonoBehaviour
 {
-    NavMeshAgent agent;
-    public GameObject WaypointManager;
-    [SerializeField] Waypoint[] waypoints;
+    GameObject WaypointManager;
+    Waypoint[] waypoints;
     Transform player;   
-    public float speed = 0.5f;
-    [SerializeField] int sala = -1, wp = -1;
+    int sala = -1, wp = -1;
     bool isInRoute = false;
-    [SerializeField] int playerSala;
+    int playerSala;
+    Vector3 dir;
 
     // Use this for initialization
     void Start()
     {
+        WaypointManager = GameObject.Find("WaypointManager");
         waypoints = new Waypoint[WaypointManager.transform.childCount];
         for (int i = 0; i < waypoints.Length; i++)
         {
@@ -27,52 +27,51 @@ public class Pathfinder : MonoBehaviour
         this.sala = waypoints[wp].sala;
     }
 
-    // Update is called once per frame
-    void Update()
+    public Vector3 Direction()
     {
-        RaycastHit2D hit = Physics2D.Raycast(this.transform.position, player.position - this.transform.position);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, player.position - transform.position, 1000, 1 << 12 | 1 << 13 | 1 << 16);
         if (hit.collider.gameObject.transform != player) //Si no ve al jugador
         {
-            wp = CloseWaypoint(this.transform);
-            if (Vector3.Distance(this.transform.position, waypoints[wp].transform.position) > 2 && !isInRoute)
-            {                
-                transform.position = Vector2.MoveTowards(this.transform.position, waypoints[wp].transform.position, speed); //Va al waypoint más cercano
+            wp = CloseWaypoint(transform);
+            if (Vector3.Distance(transform.position, waypoints[wp].transform.position) > 2 && !isInRoute)
+            {
+                return waypoints[wp].transform.position; //Va al waypoint más cercano
             }
             else //De ahí va a la sala en la que está el player pasando por los waypoints
             {
                 isInRoute = true;
-                if (Vector3.Distance(this.transform.position, waypoints[wp].transform.position) < 3)
+                if (Vector3.Distance(transform.position, waypoints[wp].transform.position) < 3)
                 {
                     this.sala = waypoints[wp].sala; //Coge la sala del waypoint más cercano
                     playerSala = waypoints[CloseWaypoint(player)].sala; //Coge la sala del jugador
 
                 }
-                if (playerSala % 3 > this.sala % 3) //Si está a la derecha
+                if (playerSala % 3 > sala % 3) //Si está a la derecha
                 {
-                    transform.position = Vector2.MoveTowards(this.transform.position, waypoints[wp].closeWaypoints[1].position, speed);
+                    return waypoints[wp].closeWaypoints[1].position;
                 }
-                else if (playerSala % 3 < this.sala % 3) //Si está a la izquierda
+                else if (playerSala % 3 < sala % 3) //Si está a la izquierda
                 {
-                    transform.position = Vector2.MoveTowards(this.transform.position, waypoints[wp].closeWaypoints[3].position, speed);
+                    return waypoints[wp].closeWaypoints[3].position;
                 }
-                else if (playerSala / 3 > this.sala / 3) //Si está abajo
+                else if (playerSala / 3 > sala / 3) //Si está abajo
                 {
-                    transform.position = Vector2.MoveTowards(this.transform.position, waypoints[wp].closeWaypoints[2].position, speed);
+                    return waypoints[wp].closeWaypoints[2].position;
                 }
-                else if (playerSala / 3 < this.sala / 3) //Si está arriba
+                else if (playerSala / 3 < sala / 3) //Si está arriba
                 {
-                    transform.position = Vector2.MoveTowards(this.transform.position, waypoints[wp].closeWaypoints[0].position, speed);
+                    return waypoints[wp].closeWaypoints[0].position;
                 }
+                else return Vector2.zero;
             }
         }
-        else 
+        else
         {
-            transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed);
-            this.sala = waypoints[wp].sala; //Coge la sala del waypoint más cercano
+            sala = waypoints[wp].sala; //Coge la sala del waypoint más cercano
             playerSala = waypoints[CloseWaypoint(player)].sala; //Coge la sala del jugador
             isInRoute = false;
+            return player.position;
         }
-        Debug.Log(wp);
     }
         
     int CloseWaypoint(Transform transform)

@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114977823951229592}
   - component: {fileID: 114990945906791508}
   - component: {fileID: 50214297674968282}
+  - component: {fileID: 114851533438746192}
   m_Layer: 0
   m_Name: MaguitoKomaeda
   m_TagString: Untagged
@@ -106,6 +107,21 @@ MonoBehaviour:
   rangeMin: 4
   debugging: 0
   timer: 1
+  path: {x: 0, y: 0}
+--- !u!114 &114851533438746192
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1964412618404762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b77731b6aa0fd48aa3205131ca6a25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaypointManager: {fileID: 0}
+  player: {fileID: 0}
+  hitt: {fileID: 0}
 --- !u!114 &114977823951229592
 MonoBehaviour:
   m_ObjectHideFlags: 1
