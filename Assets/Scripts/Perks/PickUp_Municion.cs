@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUp_Cadencia : MonoBehaviour {
+public class PickUp_Municion : MonoBehaviour {
 
-    public float cadence;
+    public float ammoPercentage;
     WeaponManager wm;
     public void Interacted()
     {
         wm = GameManager.instance.GetPlayer().GetComponentInChildren<WeaponManager>();
         if (wm)
         {
-            wm.UpgradeFireRate(cadence);
+            wm.UpgradeMagSize(ammoPercentage);
         }
     }
 }

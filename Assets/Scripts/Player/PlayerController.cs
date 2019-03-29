@@ -64,8 +64,11 @@ public class PlayerController : MonoBehaviour {
                         }
                         else if (interactingWith.GetComponent<PickUp_Cadencia>())
                         {
-                            wm.UpgradeFireRate(interactingWith.GetComponent<PickUp_Cadencia>().cadence);
-                           // interactingWith.GetComponent<PickUp_Cadencia>().Interacted();
+                           interactingWith.GetComponent<PickUp_Cadencia>().Interacted();
+                        }
+                        else if (interactingWith.GetComponent<PickUp_Municion>())
+                        {
+                            interactingWith.GetComponent<PickUp_Municion>().Interacted();
                         }
                         if (interactingWith.GetComponent<DestroyOnInteraction>())
                         {

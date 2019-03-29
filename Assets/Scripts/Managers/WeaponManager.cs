@@ -127,9 +127,24 @@ public class WeaponManager : MonoBehaviour {
             Gun gun = child.GetComponentInChildren<Gun>();
             if (gun)
             {
-                Debug.Log(gun.iAmWeapon + " upgraded");
-                gun.rate = gun.rate - gun.rate * (percentage / 100);
+                gun.rate -= gun.rate * (percentage / 100);
             }
         }
     }
+    public void UpgradeMagSize(float percentage)
+    {
+        foreach (Transform child in transform)
+        {
+            Gun gun = child.GetComponentInChildren<Gun>();
+            if (gun)
+            {
+                gun.magSize += Mathf.RoundToInt(gun.magSize*(percentage/100));
+                if (gun.gameObject.activeSelf)
+                {
+                    GameManager.instance.UpdateMaxAmmo(gun.magSize);
+                }
+            }
+        }
+    }
+
 }
