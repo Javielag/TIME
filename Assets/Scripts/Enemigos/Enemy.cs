@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
+    public bool barrera, invbarrera;
+    public GameObject pompa;
+
+    public void DestroyPompa()
+    {
+        Destroy(pompa);
+    }
 
     public void OnDestroy()
     {

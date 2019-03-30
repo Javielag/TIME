@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour {
         wm = GetComponentInChildren<WeaponManager>();
         StartCoroutine(wm.SwitchWeapon(0));
         StartCoroutine(wm.SwitchWeapon(0));
+        wm.first = false;
         //le dice al GameManager que es el jugador
         GameManager.instance.SetPlayer(this.gameObject);
 	}
@@ -52,7 +53,6 @@ public class PlayerController : MonoBehaviour {
                         if (interactingWith.GetComponent<WeaponPickup>()) //Si no interactúa con nada, no hace nada
                         {
                             wm.ChangeWeapon(interactingWith);
-                            print(interactingWith);
                         }
                         else if (interactingWith.GetComponent<PickUp_Vida>())
                         {
