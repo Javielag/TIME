@@ -124,4 +124,5 @@ public class Gun : MonoBehaviour {
     {
         GameManager.instance.UpdateSecondaryAmmo(bulletsLeft, magSize);
     }
+    public int BulletsLeft() { return bulletsLeft; }
 }

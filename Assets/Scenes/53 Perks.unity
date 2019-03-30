@@ -390,6 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSwitching: 0
+  first: 1
   currentWeapon: 0
 --- !u!114 &175729592
 MonoBehaviour:
@@ -84905,7 +84906,7 @@ MonoBehaviour:
   reloadKey: 114
   interact: 101
   changeTime: 2
-  interactRange: 2.05
+  interactRange: 1
   interactableLayer:
     serializedVersion: 2
     m_Bits: 256

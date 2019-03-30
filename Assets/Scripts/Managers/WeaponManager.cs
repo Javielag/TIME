@@ -146,15 +146,21 @@ public class WeaponManager : MonoBehaviour {
     }
     public void UpgradeMagSize(float percentage)
     {
+        //busca en todas las armas
         foreach (Transform child in transform)
         {
             Gun gun = child.GetComponentInChildren<Gun>();
             if (gun)
             {
+                //aumenta la municion
                 gun.magSize += Mathf.RoundToInt(gun.magSize*(percentage/100));
-                if (gun.gameObject.activeSelf)
+                if (gun.gameObject.activeInHierarchy)
                 {
                     GameManager.instance.UpdateMaxAmmo(gun.magSize);
+                }
+                else if(gun.iAmWeapon == SecondaryWeapon())
+                {
+                    GameManager.instance.UpdateSecondaryAmmo(gun.BulletsLeft(),gun.magSize);
                 }
             }
         }
