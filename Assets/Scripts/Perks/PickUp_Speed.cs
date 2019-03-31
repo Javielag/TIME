@@ -18,6 +18,7 @@ public class PickUp_Speed : MonoBehaviour
             }
             else
                 mov.setXtraSpeed(mov.speedMax + mov.speedMax * (speedBonus / 100f));
+            GameManager.instance.UpdatePerk("Velocidad");
         }
     }
 }

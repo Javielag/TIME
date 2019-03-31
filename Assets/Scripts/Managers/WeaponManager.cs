@@ -155,11 +155,13 @@ public class WeaponManager : MonoBehaviour {
                 //aumenta la municion
                 gun.magSize += Mathf.RoundToInt(gun.magSize*(percentage/100));
                 gun.UpdateAmmo();
+                //Actualiza la munición del arma equipada
                 if (gun.gameObject.activeInHierarchy)
                 {
                     GameManager.instance.UpdateMaxAmmo(gun.magSize);
                     GameManager.instance.UpdateAmmo(gun.BulletsLeft());
                 }
+                //Actualiza la munición del arma no equipada
                 else if(gun.iAmWeapon == equipadas[(currentWeapon + 1) % equipadas.Length])
                 {
                     GameManager.instance.UpdateSecondaryAmmo(gun.BulletsLeft(),gun.magSize);

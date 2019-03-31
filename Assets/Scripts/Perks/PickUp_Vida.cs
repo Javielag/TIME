@@ -16,12 +16,15 @@ public class PickUp_Vida : MonoBehaviour {
                 if (!isPercentage)
                 {
                     playerHealth.ChangeMaxHealth(max + healthGain);
+                GameManager.instance.UpdateMaxHealth(max + healthGain);
                 }
                 else
                 {
                     playerHealth.ChangeMaxHealth(max + Mathf.RoundToInt((max * (healthGain / 100f))));
+                    GameManager.instance.UpdateMaxHealth(max + Mathf.RoundToInt((max * (healthGain / 100f))));
                 }
                 GameManager.instance.ChangeHealth(playerHealth.GetMaxHealth(), GameManager.instance.GetPlayer());
+                GameManager.instance.UpdatePerk("Vida");
             }
         
     }

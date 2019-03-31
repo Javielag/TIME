@@ -43,8 +43,7 @@ public class GameManager : MonoBehaviour
             {
                 UI.UpdateHealth(tgHealth.health);
             }
-        }
-        
+        }        
     }
 
     public void SetPlayer(GameObject newPlayer)
@@ -118,5 +117,13 @@ public class GameManager : MonoBehaviour
     public void UpdateSecondaryAmmo(int ammo, int maxAmmo)
     {
         UI.UpdateSecondaryAmmo(ammo, maxAmmo);
+    }
+    public void UpdateMaxHealth(int newMax)
+    {
+        UI.UpdateMaxHealthVariable(newMax);
+    }
+    public void UpdatePerk(string perk)
+    {
+        UI.ActivatePerk(perk);
     }
 }

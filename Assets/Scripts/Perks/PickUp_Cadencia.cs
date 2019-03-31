@@ -12,6 +12,7 @@ public class PickUp_Cadencia : MonoBehaviour {
         if (wm)
         {
             wm.UpgradeFireRate(cadence);
+            GameManager.instance.UpdatePerk("Cadencia");
         }
     }
 }

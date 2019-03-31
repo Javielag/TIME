@@ -12,6 +12,7 @@ public class PickUp_Municion : MonoBehaviour {
         if (wm)
         {
             wm.UpgradeMagSize(ammoPercentage);
+            GameManager.instance.UpdatePerk("Recarga");
         }
     }
 }
