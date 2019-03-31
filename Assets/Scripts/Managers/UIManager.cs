@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour {
     void Start ()
     {
         GameManager.instance.SetUI(this.gameObject);
-        maxHealth = GameManager.instance.player.GetComponent<Health>().maxHealth;
+        maxHealth = GameManager.instance.player.GetComponent<Health>().GetMaxHealth();
         UpdateHealth(maxHealth);
 	}
 	
@@ -25,6 +25,12 @@ public class UIManager : MonoBehaviour {
 	}
     public void ChangeWeaponUI(Weapon weaponPrincipal, Weapon weaponSecondary)
     {
+        //Si la secundaria es nothing, desactiva la caja entera, si no, la activa IMPORTANTE me parece ultrafeo esta parte del código así que cuando toque limpieza hay que mirarlo MUY FUERTE
+        if (weaponSecondary == Weapon.nothing)
+        {
+            ArmaSecundaria.gameObject.SetActive(false);
+        }
+        else ArmaSecundaria.gameObject.SetActive(true);
         foreach (Transform weap in ArmaPrincipal)
         {
             if (weaponPrincipal.ToString() == weap.gameObject.name || weap.gameObject.name == "Ammo")
@@ -45,15 +51,19 @@ public class UIManager : MonoBehaviour {
             else
             {
                 weap.gameObject.SetActive(false);
-            }
-            
+            }          
         }
     }
     public void UpdateCurrentAmmo(int ammo)
     {
         ammo1.text = ammo.ToString();
     }
-    private void SwapAmmo()
+    public void UpdateSecondaryAmmo(int ammo, int maxAmmo)
+    {
+        ammo2.text = ammo.ToString();
+        mag2.text = maxAmmo.ToString();
+    }
+    private void SwapAmmo()             //QUITAR EN UN FUTURO
     {
         string auxAmmo, auxMag;
 
