@@ -154,16 +154,17 @@ public class WeaponManager : MonoBehaviour {
             {
                 //aumenta la municion
                 gun.magSize += Mathf.RoundToInt(gun.magSize*(percentage/100));
+                gun.UpdateAmmo();
                 if (gun.gameObject.activeInHierarchy)
                 {
                     GameManager.instance.UpdateMaxAmmo(gun.magSize);
+                    GameManager.instance.UpdateAmmo(gun.BulletsLeft());
                 }
-                else if(gun.iAmWeapon == SecondaryWeapon())
+                else if(gun.iAmWeapon == equipadas[(currentWeapon + 1) % equipadas.Length])
                 {
                     GameManager.instance.UpdateSecondaryAmmo(gun.BulletsLeft(),gun.magSize);
                 }
             }
         }
     }
-
 }
