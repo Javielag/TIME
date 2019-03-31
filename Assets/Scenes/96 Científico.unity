@@ -389,6 +389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSwitching: 0
+  first: 1
   currentWeapon: 0
 --- !u!114 &175729592
 MonoBehaviour:
@@ -12081,7 +12082,7 @@ GameObject:
   m_Component:
   - component: {fileID: 371339484}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: EnemyPool
   m_TagString: EnemyPool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12145,7 +12146,7 @@ TilemapRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 465b815bdefe565459ecda0ac4bc47a2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83591,7 +83592,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.005349, y: -3.602661, z: -0.037245885}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1701391797}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -83607,7 +83609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generadorOleadas: {fileID: 2028180154}
-  cientifico: {fileID: 0}
+  cientifico: {fileID: 1518157718}
   player: {fileID: 1936691964}
   enemyCount: 0
   oleadaActual: 0
@@ -83632,14 +83634,17 @@ MonoBehaviour:
   - {fileID: 114271245913642714, guid: bb6abf817675da0458aa938a9207538f, type: 2}
   - {fileID: 114454490590147162, guid: ebb74679358463d4ba31006c096827c3, type: 2}
   - {fileID: 114547294297027272, guid: 9fa06e7efb5ec434a85c931f7b129681, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114547294297027272, guid: 9fa06e7efb5ec434a85c931f7b129681, type: 2}
+  - {fileID: 114547294297027272, guid: 9fa06e7efb5ec434a85c931f7b129681, type: 2}
   perks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1395367394393130, guid: 96b1189ba8d95af42b67c247e353b420, type: 2}
+  - {fileID: 1098812770926418, guid: c948c4f192999284a8de4b9c802336e6, type: 2}
+  - {fileID: 1022399557797236, guid: 5c134143a40830b49bd32e298ec88223, type: 2}
+  - {fileID: 1331639622343832, guid: 842aad7c14a95e545a53ba64beaf70be, type: 2}
   perkGiven: 00000000
+  prefabCientifico: {fileID: 114803511611613608, guid: de6954d4d8204c34a9a25e2efe9dd22d,
+    type: 2}
+  posCientifico: {fileID: 1701391797}
 --- !u!1 &1527864302
 GameObject:
   m_ObjectHideFlags: 0
@@ -84274,6 +84279,34 @@ Transform:
   m_Father: {fileID: 350197719}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1701391796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1701391797}
+  m_Layer: 0
+  m_Name: PosCientifico
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1701391797
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1701391796}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.35, y: 8.12, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1518157716}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1712100270
 GameObject:
   m_ObjectHideFlags: 0
@@ -84711,7 +84744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9aa99fe64012de479876447068c58d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 52.5
+  speedMax: 5
   accel: 37.5
   melee: 0
   weaponChange: 32

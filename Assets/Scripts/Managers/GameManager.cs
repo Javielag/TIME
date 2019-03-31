@@ -72,10 +72,11 @@ public class GameManager : MonoBehaviour
         if (enemyCount <= 0)
         {
        
-            if ((oleadaActual + cientifico.primeraAparicion) % cientifico.cadaX == 0)
+            if ((oleadaActual - cientifico.primeraAparicion) % cientifico.cadaX == 0)
             {
                 //aquí van las visitas del CIENTEFRICO
-                Invoke("GeneraOleada", delayOleada);
+                cientifico.Visita();
+               // Invoke("GeneraOleada", delayOleada);
             }
             else
             {

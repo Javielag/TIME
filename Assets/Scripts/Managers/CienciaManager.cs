@@ -5,15 +5,18 @@ using UnityEngine;
 public class CienciaManager : MonoBehaviour {
 
     public int primeraAparicion, cadaX;
-    public float perkChance=20f;//probabilidad de que te toque una mejora, en caso contrario un arma
+    public float perkChance=0.8f;//probabilidad de que te toque una mejora, en caso contrario un arma
     public WeaponPickup[] weapons = new WeaponPickup[6];//todos los pickups de armas
     public GameObject[] perks = new GameObject[4];//todas las mejoras
     public bool[] perkGiven = new bool[4];//indica true cuando la mejora en el mismo sitio ya ha sido otorgada
     WeaponManager wm;
+    public Cientifico prefabCientifico;
+    public Transform posCientifico;
 
     public void Visita()
     {
-        if (Random.Range(0f, 1f) <= perkChance && MissingPerks())
+        Cientifico cientifico = Instantiate<Cientifico>(prefabCientifico,posCientifico.position,Quaternion.identity,transform);
+        if ((Random.Range(0f, 1f) <= perkChance) && MissingPerks())
         {
             int spawnPerk;
             //elige un perk sin repetir
@@ -21,7 +24,7 @@ public class CienciaManager : MonoBehaviour {
             {
                 spawnPerk = Random.Range(0, perks.Length-1);
             } while (perkGiven[spawnPerk]);
-            Instantiate(perks[spawnPerk], transform.position, Quaternion.identity, transform);
+            cientifico.Ofrece(perks[spawnPerk]);
         }
         else
         {
@@ -30,7 +33,8 @@ public class CienciaManager : MonoBehaviour {
          //   do
           //  {
                 n = Random.Range(0, weapons.Length - 1);
-          //  }while(weapons[n].thisWeapon ==wm.)
+            //  }while(weapons[n].thisWeapon ==wm.)
+            cientifico.Ofrece(weapons[n].gameObject);
         }
     }
     private bool MissingPerks()
@@ -38,6 +42,6 @@ public class CienciaManager : MonoBehaviour {
         int i = 0;
         while (i < perkGiven.Length && perkGiven[i])
             i++;
-        return !(i < perkGiven.Length);  
+        return (i < perkGiven.Length);  
     }
 }
