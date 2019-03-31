@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance = null;
     public GeneradorOleadas generadorOleadas;
+    public CienciaManager cientifico;
     public GameObject player;
     public int enemyCount;
     [SerializeField]private int /*enemyCount,*/oleadaActual=-1;
@@ -71,7 +72,7 @@ public class GameManager : MonoBehaviour
         if (enemyCount <= 0)
         {
        
-            if ((oleadaActual + 5) % 10 == 0)
+            if ((oleadaActual + cientifico.primeraAparicion) % cientifico.cadaX == 0)
             {
                 //aquí van las visitas del CIENTEFRICO
                 Invoke("GeneraOleada", delayOleada);
