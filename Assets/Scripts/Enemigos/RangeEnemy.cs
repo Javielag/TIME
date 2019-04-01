@@ -11,6 +11,7 @@ public class RangeEnemy : MonoBehaviour
     bool isMoving = false, canMove = true;
     public bool timer = true;
     float a = 0;
+    public Vector2 path;
     private void Start()
     {
         player = GameManager.instance.GetPlayer();
@@ -18,7 +19,7 @@ public class RangeEnemy : MonoBehaviour
     void Update()
     {
         Vector2 pos = player.transform.position - transform.position;
-
+        path = this.GetComponent<Pathfinder>().Direction() - transform.position;
         pos = pos.normalized;
         if (canMove)
         {
@@ -31,7 +32,7 @@ public class RangeEnemy : MonoBehaviour
                 }
                 if (Time.time - a >= 2)
                 {
-                    transform.Translate(pos * speed * Time.deltaTime);
+                    transform.Translate(path.normalized * speed * Time.deltaTime);
                     isMoving = true;
                 }
             }

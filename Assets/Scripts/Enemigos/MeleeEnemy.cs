@@ -18,8 +18,8 @@ public class MeleeEnemy : MonoBehaviour
 
     void Update()
     {
-        //comparación de la posición del jugador y el enemigo
-        angle = player.transform.position - transform.position;
+        //comparación de la posición del jugador y el enemigo       
+        angle = this.GetComponent<Pathfinder>().Direction() - transform.position;
         if (Vector2.Distance(player.transform.position,transform.position) <=attackrange && !attacking)
         {
             
