@@ -26,8 +26,11 @@ public class Gun : MonoBehaviour {
     {
         isReloading = false;              //Cuando se activa el arma, asegura que no esté recargándose y que puede disparar
         canShoot = true;
-        GameManager.instance.UpdateMaxAmmo(magSize);
-        GameManager.instance.UpdateAmmo(bulletsLeft);
+        if (GameManager.instance)        //Medida seguridad
+        {
+            GameManager.instance.UpdateMaxAmmo(magSize);
+            GameManager.instance.UpdateAmmo(bulletsLeft);
+        }        
     }
     public void Disable()
     {
@@ -116,5 +119,14 @@ public class Gun : MonoBehaviour {
     public void NotReload()
     {
         isReloading = false;
+    }
+    public void Switched()                                  //Método auxiliar para poder actualizar la munición de la UI en la secundaria
+    {
+        GameManager.instance.UpdateSecondaryAmmo(bulletsLeft, magSize);
+    }
+    public int BulletsLeft() { return bulletsLeft; }
+    public void UpdateAmmo()
+    {
+        bulletsLeft = magSize;
     }
 }

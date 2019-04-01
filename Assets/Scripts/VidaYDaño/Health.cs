@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public int maxHealth = 100;
+    [SerializeField]
+    private int maxHealth = 100;
     public int health;
     // Use this for initialization
     void Start()
@@ -27,5 +28,6 @@ public class Health : MonoBehaviour
     {
         maxHealth = newMax;
     }
+    public int GetMaxHealth() { return maxHealth; }
 
 }

@@ -2,7 +2,8 @@
 
 public class PlayerController : MonoBehaviour {
 
-    public float maxSpeed = 5f, accel = 2f;
+    public float speedMax = 5f, accel = 2f;//limite basico de velocidad y aceleracion
+    private float xtraSpeed,maxSpeed;//tope extra y tope actual
     WeaponManager wm;
     public KeyCode melee, weaponChange, reloadKey,interact;
     public float changeTime,interactRange;
@@ -12,16 +13,20 @@ public class PlayerController : MonoBehaviour {
     int[] weapon = new int[] {0, 1};
 	// Use this for initialization
 	void Start () {
+        xtraSpeed = maxSpeed=speedMax;
         rb = GetComponent<Rigidbody2D>();
         wm = GetComponentInChildren<WeaponManager>();
         StartCoroutine(wm.SwitchWeapon(0));
         StartCoroutine(wm.SwitchWeapon(0));
+        wm.first = false;
         //le dice al GameManager que es el jugador
         GameManager.instance.SetPlayer(this.gameObject);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        if (wm.IsReloading()) maxSpeed = xtraSpeed;
+        else maxSpeed = speedMax;
         //actualiza en input de movimiento
         moveDir = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
 
@@ -39,18 +44,36 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKeyDown(interact))
         {
             //crea un area circular en la que el jugador interactúa
-            Collider2D interactingWith = Physics2D.OverlapCircle(transform.position, interactRange, interactableLayer);
+            Collider2D[] interactables = Physics2D.OverlapCircleAll(transform.position, interactRange, interactableLayer);
             {
-                if(interactingWith != null)
+                foreach (Collider2D interactingWith in interactables)
                 {
-                    if (interactingWith.GetComponent<WeaponPickup>()) //Si no interactúa con nada, no hace nada
+                    if (interactingWith != null)
                     {
-                        wm.ChangeWeapon(interactingWith);
-                        print(interactingWith);
-                    }
-                    if (interactingWith.GetComponent<DestroyOnInteraction>())
-                    {
-                        Destroy(interactingWith.gameObject);
+                        if (interactingWith.GetComponent<WeaponPickup>()) //Si no interactúa con nada, no hace nada
+                        {
+                            wm.ChangeWeapon(interactingWith);
+                        }
+                        else if (interactingWith.GetComponent<PickUp_Vida>())
+                        {
+                            interactingWith.GetComponent<PickUp_Vida>().Interacted();
+                        }
+                        else if (interactingWith.GetComponent<PickUp_Speed>())
+                        {
+                            interactingWith.GetComponent<PickUp_Speed>().Interacted();
+                        }
+                        else if (interactingWith.GetComponent<PickUp_Cadencia>())
+                        {
+                           interactingWith.GetComponent<PickUp_Cadencia>().Interacted();
+                        }
+                        else if (interactingWith.GetComponent<PickUp_Municion>())
+                        {
+                            interactingWith.GetComponent<PickUp_Municion>().Interacted();
+                        }
+                        if (interactingWith.GetComponent<DestroyOnInteraction>())
+                        {
+                            Destroy(interactingWith.gameObject);
+                        }
                     }
                 }
             }
@@ -68,5 +91,9 @@ public class PlayerController : MonoBehaviour {
         Gizmos.color = Color.red;
         //dibuja el area de interaccion
         Gizmos.DrawWireSphere(transform.position, interactRange);
+    }
+    public void setXtraSpeed(float xtra)
+    {
+        xtraSpeed = xtra;
     }
 }
