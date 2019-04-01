@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Cientifico : MonoBehaviour {
 
+    public int curacion;
     private void OnDestroy()
     {
         GameManager.instance.GeneraOleada();
+        GameManager.instance.ChangeHealth(curacion, GameManager.instance.GetPlayer());
     }
     public void Ofrece(GameObject esto)
     {

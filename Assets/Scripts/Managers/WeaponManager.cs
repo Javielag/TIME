@@ -167,4 +167,8 @@ public class WeaponManager : MonoBehaviour {
             }
         }
     }
+    public Weapon equipedWeapon (int n)
+    {
+        return equipadas[n];
+    }
 }

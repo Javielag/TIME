@@ -83628,7 +83628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   primeraAparicion: 1
   cadaX: 2
-  perkChance: 20
+  perkChance: 0.2
   weapons:
   - {fileID: 114864688325308842, guid: 5e9b17bbc80058042bd734d96800d2b4, type: 2}
   - {fileID: 114271245913642714, guid: bb6abf817675da0458aa938a9207538f, type: 2}

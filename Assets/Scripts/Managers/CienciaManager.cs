@@ -12,9 +12,12 @@ public class CienciaManager : MonoBehaviour {
     WeaponManager wm;
     public Cientifico prefabCientifico;
     public Transform posCientifico;
+    int count =0;
 
     public void Visita()
     {
+        count++;
+        Debug.Log(count);
         Cientifico cientifico = Instantiate<Cientifico>(prefabCientifico,posCientifico.position,Quaternion.identity,transform);
         if ((Random.Range(0f, 1f) <= perkChance) && MissingPerks())
         {
@@ -22,18 +25,19 @@ public class CienciaManager : MonoBehaviour {
             //elige un perk sin repetir
             do
             {
-                spawnPerk = Random.Range(0, perks.Length-1);
+                spawnPerk = Random.Range(0, perks.Length);
             } while (perkGiven[spawnPerk]);
             cientifico.Ofrece(perks[spawnPerk]);
+            perkGiven[spawnPerk] = true;
         }
         else
         {
             wm = GameManager.instance.GetPlayer().GetComponentInChildren<WeaponManager>();
             int n;
-         //   do
-          //  {
-                n = Random.Range(0, weapons.Length - 1);
-            //  }while(weapons[n].thisWeapon ==wm.)
+            do
+            {
+                n = Random.Range(0, weapons.Length);
+            } while (weapons[n].thisWeapon == wm.equipedWeapon(0) || weapons[n].thisWeapon == wm.equipedWeapon(1));
             cientifico.Ofrece(weapons[n].gameObject);
         }
     }

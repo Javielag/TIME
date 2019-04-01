@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212580722656982192}
   - component: {fileID: 114588128384081230}
   - component: {fileID: 114803511611613608}
+  - component: {fileID: 61177195619497052}
   m_Layer: 8
   m_Name: Scientific
   m_TagString: Untagged
@@ -71,6 +72,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61177195619497052
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1440755243104560}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.08, y: 2.88}
+    newSize: {x: 2.08, y: 2.88}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.08, y: 2.88}
+  m_EdgeRadius: 0
 --- !u!114 &114588128384081230
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -93,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d3770aaecdcd2544a7e9bc7739af47b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curacion: 1000
 --- !u!212 &212580722656982192
 SpriteRenderer:
   m_ObjectHideFlags: 1
