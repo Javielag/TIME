@@ -12,24 +12,45 @@ public class Pathfinder : MonoBehaviour
     bool isInRoute = false;
     int playerSala;
     Vector3 dir;
-
-    // Use this for initialization
-    void Start()
+    private void Awake()
     {
+        player = GameManager.instance.GetPlayer().transform;
         WaypointManager = GameObject.Find("WaypointManager");
         waypoints = new Waypoint[WaypointManager.transform.childCount];
         for (int i = 0; i < waypoints.Length; i++)
         {
             waypoints[i] = WaypointManager.transform.GetChild(i).GetComponent<Waypoint>();
         }
-        player = GameManager.instance.GetPlayer().transform;
         wp = CloseWaypoint(this.transform);
         this.sala = waypoints[wp].sala;
+    }
+    // Use this for initialization
+    void Start()
+    {
+        //WaypointManager = GameObject.Find("WaypointManager");
+        //waypoints = new Waypoint[WaypointManager.transform.childCount];
+        //for (int i = 0; i < waypoints.Length; i++)
+        //{
+        //    waypoints[i] = WaypointManager.transform.GetChild(i).GetComponent<Waypoint>();
+        //}
+        ////player = GameManager.instance.GetPlayer().transform;
+        //wp = CloseWaypoint(this.transform);
+        //this.sala = waypoints[wp].sala;
     }
 
     public Vector3 Direction()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, player.position - transform.position, 1000, 1 << 12 | 1 << 13 | 1 << 16);
+        RaycastHit2D hit;
+        int casted = 0;
+        do
+        {
+            casted++;
+            if (player == null)
+                Debug.Log("Noplayer");
+            if (transform == null) Debug.Log("NoTransform");
+            hit = Physics2D.Raycast(transform.position, player.position - transform.position, 1000, 1 << 12 | 1 << 13 | 1 << 16);
+        } while (!hit && casted < 100);
+        if(casted >= 100) { Debug.Log("ROTTTTO"); }
         if (hit.collider.gameObject.transform != player) //Si no ve al jugador
         {
             wp = CloseWaypoint(transform);
