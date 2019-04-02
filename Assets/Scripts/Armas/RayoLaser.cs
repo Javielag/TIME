@@ -34,7 +34,10 @@ public class RayoLaser : MonoBehaviour {
     }
     private void Shoot(Vector2 end)
     {
-        Collider2D[] hits = Physics2D.OverlapBoxAll(Centre(transform.position,end),new Vector2(Vector2.Distance(transform.position,end),ancho)
+        Vector2 centre = Centre(transform.position, end);
+        float distance = Vector2.Distance(transform.position, end);
+        SetSprite(GetComponentInChildren<Transform>(), centre, ancho, distance);
+        Collider2D[] hits = Physics2D.OverlapBoxAll(centre,new Vector2(distance ,ancho)
             ,Vector2.Angle(transform.right,new Vector2(1,0)));
         int i = 0;
         foreach (Collider2D hit in hits)
@@ -43,5 +46,10 @@ public class RayoLaser : MonoBehaviour {
             Debug.Log("Lazered " + hit.name + " " + i);
             GameManager.instance.ChangeHealth(-dmg,hit.gameObject);
         }
+    }
+    private void SetSprite(Transform child,Vector2 position,float ancho, float largo)
+    {
+        child.localScale = new Vector3(largo, ancho);
+        child.position = position;
     }
 }

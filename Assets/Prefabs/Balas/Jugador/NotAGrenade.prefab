@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a98a2abef48024a84130942761880c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rad: 5
+  rad: 3
   knock: 15
   dmg: 20
   TargetLayer:
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1958dcae5f38ae40a3875dc8b4bf315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 3
 --- !u!212 &212701829981292072
 SpriteRenderer:
   m_ObjectHideFlags: 1
