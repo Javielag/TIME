@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public CienciaManager cientifico;
     public GameObject player;
     public int enemyCount;
+    public LayerMask enemyLayer, wallLayer;
     [SerializeField]private int /*enemyCount,*/oleadaActual=-1;
     public float delayOleada;
     [SerializeField]
@@ -128,4 +129,6 @@ public class GameManager : MonoBehaviour
     {
         UI.ActivatePerk(perk);
     }
+    public LayerMask OnlyWalls(){ return wallLayer; }
+    public LayerMask OnlyEnemies() { return enemyLayer; }
 }

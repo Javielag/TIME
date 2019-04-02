@@ -6,7 +6,7 @@ public class Gun : MonoBehaviour {
 
     public Weapon iAmWeapon;
     public int magSize, projectiles = 1;//tamaño de cargador y daño,cantidad de proyectiles disparados
-    public float rate, range, reload, maxSpread, bulletSpeed = 20;//velocidad de disparo, rango, tiempo de recarga,dispersion
+    public float rate, range, reload, maxSpread;//velocidad de disparo, rango, tiempo de recarga,dispersion
     public bool automatic; //falso si ee semiautomatico
     private float nextShot;//ms entre disparos
     [SerializeField] private bool canShoot = true, isReloading = false;
@@ -74,7 +74,6 @@ public class Gun : MonoBehaviour {
         {
             Vector2 direction = transform.lossyScale.x * transform.right;
             Bullet newBullet = Instantiate<Bullet>(bulletPrefab, transform.position, Quaternion.identity, bulletPool);
-            newBullet.ChangeSpeed(bulletSpeed);
             newBullet.PointAt(direction,Random.Range(-maxSpread,maxSpread));
             //le dice a la bala que se destruya tras recorrer una distancia
             newBullet.gameObject.GetComponent<DestroyAfterSeconds>().Override(range / newBullet.GetSpeed());
