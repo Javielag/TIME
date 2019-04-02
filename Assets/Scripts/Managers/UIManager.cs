@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour {
     public Transform healthBar, switchIcon, reloadIcon;    
     public Text oleada;
     public Text ammo1, mag1, ammo2, mag2;
+    public Text avisoportal;
+    public Image avisop;
     public Transform ArmaPrincipal, ArmaSecundaria;
     int maxHealth;
     void Start ()
@@ -88,5 +90,10 @@ public class UIManager : MonoBehaviour {
     {
         reloadIcon.gameObject.SetActive(state);
     }
+    public void AvisoPortal(string pos)
+    {
+        //avisoportal.text = "Ha aparecido un portal en la sala de" + pos;        
+    }
+    
    
 }

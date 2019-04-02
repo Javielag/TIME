@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
     public GeneradorOleadas generadorOleadas;
     public GameObject player;
+    public GameObject a, b, c, d;
     public int enemyCount;
     [SerializeField]private int /*enemyCount,*/oleadaActual=-1;
     public float delayOleada;
@@ -114,5 +115,26 @@ public class GameManager : MonoBehaviour
     public void ReloadingIconUI(bool state)
     {
         UI.ReloadingWeapon(state);
+    }
+    public void AvisoPortal(string pos)
+    {
+        Debug.Log(pos);
+        UI.AvisoPortal(pos);
+    }
+    public GameObject GetA()
+    {
+        return a;
+    }
+    public GameObject GetB()
+    {
+        return b;
+    }
+    public GameObject GetC()
+    {
+        return c;
+    }
+    public GameObject GetD()
+    {
+        return d;
     }
 }
