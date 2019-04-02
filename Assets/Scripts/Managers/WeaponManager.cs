@@ -161,7 +161,6 @@ public class WeaponManager : MonoBehaviour {
                     GameManager.instance.UpdateMaxAmmo(gun.magSize);
                     GameManager.instance.UpdateAmmo(gun.BulletsLeft());
                 }
-                //Actualiza la munición del arma no equipada
                 else if(gun.iAmWeapon == equipadas[(currentWeapon + 1) % equipadas.Length])
                 {
                     GameManager.instance.UpdateSecondaryAmmo(gun.BulletsLeft(),gun.magSize);
@@ -169,4 +168,13 @@ public class WeaponManager : MonoBehaviour {
             }
         }
     }
+    public Weapon equipedWeapon (int n)
+    {
+        return equipadas[n];
+    }
 }
+
+                //Actualiza la munición del arma no equipada
+                else if(gun.iAmWeapon == equipadas[(currentWeapon + 1) % equipadas.Length])
+                {
+                    GameManager.instance.UpdateSecondaryAmmo(gun.BulletsLeft(),gun.magSize);

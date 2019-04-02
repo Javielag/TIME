@@ -12,7 +12,7 @@ public class HealthChange : MonoBehaviour
     {
         Enemy enem = collision.GetComponent<Enemy>();
         //Si la variable de Enemy barrera es true, makedamage es false -> no deja hacer daño con los proyectiles y viceversa
-        if (enem.barrera)
+        if (enem && enem.barrera)
         {
             makeDamage = false;
             Destroy(this.gameObject);
@@ -24,8 +24,11 @@ public class HealthChange : MonoBehaviour
             GameManager.instance.ChangeHealth(-damage, collision.gameObject); //Aquí van cosas de enemigos, de momento hacen daño por contacto
             if (gameObject.tag == "Projectile")
             {
-                enem.invbarrera = false;  //Cuando hace daño la var de Enemy barrera inversa que convierte en false
-                enem.DestroyPompa();
+                if (enem)
+                {
+                    enem.invbarrera = false;  //Cuando hace daño la var de Enemy barrera inversa que convierte en false
+                    enem.DestroyPompa();
+                }
                 Destroy(this.gameObject);
             }
         }
