@@ -18,6 +18,7 @@ public class WormHole : MonoBehaviour {
 		
 	}
 
+    //Al entrar el jugador en el area de daño del gusano, esta le daña una sola vez
     private void OnTriggerStay2D(Collider2D other)
     {
         if (!damaged && other.gameObject.tag=="Player")
