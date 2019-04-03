@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour {
     public Text oleada;
     public Text ammo1, mag1, ammo2, mag2;
     public Text avisoportal;
-    public Image avisop;
+    public Transform avportal;
     public Transform ArmaPrincipal, ArmaSecundaria;
     int maxHealth;
     void Start ()
@@ -92,7 +92,13 @@ public class UIManager : MonoBehaviour {
     }
     public void AvisoPortal(string pos)
     {
-        //avisoportal.text = "Ha aparecido un portal en la sala de" + pos;        
+        avportal.gameObject.SetActive(true);
+        avisoportal.text = "Ha aparecido un portal en la sala de" + pos;
+        Invoke("DesactivaTexto", 8);
+    }
+    public void DesactivaTexto()
+    {
+        avportal.gameObject.SetActive(false);
     }
     
    
