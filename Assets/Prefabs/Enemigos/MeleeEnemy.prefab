@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114193418798180168}
   - component: {fileID: 114684912989540086}
   - component: {fileID: 114334165973408254}
-  - component: {fileID: 114768542660947250}
+  - component: {fileID: 61468155115020330}
   m_Layer: 11
   m_Name: MeleeEnemy
   m_TagString: enemy
@@ -70,7 +70,7 @@ Rigidbody2D:
   m_Constraints: 4
 --- !u!61 &61468155115020330
 BoxCollider2D:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1793075531721430}
@@ -140,9 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b77731b6aa0fd48aa3205131ca6a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WaypointManager: {fileID: 0}
-  player: {fileID: 0}
-  hitt: {fileID: 0}
+  waypoints: []
 --- !u!114 &114626617285431272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -183,9 +181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c802e1389fa2514397cb009ab112d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barrera: 0
-  invbarrera: 0
-  pompa: {fileID: 0}
 --- !u!212 &212831705348269952
 SpriteRenderer:
   m_ObjectHideFlags: 1

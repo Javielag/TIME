@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponManager : MonoBehaviour {
+public class WeaponManager : MonoBehaviour
+{
 
     Gun weapon;
     float changeTime;
     public bool isSwitching = false, first = true;
-    [SerializeField]int currentWeapon=0;
+    [SerializeField] int currentWeapon = 0;
     IEnumerator reload;
-    Weapon[] equipadas = new Weapon[] {Weapon.pistola, Weapon.nothing};
+    Weapon[] equipadas = new Weapon[] { Weapon.pistola, Weapon.nothing };
     private void Start()
     {
         changeTime = GetComponentInParent<PlayerController>().changeTime;
@@ -19,7 +20,7 @@ public class WeaponManager : MonoBehaviour {
     {
         Debug.Log("Cambiando arma");
         //first = variable de seguridad para evitar errores la primera vez que se realiza(que siempre tiene nothing de secundaria)
-        if(first || equipadas[(currentWeapon + 1) % equipadas.Length] != Weapon.nothing)
+        if (first || equipadas[(currentWeapon + 1) % equipadas.Length] != Weapon.nothing)
         {
             currentWeapon = (currentWeapon + 1) % equipadas.Length;
             weapon = GetComponentInChildren<Gun>();
@@ -34,7 +35,7 @@ public class WeaponManager : MonoBehaviour {
             yield return new WaitForSeconds(changeTime);
             weapon.Switched();
             SelectWeapon(currentWeapon);
-        }      
+        }
     }
     public void ChangeWeapon(Collider2D wpCol)
     {
@@ -43,7 +44,7 @@ public class WeaponManager : MonoBehaviour {
             WeaponPickup wpPick = wpCol.GetComponent<WeaponPickup>();
             if (wpPick)
             {
-                if(equipadas[(currentWeapon + 1) % equipadas.Length] == Weapon.nothing)
+                if (equipadas[(currentWeapon + 1) % equipadas.Length] == Weapon.nothing)
                 {
                     equipadas[(currentWeapon + 1) % equipadas.Length] = wpPick.WhatWeapon();
                     StartCoroutine("SwitchWeapon", 0);
@@ -56,7 +57,7 @@ public class WeaponManager : MonoBehaviour {
                 wpPick.OnPicked();
             }
         }
-        
+
     }
     private void SelectWeapon(int weapn)                //Activa el arma weapn y desactiva todas las demás
     {
@@ -78,13 +79,13 @@ public class WeaponManager : MonoBehaviour {
                         }
                         weap.gameObject.SetActive(false);
                     }
-                }                
-            }            
+                }
+            }
         }
         isSwitching = false;
-        GameManager.instance.ChangeWeapon(equipadas[weapn], equipadas[(weapn+1)%equipadas.Length]);
+        GameManager.instance.ChangeWeapon(equipadas[weapn], equipadas[(weapn + 1) % equipadas.Length]);
     }
-    public void CancelReload()                      
+    public void CancelReload()
     {
         if (IsReloading())
         {
@@ -135,7 +136,7 @@ public class WeaponManager : MonoBehaviour {
     }
     public void UpgradeFireRate(float percentage)
     {
-        foreach(Transform child in transform)
+        foreach (Transform child in transform)
         {
             Gun gun = child.GetComponentInChildren<Gun>();
             if (gun)
@@ -153,7 +154,7 @@ public class WeaponManager : MonoBehaviour {
             if (gun)
             {
                 //aumenta la municion
-                gun.magSize += Mathf.RoundToInt(gun.magSize*(percentage/100));
+                gun.magSize += Mathf.RoundToInt(gun.magSize * (percentage / 100));
                 gun.UpdateAmmo();
                 //Actualiza la munición del arma equipada
                 if (gun.gameObject.activeInHierarchy)
@@ -161,20 +162,25 @@ public class WeaponManager : MonoBehaviour {
                     GameManager.instance.UpdateMaxAmmo(gun.magSize);
                     GameManager.instance.UpdateAmmo(gun.BulletsLeft());
                 }
-                else if(gun.iAmWeapon == equipadas[(currentWeapon + 1) % equipadas.Length])
+                else if (gun.iAmWeapon == equipadas[(currentWeapon + 1) % equipadas.Length])
                 {
-                    GameManager.instance.UpdateSecondaryAmmo(gun.BulletsLeft(),gun.magSize);
+                    GameManager.instance.UpdateSecondaryAmmo(gun.BulletsLeft(), gun.magSize);
+                }
+
+                //Actualiza la munición del arma no equipada
+                else if (gun.iAmWeapon == equipadas[(currentWeapon + 1) % equipadas.Length])
+
+                {
+
+                    GameManager.instance.UpdateSecondaryAmmo(gun.BulletsLeft(), gun.magSize);
                 }
             }
         }
+
     }
-    public Weapon equipedWeapon (int n)
+    public Weapon equipedWeapon(int n)
     {
         return equipadas[n];
     }
 }
 
-                //Actualiza la munición del arma no equipada
-                else if(gun.iAmWeapon == equipadas[(currentWeapon + 1) % equipadas.Length])
-                {
-                    GameManager.instance.UpdateSecondaryAmmo(gun.BulletsLeft(),gun.magSize);

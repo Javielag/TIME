@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance = null;
     public GeneradorOleadas generadorOleadas;
-    public CienciaManager cientifico;
+    private CienciaManager cientifico;
     public GameObject player;
     public int enemyCount;
     public LayerMask enemyLayer, wallLayer;
@@ -131,4 +131,8 @@ public class GameManager : MonoBehaviour
     }
     public LayerMask OnlyWalls(){ return wallLayer; }
     public LayerMask OnlyEnemies() { return enemyLayer; }
+    public void SetCienciaManager(CienciaManager dis)
+    {
+        cientifico = dis;
+    }
 }

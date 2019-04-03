@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public Spawner[] enemySpawners = new Spawner[3];
+    public Spawner[] enemySpawners = new Spawner[7];
 
     public void Enemigos(int[] cants)
     {

@@ -6,6 +6,7 @@ public class MeleeEnemy : MonoBehaviour
 {
     // variables públicas (velocidad, daño rango de ataque y tiempo de ataque) y privadas (ángulo de movimiento y booleano que indica cuando ataca y cuando no)
     public int speed,damagerange,attackrange, attackTime,damage;
+    Pathfinder pathfinder;
     GameObject player;
     private Vector2 angle;
     private bool attacking;
@@ -14,12 +15,15 @@ public class MeleeEnemy : MonoBehaviour
     {
         //inicialización de player
         player = GameManager.instance.GetPlayer();
+        pathfinder = GetComponent<Pathfinder>();
     }
 
     void Update()
     {
-        //comparación de la posición del jugador y el enemigo       
-        angle = this.GetComponent<Pathfinder>().Direction() - transform.position;
+        if (pathfinder)
+            //comparación de la posición del jugador y el enemigo       
+            angle = pathfinder.Direction() - transform.position;
+        else Debug.Log(gameObject.name + "No tiene pathfinder");
         if (Vector2.Distance(player.transform.position,transform.position) <=attackrange && !attacking)
         {
             

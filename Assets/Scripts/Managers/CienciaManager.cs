@@ -8,12 +8,16 @@ public class CienciaManager : MonoBehaviour {
     public float perkChance=0.8f;//probabilidad de que te toque una mejora, en caso contrario un arma
     public WeaponPickup[] weapons = new WeaponPickup[6];//todos los pickups de armas
     public GameObject[] perks = new GameObject[4];//todas las mejoras
-    public bool[] perkGiven = new bool[4];//indica true cuando la mejora en el mismo sitio ya ha sido otorgada
+    private bool[] perkGiven = new bool[4];//indica true cuando la mejora en el mismo sitio ya ha sido otorgada
     WeaponManager wm;
     public Cientifico prefabCientifico;
     public Transform posCientifico;
     int count =0;
 
+    private void Start()
+    {
+        GameManager.instance.SetCienciaManager(this);
+    }
     public void Visita()
     {
         count++;
