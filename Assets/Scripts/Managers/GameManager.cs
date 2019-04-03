@@ -43,8 +43,7 @@ public class GameManager : MonoBehaviour
             {
                 UI.UpdateHealth(tgHealth.health);
             }
-        }
-        
+        }     
     }
 
     public void SetPlayer(GameObject newPlayer)
