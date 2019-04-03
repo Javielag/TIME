@@ -14,6 +14,7 @@ public class AreaDamage : MonoBehaviour {
         foreach (Collider2D col in hit)
         {
             //Debug.Log(col.name + " hit");
+           
             PlayKnockback knockback = col.GetComponent<PlayKnockback>();
             if (knockback)
             {
