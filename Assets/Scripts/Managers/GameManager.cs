@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance = null;
-    public GeneradorOleadas generadorOleadas;
+    private GeneradorOleadas generadorOleadas;
     private CienciaManager cientifico;
     public GameObject player;
     public int enemyCount;
@@ -29,10 +30,6 @@ public class GameManager : MonoBehaviour
 
     }
     // Use this for initialization
-    public void Start()
-    {
-        Invoke("GeneraOleada",delayOleada);
-    }
 
 
     public void ChangeHealth(int value, GameObject target)
@@ -134,5 +131,18 @@ public class GameManager : MonoBehaviour
     public void SetCienciaManager(CienciaManager dis)
     {
         cientifico = dis;
+    }
+    public void SetGeneraOleadas(GeneradorOleadas olas)
+    {
+        generadorOleadas = olas;
+    }
+    public void OnButtonPressed(string button)
+    {
+        switch (button)
+        {
+            case "start":
+                SceneManager.LoadScene("Hito02");
+                break;
+        }
     }
 }

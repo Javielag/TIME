@@ -13,8 +13,12 @@ public class UIManager : MonoBehaviour {
     void Start ()
     {
         GameManager.instance.SetUI(this.gameObject);
-        maxHealth = GameManager.instance.player.GetComponent<Health>().GetMaxHealth();
-        UpdateHealth(maxHealth);
+        if (GameManager.instance.GetPlayer())
+        {
+            maxHealth = GameManager.instance.GetPlayer().GetComponent<Health>().GetMaxHealth();
+            UpdateHealth(maxHealth);
+        }
+
 	}
 	
 	// Update is called once per frame
@@ -124,6 +128,10 @@ public class UIManager : MonoBehaviour {
         perkVelocidad.localScale = new Vector3(0.8f, 1);
         perkRecarga.localScale = new Vector3(0.8f, 1);
         healthText.transform.localScale = new Vector3(0.8f, 1);
+    }
+    public void ButtonPressed(string button)
+    {
+        GameManager.instance.OnButtonPressed(button);
     }
    
 }

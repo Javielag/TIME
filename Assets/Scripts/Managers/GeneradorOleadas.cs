@@ -5,7 +5,12 @@ using UnityEngine;
 public class GeneradorOleadas : MonoBehaviour { 
 
     public SpawnManager spawnManager;
-	public void GeneraOleada(int ol, out int enemyCount)
+    private void Start()
+    {
+        GameManager.instance.SetGeneraOleadas(this);
+        Invoke("GeneraOleada", GameManager.instance.delayOleada);
+    }
+    public void GeneraOleada(int ol, out int enemyCount)
     {
         int a;
         int[] cants = new int[7];
