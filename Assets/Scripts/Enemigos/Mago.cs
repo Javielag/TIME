@@ -14,7 +14,7 @@ public class Mago : MonoBehaviour {
     {
         bulletPool = GameObject.FindGameObjectWithTag("BulletPool").transform;
         thisEnemy = GetComponent<RangeEnemy>();
-        player = GameManager.instance.GetPlayer();            
+        player = GameManager.instance.GetPlayer();
     }
     void Update()
     {   //Si no hay uno creado y no se está moviendo

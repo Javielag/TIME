@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance = null;
+    //private bool portals;
     private GeneradorOleadas generadorOleadas;
     private CienciaManager cientifico;
     public GameObject player;

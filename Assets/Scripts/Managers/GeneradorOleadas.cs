@@ -8,7 +8,7 @@ public class GeneradorOleadas : MonoBehaviour {
     private void Start()
     {
         GameManager.instance.SetGeneraOleadas(this);
-        Invoke("GeneraOleada", GameManager.instance.delayOleada);
+        GameManager.instance.GeneraOleada();
     }
     public void GeneraOleada(int ol, out int enemyCount)
     {

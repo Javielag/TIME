@@ -61,7 +61,8 @@ public class UIManager : MonoBehaviour {
     }
     public void UpdateCurrentAmmo(int ammo)
     {
-        ammo1.text = ammo.ToString();
+        if(ammo1)
+            ammo1.text = ammo.ToString();
     }
     public void UpdateSecondaryAmmo(int ammo, int maxAmmo)
     {
@@ -84,7 +85,8 @@ public class UIManager : MonoBehaviour {
     }
     public void UpdateMaxAmmo(int ammo)
     {
-        mag1.text = ammo.ToString();
+        if(mag1)
+            mag1.text = ammo.ToString();
     }
     public void UpdateSecondaryWeapon(int ammo, int maxAmmo)
     {
