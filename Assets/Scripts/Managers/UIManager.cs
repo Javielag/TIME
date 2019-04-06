@@ -11,7 +11,9 @@ public class UIManager : MonoBehaviour {
     public Text avisoportal;
     public Transform avportal;
     public Transform ArmaPrincipal, ArmaSecundaria;
-    int maxHealth;
+    [SerializeField]int maxHealth, timerPortales;
+    bool avisoPortal = false;
+    IEnumerator portalCoroutine;
     void Start ()
     {
         GameManager.instance.SetUI(this.gameObject);
@@ -92,13 +94,26 @@ public class UIManager : MonoBehaviour {
     }
     public void AvisoPortal(string pos)
     {
+        portalCoroutine = (AvisoPortalCorrutina(pos));
+        StartCoroutine(portalCoroutine);
+    }
+    IEnumerator AvisoPortalCorrutina(string pos)
+    {
+        yield return new WaitWhile(AvisoIsActive);              //Hasta que el método AvisoIsActive sea false
+        avisoPortal = true;
         avportal.gameObject.SetActive(true);
         avisoportal.text = "Ha aparecido un portal en la sala de" + pos;
-        Invoke("DesactivaTexto", 8);
+        Invoke("DesactivaTexto", timerPortales);
     }
     public void DesactivaTexto()
     {
         avportal.gameObject.SetActive(false);
+        avisoPortal = false;
+    }
+    bool AvisoIsActive()
+    {
+        if (avisoPortal) return true;
+        else return false;
     }
     
    

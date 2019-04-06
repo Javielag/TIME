@@ -84819,6 +84819,8 @@ MonoBehaviour:
   avportal: {fileID: 2027118520}
   ArmaPrincipal: {fileID: 1975713292}
   ArmaSecundaria: {fileID: 1431882380}
+  maxHealth: 0
+  timerPortales: 8
 --- !u!114 &1864957572
 MonoBehaviour:
   m_ObjectHideFlags: 0
