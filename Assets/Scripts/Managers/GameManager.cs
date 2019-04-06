@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public float delayOleada;
     [SerializeField]
     UIManager UI;
+    public bool canTeleport = true;
 
     //Singleton
     private void Awake()
