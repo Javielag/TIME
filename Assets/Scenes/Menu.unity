@@ -190,14 +190,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1602896263}
-        m_MethodName: ButtonPressed
+        m_MethodName: ChangeScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: start
+          m_StringArgument: 42 MenuPausa
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -536,6 +536,7 @@ MonoBehaviour:
   perkVelocidad: {fileID: 0}
   perkRecarga: {fileID: 0}
   perkVida: {fileID: 0}
+  menuPausa: {fileID: 0}
   oleada: {fileID: 0}
   ammo1: {fileID: 0}
   mag1: {fileID: 0}
@@ -660,7 +661,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fcae323190074043adfda10828f5d4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  generadorOleadas: {fileID: 0}
   player: {fileID: 0}
   enemyCount: 0
   enemyLayer:

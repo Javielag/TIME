@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public LayerMask enemyLayer, wallLayer;
     [SerializeField]private int /*enemyCount,*/oleadaActual=-1;
     public float delayOleada;
+    bool menuPausa;
     [SerializeField]
     UIManager UI;
 
@@ -137,13 +138,37 @@ public class GameManager : MonoBehaviour
     {
         generadorOleadas = olas;
     }
-    public void OnButtonPressed(string button)
+    public void ChangeScene(string button)
     {
-        switch (button)
+        SceneManager.LoadScene(button);
+        Time.timeScale = 1;
+        menuPausa = false;
+        //switch (button)
+        //{
+        //    case "start":
+        //        SceneManager.LoadScene("Hito02");
+        //        break;
+        //}
+    }
+    void pauseGame()
+    {
+        Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+    }
+    public void ChangeMenuState()
+    {
+        if (!menuPausa)
         {
-            case "start":
-                SceneManager.LoadScene("Hito02");
-                break;
+            UI.PauseMenu(true);
         }
+        else
+        {
+            UI.PauseMenu(false);
+        }
+        menuPausa = !menuPausa;
+        pauseGame();
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

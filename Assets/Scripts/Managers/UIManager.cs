@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
     public Text healthText;
-    public Transform healthBar, switchIcon, reloadIcon, healthContainer, perkCadencia, perkVelocidad, perkRecarga, perkVida;    
+    public Transform healthBar, switchIcon, reloadIcon, healthContainer, perkCadencia, perkVelocidad, perkRecarga, perkVida, menuPausa;    
     public Text oleada;
     public Text ammo1, mag1, ammo2, mag2;
     public Transform ArmaPrincipal, ArmaSecundaria;
@@ -131,9 +131,16 @@ public class UIManager : MonoBehaviour {
         perkRecarga.localScale = new Vector3(0.8f, 1);
         healthText.transform.localScale = new Vector3(0.8f, 1);
     }
-    public void ButtonPressed(string button)
+    public void PauseMenu(bool state)
     {
-        GameManager.instance.OnButtonPressed(button);
+        menuPausa.gameObject.SetActive(state);
     }
-   
+    public void ExitGame()
+    {
+        GameManager.instance.ExitGame();
+    }
+    public void ChangeScene(string scene)
+    {
+        GameManager.instance.ChangeScene(scene);
+    }
 }
