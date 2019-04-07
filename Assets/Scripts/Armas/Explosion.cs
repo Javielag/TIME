@@ -14,8 +14,6 @@ public class Explosion : MonoBehaviour
         areaDmg = GetComponent<AreaDamage>();      
         areaDmg.PushArea();
         areaDmg.DealDamage();
-        //ReproduceAnimación
-        Destroy(this.gameObject, 2);
         
 	}
 	
