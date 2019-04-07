@@ -81,7 +81,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.00044570863, y: 0.0028166473}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -92,7 +92,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.46956894, y: 0.47510195}
   m_EdgeRadius: 0
 --- !u!61 &61994752374360376
 BoxCollider2D:
@@ -106,7 +106,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.022722244}
+  m_Offset: {x: -0.0009615943, y: -0.010933787}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -117,7 +117,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.45466805, y: 0.31833458}
+  m_Size: {x: 0.21426772, y: 0.25102252}
   m_EdgeRadius: 0
 --- !u!95 &95953378294844364
 Animator:
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   attackrange: 2
-  attackTime: 3
+  attackTime: 2
   casttime: 1
   damage: 10
   animator: {fileID: 95953378294844364}
