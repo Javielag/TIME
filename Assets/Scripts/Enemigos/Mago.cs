@@ -17,9 +17,11 @@ public class Mago : MonoBehaviour {
         player = GameManager.instance.GetPlayer();            
     }
     void Update()
-    {   //Si no hay uno creado y no se está moviendo
+    {   //Si no hay uno creado y no se está moviendo        3 barras = Donde poner las cosas si queremos evitar que salgan los portales
+        ///Añadir GameManager.instance.canTeleport aquí
         if (!generated && !thisEnemy.Moving())
         {
+            ///GameManager.instance.canTeleport = false aquí
             Debug.Log("Iniciando casteamiento");
             thisEnemy.SetCanMove(false);        //Impide el movimiento
             generated = true;
