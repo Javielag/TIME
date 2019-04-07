@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114684912989540086}
   - component: {fileID: 114334165973408254}
   - component: {fileID: 61468155115020330}
+  - component: {fileID: 95953378294844364}
   m_Layer: 11
   m_Name: MeleeEnemy
   m_TagString: enemy
@@ -42,8 +43,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1793075531721430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.1212425, y: 0.17887631, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 10.28, y: -3.49, z: 0}
+  m_LocalScale: {x: 6.848421, y: 6.848421, z: 6.848421}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -70,7 +71,7 @@ Rigidbody2D:
   m_Constraints: 4
 --- !u!61 &61468155115020330
 BoxCollider2D:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1793075531721430}
@@ -84,7 +85,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.21, y: 0.23}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -105,19 +106,37 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.022722244}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.21, y: 0.23}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.45466805, y: 0.31833458}
   m_EdgeRadius: 0
+--- !u!95 &95953378294844364
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1793075531721430}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 19b52c01b1c618a4d9f60ef8c0668e55, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114193418798180168
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -140,7 +159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b77731b6aa0fd48aa3205131ca6a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
 --- !u!114 &114626617285431272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -170,6 +188,7 @@ MonoBehaviour:
   attackTime: 3
   casttime: 1
   damage: 10
+  animator: {fileID: 95953378294844364}
 --- !u!114 &114768542660947250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -181,6 +200,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c802e1389fa2514397cb009ab112d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barrera: 0
+  invbarrera: 0
+  pompa: {fileID: 0}
 --- !u!212 &212831705348269952
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -216,8 +238,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 324809eb1438c4b278f031c80ca02b12, type: 3}
-  m_Color: {r: 0.8867924, g: 0, b: 0.043574423, a: 1}
+  m_Sprite: {fileID: 21300010, guid: 1b69964edea22ad488ec6da6f80e755c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
