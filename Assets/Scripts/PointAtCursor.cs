@@ -7,7 +7,7 @@ public class PointAtCursor : MonoBehaviour {
     private void Start()
     {
     }
-    private void Update()
+    private void LateUpdate()
     {
         Vector3 mouse = Input.mousePosition;
         mouse = Camera.main.ScreenToWorldPoint(mouse);

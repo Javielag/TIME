@@ -15,10 +15,12 @@ public class Gun : MonoBehaviour {
     public Bullet bulletPrefab;
     Transform bulletPool;
     Random rnd = new Random();
+    Animator anim;
     private void Start()
     {
         bulletPool = GameObject.FindGameObjectWithTag("BulletPool").transform;
         nextShot = Time.time;
+        anim = GetComponentInParent<Animator>();
         bulletsLeft = magSize;
         //coge el transform de su abuelo GunPivot
     }
@@ -30,7 +32,7 @@ public class Gun : MonoBehaviour {
         {
             GameManager.instance.UpdateMaxAmmo(magSize);
             GameManager.instance.UpdateAmmo(bulletsLeft);
-        }        
+        }
     }
     public void Disable()
     {
@@ -96,6 +98,7 @@ public class Gun : MonoBehaviour {
         GameManager.instance.UpdateAmmo(bulletsLeft);
         Debug.Log(isReloading);
         GameManager.instance.ReloadingIconUI(false);
+        anim.SetBool("isReloading", false);
     }
     public void ResetFire()
     {

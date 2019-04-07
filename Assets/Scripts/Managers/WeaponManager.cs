@@ -7,12 +7,14 @@ public class WeaponManager : MonoBehaviour
 
     Gun weapon;
     float changeTime;
+    Animator anim;
     public bool isSwitching = false, first = true;
     [SerializeField] int currentWeapon = 0;
     IEnumerator reload;
     Weapon[] equipadas = new Weapon[] { Weapon.pistola, Weapon.nothing };
     private void Start()
     {
+        anim = GetComponent<Animator>();
         changeTime = GetComponentInParent<PlayerController>().changeTime;
         CancelReload();
     }
@@ -100,6 +102,7 @@ public class WeaponManager : MonoBehaviour
     {
         if (!isSwitching && !CheckAmmo())
         {
+            anim.SetBool("isReloading", true);
             weapon = GetComponentInChildren<Gun>();
             reload = weapon.Reload();
             StartCoroutine(reload);

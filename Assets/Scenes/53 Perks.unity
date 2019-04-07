@@ -229,6 +229,7 @@ GameObject:
   - component: {fileID: 175729591}
   - component: {fileID: 175729592}
   - component: {fileID: 175729593}
+  - component: {fileID: 175729594}
   m_Layer: 0
   m_Name: GunPivot
   m_TagString: Untagged
@@ -302,6 +303,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1167346fba54dde4197f4629cc2366bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &175729594
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 175729588}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 310c6394637eec64aba9e327629d6135, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &246155211
 Prefab:
   m_ObjectHideFlags: 0
@@ -80406,7 +80425,6 @@ MonoBehaviour:
   range: 10
   reload: 5
   maxSpread: 8
-  bulletSpeed: 40
   automatic: 1
   canShoot: 1
   isReloading: 0
@@ -80773,6 +80791,34 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 913437718}
   m_CullTransparentMesh: 0
+--- !u!1 &934321408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1875183499}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 934321409}
+  m_Layer: 0
+  m_Name: Missing Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &934321409
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1875183499}
+  m_GameObject: {fileID: 934321408}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &966278720
 GameObject:
   m_ObjectHideFlags: 0
@@ -81069,7 +81115,6 @@ MonoBehaviour:
   range: 5
   reload: 2
   maxSpread: 45
-  bulletSpeed: 35
   automatic: 0
   canShoot: 1
   isReloading: 0
@@ -81193,7 +81238,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4421416964865858, guid: ebb74679358463d4ba31006c096827c3, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb74679358463d4ba31006c096827c3, type: 2}
@@ -81385,7 +81430,6 @@ MonoBehaviour:
   range: 15
   reload: 2
   maxSpread: 0
-  bulletSpeed: 45
   automatic: 1
   canShoot: 1
   isReloading: 0
@@ -81757,7 +81801,6 @@ MonoBehaviour:
   range: 15
   reload: 2
   maxSpread: 0
-  bulletSpeed: 35
   automatic: 0
   canShoot: 1
   isReloading: 0
@@ -81874,9 +81917,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generadorOleadas: {fileID: 0}
-  cientifico: {fileID: 0}
   player: {fileID: 1936691964}
   enemyCount: 0
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
   oleadaActual: 0
   delayOleada: 3
   UI: {fileID: 0}
@@ -81917,7 +81965,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4747247122486252, guid: 1aeb2b3ea64dadb4fbeff76dd481acc1, type: 2}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1aeb2b3ea64dadb4fbeff76dd481acc1, type: 2}
