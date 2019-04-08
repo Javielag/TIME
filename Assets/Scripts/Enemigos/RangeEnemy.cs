@@ -8,19 +8,23 @@ public class RangeEnemy : MonoBehaviour
     public int speed, rangeMax, rangeMin;
     GameObject player;
     [SerializeField]bool debugging = false;
-    bool isMoving = false, canMove = true;
+    public bool isMoving = false, canMove = true;
     public bool timer = true;
     float a = 0;
     public Vector2 path;
+    private SpriteRenderer sp;
     private void Start()
     {
         player = GameManager.instance.GetPlayer();
+        sp = GetComponent<SpriteRenderer>();
     }
     void Update()
     {
         Vector2 pos = player.transform.position - transform.position;
         path = this.GetComponent<Pathfinder>().Direction() - transform.position;
         pos = pos.normalized;
+        if (pos.x >= 0) sp.flipX = false;
+        else sp.flipX = true;
         if (canMove)
         {
             if (Vector2.Distance(player.transform.position, transform.position) >= rangeMax)
@@ -30,7 +34,7 @@ public class RangeEnemy : MonoBehaviour
                     a = Time.time;
                     timer = false;
                 }
-                if (Time.time - a >= 2)
+                    if (Time.time - a >= 2)
                 {
                     transform.Translate(path.normalized * speed * Time.deltaTime);
                     isMoving = true;
