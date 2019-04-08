@@ -14,6 +14,8 @@ public class Gusano : MonoBehaviour
     // Vectores de ángulo y posición a partir de la cual salta y a la cual se dirige
     private Vector2 angle,wormhole1, wormhole2;
     private bool jumping, advicing,digging;
+    public Animator anim;
+    SpriteRenderer spriteR;
 
     void Start()
     {
@@ -21,6 +23,7 @@ public class Gusano : MonoBehaviour
         player = GameManager.instance.GetPlayer();
         Collider = GetComponent<BoxCollider2D>();
         bulletPool = GameObject.FindGameObjectWithTag("BulletPool").transform;
+        spriteR = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -30,6 +33,11 @@ public class Gusano : MonoBehaviour
         {
             //comparación de la posición del jugador y el enemigo
             angle = player.transform.position - transform.position;
+            if(angle.x <= 0) { //spriteR.flipX = false;
+                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y);
+            }
+            else)//spriteR.flipX = true;
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y);
             transform.Translate(angle.normalized * speed * Time.deltaTime);
             //Si entra en rango de salto activa el aviso de salto
             if (Vector2.Distance(player.transform.position, transform.position) <= jumprange)
@@ -50,6 +58,8 @@ public class Gusano : MonoBehaviour
     //Avisa al jugador de que va a saltar,decide la dirección del salto, instancia un "aviso de salto" y comienza la secuencia de salto
     public void Advice()
     {
+        anim.SetBool("advicing", true);
+        anim.SetBool("isMoving", false);
         advicing = true;
         wormhole1 = transform.position;
         wormhole2 = player.transform.position;
@@ -60,6 +70,8 @@ public class Gusano : MonoBehaviour
     //salta, activa el collider para que sea posible dañarlo, y crea una zona de daño en su posición inicial
     public void Jump()
     {
+        anim.SetBool("isJumping", true);
+        anim.SetBool("advicing", false);
         Collider.enabled = true;
         GameObject thisWormHole = Instantiate<GameObject>(wormholeprefab, wormhole1, Quaternion.identity, bulletPool);
         jumping = true;
@@ -72,6 +84,8 @@ public class Gusano : MonoBehaviour
     //Al terminar el tiempo de salto, vuelve a introducirse bajo tierra y crea otra zona de daño
     public void Dig()
     {
+        anim.SetBool("isJumping", false);
+        anim.SetBool("dig", true);
         wormhole1 = transform.position;
         GameObject thisWormHole = Instantiate<GameObject>(wormholeprefab, wormhole1, Quaternion.identity, bulletPool);
         digging = true;
@@ -82,6 +96,8 @@ public class Gusano : MonoBehaviour
     //al estar bajo tierra reseteal el movimiento normal y desactiva su collider para ser invulnerable de nuevo
     public void Resetmove()
     {
+        anim.SetBool("dig",false);
+        anim.SetBool("isMoving", true);
         Collider.enabled = false;
         digging = false;
     }
