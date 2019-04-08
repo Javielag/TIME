@@ -22,7 +22,6 @@ public class UIManager : MonoBehaviour {
             maxHealth = GameManager.instance.GetPlayer().GetComponent<Health>().GetMaxHealth();
             UpdateHealth(maxHealth);
         }
-
 	}
 	
 	// Update is called once per frame

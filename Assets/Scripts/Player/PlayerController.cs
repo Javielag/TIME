@@ -11,16 +11,19 @@ public class PlayerController : MonoBehaviour {
     Vector2 moveDir;//almacena la direccion en la que se mueve el jugador
     Rigidbody2D rb;
     int[] weapon = new int[] {0, 1};
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    private void Awake()
+    {
+        //le dice al GameManager que es el jugador  
+        GameManager.instance.SetPlayer(this.gameObject);
+    }
+    void Start () {
         xtraSpeed = maxSpeed=speedMax;
         rb = GetComponent<Rigidbody2D>();
         wm = GetComponentInChildren<WeaponManager>();
         StartCoroutine(wm.SwitchWeapon(0));
         StartCoroutine(wm.SwitchWeapon(0));
-        wm.first = false;
-        //le dice al GameManager que es el jugador
-        GameManager.instance.SetPlayer(this.gameObject);
+        wm.first = false;   
 	}
 	
 	// Update is called once per frame
