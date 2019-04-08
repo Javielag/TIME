@@ -27,6 +27,8 @@ GameObject:
   - component: {fileID: 61223119840532868}
   - component: {fileID: 114598924422342524}
   - component: {fileID: 114237438935437922}
+  - component: {fileID: 114900401949487808}
+  - component: {fileID: 95846571040955790}
   m_Layer: 11
   m_Name: Flying_enemy
   m_TagString: Untagged
@@ -123,6 +125,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &95846571040955790
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1542008795369918}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 055ff871d1daeb045b9e28372bb3f7a3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114061778105006502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -147,6 +167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c802e1389fa2514397cb009ab112d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barrera: 0
+  invbarrera: 0
+  pompa: {fileID: 0}
 --- !u!114 &114237438935437922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,9 +181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b77731b6aa0fd48aa3205131ca6a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WaypointManager: {fileID: 0}
-  player: {fileID: 0}
-  hitt: {fileID: 0}
 --- !u!114 &114242193225163968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -176,6 +196,8 @@ MonoBehaviour:
   rangeMax: 5
   rangeMin: 4
   debugging: 0
+  isMoving: 0
+  canMove: 1
   timer: 1
   path: {x: 0, y: 0}
 --- !u!114 &114249534960846176
@@ -213,6 +235,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d9f633c14b321f4ba13d676d62fe524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114900401949487808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1542008795369918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6511b5009cfe33242bdbbffa0e3a9b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212035803455317148

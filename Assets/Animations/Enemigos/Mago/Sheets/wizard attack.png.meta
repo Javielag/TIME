@@ -56,7 +56,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1700
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -114,13 +114,13 @@ TextureImporter:
         width: 489
         height: 909
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7eee7e0cc0f4e8f4b8f78a49db9c0365
+      spriteID: 5eaaba7c6e63bec45af8ccb184e561f5
       vertices: []
       indices: 
       edges: []
@@ -134,13 +134,13 @@ TextureImporter:
         width: 459
         height: 909
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e090511d5088e042b600c049264fb18
+      spriteID: bafd832b61679ba4785046e7845615de
       vertices: []
       indices: 
       edges: []
@@ -154,13 +154,13 @@ TextureImporter:
         width: 459
         height: 909
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: beb9fc5372c5d3b4eb7cd9d412ebffce
+      spriteID: 3579928c568ea8c43bcddcef5b5b26e3
       vertices: []
       indices: 
       edges: []
@@ -174,13 +174,13 @@ TextureImporter:
         width: 489
         height: 909
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7303e9a5209174f45b86f75e505b8235
+      spriteID: 322bea7e2d9f7254cbd587803c04768f
       vertices: []
       indices: 
       edges: []
@@ -194,13 +194,13 @@ TextureImporter:
         width: 474
         height: 889
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f50bca8b854d26440869c6484c04ba2b
+      spriteID: e43fa983ddc2a224d9c5668a84fc00dd
       vertices: []
       indices: 
       edges: []
@@ -214,53 +214,13 @@ TextureImporter:
         width: 489
         height: 894
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f15b0d1282b4a444cad51cf2ed9a1990
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wizard attack_6
-      rect:
-        serializedVersion: 2
-        x: 58
-        y: 518
-        width: 284
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae20b34e7c553c742823122ddfd468aa
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wizard attack_7
-      rect:
-        serializedVersion: 2
-        x: 348
-        y: 553
-        width: 24
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 530fd7ae14665704dbdc6f8ab04bd1b4
+      spriteID: 6e2de4ba11a049f40874bc2de3a3669c
       vertices: []
       indices: 
       edges: []
@@ -274,33 +234,13 @@ TextureImporter:
         width: 524
         height: 894
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7e21249f89bd6c47a5745fc1696a909
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wizard attack_9
-      rect:
-        serializedVersion: 2
-        x: 1273
-        y: 519
-        width: 284
-        height: 101
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 219dcfbc8c64dee4c838ca316696521b
+      spriteID: c66ac21a21c3df440b5e80aa9e9420da
       vertices: []
       indices: 
       edges: []
@@ -314,13 +254,13 @@ TextureImporter:
         width: 489
         height: 894
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c592719c3d374264a81bfb9761708cab
+      spriteID: e88318d62eeec784294251a840a7290c
       vertices: []
       indices: 
       edges: []

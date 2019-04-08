@@ -16,8 +16,7 @@ public class Spawner : MonoBehaviour {
     }
     //asigna una cantidad de enemigos que debe generar y empeiza
     public void EmpiezaOleada(int cant)
-    {
-        
+    {        
         remaining = cant;
         Invoke("GeneraEnemigos",0);
     }
