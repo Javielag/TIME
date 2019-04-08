@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
     public Text healthText;
-    public Transform healthBar, switchIcon, reloadIcon, healthContainer, perkCadencia, perkVelocidad, perkRecarga, perkVida;    
+    public Transform healthBar, healthBarTop, switchIcon, reloadIcon, healthContainer, perkCadencia, perkVelocidad, perkRecarga, perkVida;    
     public Text oleada;
     public Text ammo1, mag1, ammo2, mag2;
     public Text avisoportal;
@@ -26,6 +26,7 @@ public class UIManager : MonoBehaviour {
     {
         healthText.text = newHealth.ToString();
         healthBar.localScale = new Vector3(newHealth/maxHealth, 1);
+        healthBarTop.localScale = new Vector3(-maxHealth/newHealth, -1);
         Debug.Log(newHealth / maxHealth);
 	}
     public void ChangeWeaponUI(Weapon weaponPrincipal, Weapon weaponSecondary)
@@ -143,14 +144,10 @@ public class UIManager : MonoBehaviour {
             case "Recarga": perkRecarga.gameObject.SetActive(true); break;
         }
     }
-    //Cambia la escala de HealthContainer y evita que lo demás se estire IMPORTANTE aumenta el hueco entre los perks, retocar eso
+    //Cambia la escala de HealthContainer y mantiene su texto a su escala original
     void UpdateScale()
     {
         healthContainer.localScale = new Vector3(1.25f, 1);
-        perkVida.localScale = new Vector3(0.8f, 1);
-        perkCadencia.localScale = new Vector3(0.8f, 1);
-        perkVelocidad.localScale = new Vector3(0.8f, 1);
-        perkRecarga.localScale = new Vector3(0.8f, 1);
         healthText.transform.localScale = new Vector3(0.8f, 1);
     }
    
