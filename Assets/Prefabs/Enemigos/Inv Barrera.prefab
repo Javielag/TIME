@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 61072342710954300}
   - component: {fileID: 114688628897056148}
   - component: {fileID: 114234168180527246}
+  - component: {fileID: 95028668478060238}
   m_Layer: 11
   m_Name: Inv Barrera
   m_TagString: enemy
@@ -122,6 +123,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &95028668478060238
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1274953256828738}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 19b52c01b1c618a4d9f60ef8c0668e55, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114234168180527246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -134,10 +153,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  damagerange: 1
   attackrange: 1
   attackTime: 3
+  casttime: 0
   damage: 10
+  animator: {fileID: 95028668478060238}
 --- !u!114 &114474391471320452
 MonoBehaviour:
   m_ObjectHideFlags: 1
