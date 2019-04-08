@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 114688628897056148}
   - component: {fileID: 114234168180527246}
   - component: {fileID: 95028668478060238}
+  - component: {fileID: 114118808640127884}
   m_Layer: 11
   m_Name: Inv Barrera
   m_TagString: enemy
@@ -141,6 +142,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114118808640127884
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1274953256828738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b77731b6aa0fd48aa3205131ca6a25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114234168180527246
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -11,6 +11,7 @@ public class KamikazeEnemy : MonoBehaviour
     public Explosion explosionPrefab;
     private Vector2 angle;
     private bool attacking, kamikazing;
+    private SpriteRenderer sp;
 
     // Use this for initialization
     void Start()
@@ -18,6 +19,7 @@ public class KamikazeEnemy : MonoBehaviour
         //inicialización de player
         player = GameManager.instance.GetPlayer();
         bulletPool = GameObject.FindGameObjectWithTag("BulletPool").transform;
+        sp = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -28,6 +30,8 @@ public class KamikazeEnemy : MonoBehaviour
         {
             //comparación de la posición del jugador y el enemigo
             angle = player.transform.position - transform.position;
+            if (angle.x >= 0) sp.flipX = false;
+            else sp.flipX = true;
             // Si está cerca del jugador y no está atacando, inicia la secuencia de ataque
             if (Vector2.Distance(player.transform.position, transform.position) <= attackrange && !attacking)
             {

@@ -11,11 +11,13 @@ public class Mago : MonoBehaviour {
     RangeEnemy thisEnemy;
     Transform bulletPool;
     public Animator animator;
+    SpriteRenderer sp;
     void Start()
     {
         bulletPool = GameObject.FindGameObjectWithTag("BulletPool").transform;
         thisEnemy = GetComponent<RangeEnemy>();
-        player = GameManager.instance.GetPlayer();            
+        player = GameManager.instance.GetPlayer();
+        sp = GetComponent<SpriteRenderer>();
     }
     void Update()
     {   //Si no hay uno creado y no se está moviendo
