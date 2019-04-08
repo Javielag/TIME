@@ -36,7 +36,7 @@ public class Gusano : MonoBehaviour
             if(angle.x <= 0) { //spriteR.flipX = false;
                 transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y);
             }
-            else//spriteR.flipX = true;
+            else)//spriteR.flipX = true;
                 transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y);
             transform.Translate(angle.normalized * speed * Time.deltaTime);
             //Si entra en rango de salto activa el aviso de salto
