@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance = null;
-    public GeneradorOleadas generadorOleadas;
+    //private bool portals;
+    private GeneradorOleadas generadorOleadas;
     private CienciaManager cientifico;
     public GameObject player;
     public GameObject a, b, c, d;
@@ -14,6 +16,7 @@ public class GameManager : MonoBehaviour
     public LayerMask enemyLayer, wallLayer;
     [SerializeField]private int /*enemyCount,*/oleadaActual=-1;
     public float delayOleada;
+    bool menuPausa;
     [SerializeField]
     UIManager UI;
 
@@ -30,10 +33,6 @@ public class GameManager : MonoBehaviour
 
     }
     // Use this for initialization
-    public void Start()
-    {
-        Invoke("GeneraOleada",delayOleada);
-    }
 
 
     public void ChangeHealth(int value, GameObject target)
@@ -156,5 +155,42 @@ public class GameManager : MonoBehaviour
     public void SetCienciaManager(CienciaManager dis)
     {
         cientifico = dis;
+    }
+    public void SetGeneraOleadas(GeneradorOleadas olas)
+    {
+        generadorOleadas = olas;
+    }
+    public void ChangeScene(string button)
+    {
+        SceneManager.LoadScene(button);
+        Time.timeScale = 1;
+        menuPausa = false;
+        //switch (button)
+        //{
+        //    case "start":
+        //        SceneManager.LoadScene("Hito02");
+        //        break;
+        //}
+    }
+    void pauseGame()
+    {
+        Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+    }
+    public void ChangeMenuState()
+    {
+        if (!menuPausa)
+        {
+            UI.PauseMenu(true);
+        }
+        else
+        {
+            UI.PauseMenu(false);
+        }
+        menuPausa = !menuPausa;
+        pauseGame();
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

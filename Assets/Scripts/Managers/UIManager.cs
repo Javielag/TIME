@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
     public Text healthText;
-    public Transform healthBar, healthBarTop, switchIcon, reloadIcon, healthContainer, perkCadencia, perkVelocidad, perkRecarga, perkVida;    
+    public Transform healthBar, healthBarTop, switchIcon, reloadIcon, healthContainer, perkCadencia, perkVelocidad, perkRecarga, perkVida, menuPausa;    
     public Text oleada;
     public Text ammo1, mag1, ammo2, mag2;
     public Text avisoportal;
@@ -17,8 +17,12 @@ public class UIManager : MonoBehaviour {
     void Start ()
     {
         GameManager.instance.SetUI(this.gameObject);
-        maxHealth = GameManager.instance.player.GetComponent<Health>().GetMaxHealth();
-        UpdateHealth(maxHealth);
+        if (GameManager.instance.GetPlayer())
+        {
+            maxHealth = GameManager.instance.GetPlayer().GetComponent<Health>().GetMaxHealth();
+            UpdateHealth(maxHealth);
+        }
+
 	}
 	
 	// Update is called once per frame
@@ -62,7 +66,8 @@ public class UIManager : MonoBehaviour {
     }
     public void UpdateCurrentAmmo(int ammo)
     {
-        ammo1.text = ammo.ToString();
+        if(ammo1)
+            ammo1.text = ammo.ToString();
     }
     public void UpdateSecondaryAmmo(int ammo, int maxAmmo)
     {
@@ -85,7 +90,8 @@ public class UIManager : MonoBehaviour {
     }
     public void UpdateMaxAmmo(int ammo)
     {
-        mag1.text = ammo.ToString();
+        if(mag1)
+            mag1.text = ammo.ToString();
     }
     public void UpdateSecondaryWeapon(int ammo, int maxAmmo)
     {
@@ -150,5 +156,16 @@ public class UIManager : MonoBehaviour {
         healthContainer.localScale = new Vector3(1.25f, 1);
         healthText.transform.localScale = new Vector3(0.8f, 1);
     }
-   
+    public void PauseMenu(bool state)
+    {
+        menuPausa.gameObject.SetActive(state);
+    }
+    public void ExitGame()
+    {
+        GameManager.instance.ExitGame();
+    }
+    public void ChangeScene(string scene)
+    {
+        GameManager.instance.ChangeScene(scene);
+    }
 }

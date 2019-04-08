@@ -15,6 +15,7 @@ public class PortalMago : MonoBehaviour {
     }
     public void Teleport(Vector2 otherPortal)
     {
+        //Collider2D[] hits = Physics2D.OverlapCircleAll()
         foreach(GameObject things in objetos)
         {
             if (things)

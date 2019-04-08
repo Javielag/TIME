@@ -132,9 +132,12 @@ MonoBehaviour:
   rad: 2.01
   knock: 10
   dmg: 15
-  PlayerLayer:
+  DamageLayer:
     serializedVersion: 2
     m_Bits: 4096
+  PushLayer:
+    serializedVersion: 2
+    m_Bits: 6144
 --- !u!114 &114626617285431272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -159,6 +162,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c802e1389fa2514397cb009ab112d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barrera: 0
+  invbarrera: 0
+  pompa: {fileID: 0}
 --- !u!212 &212831705348269952
 SpriteRenderer:
   m_ObjectHideFlags: 1
