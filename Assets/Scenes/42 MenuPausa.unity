@@ -80704,12 +80704,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: f055e502748f2c0419b8958edb845a73, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 25
+    m_MaxSize: 30
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -82110,7 +82110,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: f055e502748f2c0419b8958edb845a73, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -82171,6 +82171,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1936691964}
+  a: {fileID: 0}
+  b: {fileID: 0}
+  c: {fileID: 0}
+  d: {fileID: 0}
   enemyCount: 0
   enemyLayer:
     serializedVersion: 2
@@ -82849,6 +82853,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthText: {fileID: 1595516519}
   healthBar: {fileID: 764118566}
+  healthBarTop: {fileID: 0}
   switchIcon: {fileID: 385118778}
   reloadIcon: {fileID: 875651424}
   healthContainer: {fileID: 913437719}
@@ -82862,8 +82867,12 @@ MonoBehaviour:
   mag1: {fileID: 1539448944}
   ammo2: {fileID: 750415095}
   mag2: {fileID: 420375115}
+  avisoportal: {fileID: 0}
+  avportal: {fileID: 0}
   ArmaPrincipal: {fileID: 1975713292}
   ArmaSecundaria: {fileID: 1431882380}
+  maxHealth: 0
+  timerPortales: 0
 --- !u!114 &1864957572
 MonoBehaviour:
   m_ObjectHideFlags: 0

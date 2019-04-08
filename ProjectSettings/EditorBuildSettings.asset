@@ -17,10 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 720a8c3ce29b5864abfa2e150d1ba22b
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/Controles.unity
+    guid: 3e1993de34153474b9eaace8d0f83364
+  - enabled: 1
     path: Assets/Scenes/Hito02.unity
     guid: 25c9a330361e3334fb041c9bedacc529
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/42 MenuPausa.unity
     guid: 40fb04ae02efefe428b073395afb28ea
   m_configObjects: {}

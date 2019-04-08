@@ -162,9 +162,13 @@ public class GameManager : MonoBehaviour
     }
     public void ChangeScene(string button)
     {
-        SceneManager.LoadScene(button);
-        Time.timeScale = 1;
+        Time.timeScale = 1;                 //Evita errores con el menú
         menuPausa = false;
+        if (button == "Menu")               //Si vuelve al menú principal, reinicia las rondas
+        {
+            oleadaActual = -1;
+        }
+        SceneManager.LoadScene(button);     //Carga la escena
         //switch (button)
         //{
         //    case "start":
@@ -172,21 +176,15 @@ public class GameManager : MonoBehaviour
         //        break;
         //}
     }
-    void pauseGame()
+    void pauseGame()            //Para el juego
     {
-        Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+        Time.timeScale = Time.timeScale == 0 ? 1 : 0;               //Si el tiempo avanza, lo para, y viceversa
     }
     public void ChangeMenuState()
     {
-        if (!menuPausa)
-        {
-            UI.PauseMenu(true);
-        }
-        else
-        {
-            UI.PauseMenu(false);
-        }
+        //Invierte el booleano de menú y activa/desactiva el menú
         menuPausa = !menuPausa;
+        UI.PauseMenu(menuPausa);
         pauseGame();
     }
     public void ExitGame()
