@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public GeneradorOleadas generadorOleadas;
     private CienciaManager cientifico;
     public GameObject player;
+    public GameObject a, b, c, d;
     public int enemyCount;
     public LayerMask enemyLayer, wallLayer;
     [SerializeField]private int /*enemyCount,*/oleadaActual=-1;
@@ -116,6 +117,27 @@ public class GameManager : MonoBehaviour
     public void ReloadingIconUI(bool state)
     {
         UI.ReloadingWeapon(state);
+    }
+    public void AvisoPortal(string pos)
+    {
+        Debug.Log(pos);
+        UI.AvisoPortal(pos);
+    }
+    public GameObject GetA()
+    {
+        return a;
+    }
+    public GameObject GetB()
+    {
+        return b;
+    }
+    public GameObject GetC()
+    {
+        return c;
+    }
+    public GameObject GetD()
+    {
+        return d;
     }
     public void UpdateSecondaryAmmo(int ammo, int maxAmmo)
     {
