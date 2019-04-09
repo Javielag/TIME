@@ -14,7 +14,7 @@ public class GeneradorOleadas : MonoBehaviour {
     public void GeneraOleada(int ol, out int enemyCount)
     {
         int a;
-        int[] cants = new int[7];
+        int[] cants = new int[9];
         enemyCount = 0;
         //ol = 1;
         cants[0] = (int)Mathf.Pow(1.2f, ol) + 4;
@@ -23,10 +23,10 @@ public class GeneradorOleadas : MonoBehaviour {
             cants[1] = (int)(Mathf.Pow(1.2f, ol) + 4) / 2;
             if (ol >= 10)
             {
-                a = Random.Range(2, 7);
+                a = Random.Range(2, cants.Length);
                 cants[a] = (int)(Mathf.Pow(1.2f, ol) + 4) / 8;
-                a = Random.Range(2, 7);
-                cants[Random.Range(2, 7)] = cants[a] + (int)(Mathf.Pow(1.2f, ol) + 4) / 8;
+                a = Random.Range(2, cants.Length);
+                cants[a] = cants[a] + (int)(Mathf.Pow(1.2f, ol) + 4) / 8;
             }
                 
         }

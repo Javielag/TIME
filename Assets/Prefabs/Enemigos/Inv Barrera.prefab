@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 61072342710954300}
   - component: {fileID: 114688628897056148}
   - component: {fileID: 114234168180527246}
+  - component: {fileID: 114710145285877888}
   m_Layer: 11
   m_Name: Inv Barrera
   m_TagString: enemy
@@ -134,9 +135,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  damagerange: 1
   attackrange: 1
   attackTime: 3
+  casttime: 0
   damage: 10
 --- !u!114 &114474391471320452
 MonoBehaviour:
@@ -171,6 +172,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d9f633c14b321f4ba13d676d62fe524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114710145285877888
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1274953256828738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b77731b6aa0fd48aa3205131ca6a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114996126607235808

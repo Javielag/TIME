@@ -129,7 +129,10 @@ MonoBehaviour:
   rad: 3
   knock: 15
   dmg: 20
-  TargetLayer:
+  DamageLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  PushLayer:
     serializedVersion: 2
     m_Bits: 2048
 --- !u!114 &114593777105171210
