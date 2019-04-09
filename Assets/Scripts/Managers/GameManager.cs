@@ -32,9 +32,6 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
 
     }
-    // Use this for initialization
-
-
     public void ChangeHealth(int value, GameObject target)
     {
         Health tgHealth = target.GetComponent<Health>();
@@ -79,7 +76,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                Invoke("GeneraOleada", delayOleada);
+                GeneraOleada();
             }
         }
           
@@ -159,14 +156,16 @@ public class GameManager : MonoBehaviour
     }
     public void ChangeScene(string button)
     {
-        SceneManager.LoadScene(button);     //Carga la escena
+       
         Time.timeScale = 1;                 //Evita errores con el menú
         menuPausa = false;
         if (button == "Menu")               //Si vuelve al menú principal, reinicia las rondas
         {
+            CancelInvoke();
             oleadaActual = 0;
-            //generadorOleadas.spawnManager.ShutDown();
+            generadorOleadas.StopOleadas();
         }
+        SceneManager.LoadScene(button);     //Carga la escena
 
 
         //switch (button)
@@ -190,5 +189,9 @@ public class GameManager : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+    public void SetOleada(int estaOleada)
+    {
+        oleadaActual = estaOleada;
     }
 }

@@ -19,8 +19,8 @@ public class Spawner : MonoBehaviour {
     {
         
         remaining = cant;
-        //GeneraEnemigos();
-        Invoke("GeneraEnemigos",0);
+        GeneraEnemigos();
+        //Invoke("GeneraEnemigos",0);
     }
     //si quedan enemigos por generar, los spawnea
     public void GeneraEnemigos()
@@ -28,7 +28,8 @@ public class Spawner : MonoBehaviour {
         
        if(remaining > 0)
        {
-            Invoke("Spawn",0);
+            if(this != null)
+                Invoke("Spawn",0);
        }
        else if (portal)
        {
@@ -92,6 +93,7 @@ public class Spawner : MonoBehaviour {
     }
     public void ShutDown()
     {
+        CancelInvoke();
         StopAllCoroutines();
         remaining = 0;
     }

@@ -39,6 +39,9 @@ public class Health : MonoBehaviour
             }
             else
             {
+                PlayerDead die = GetComponent<PlayerDead>();
+                if (die)
+                    die.OnDead();
                 Destroy(this.gameObject);
             }
                     

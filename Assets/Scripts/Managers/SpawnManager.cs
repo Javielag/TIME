@@ -17,7 +17,7 @@ public class SpawnManager : MonoBehaviour
     {
         foreach(Transform son in transform)
         {
-            Spawner spawn = GetComponent<Spawner>();
+            Spawner spawn = son.GetComponent<Spawner>();
             if (spawn)
             {
                 spawn.ShutDown();

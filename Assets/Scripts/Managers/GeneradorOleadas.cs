@@ -8,6 +8,7 @@ public class GeneradorOleadas : MonoBehaviour {
     private void Start()
     {
         GameManager.instance.SetGeneraOleadas(this);
+        GameManager.instance.SetOleada(0);
         GameManager.instance.GeneraOleada();
     }
     public void GeneraOleada(int ol, out int enemyCount)
@@ -44,6 +45,10 @@ public class GeneradorOleadas : MonoBehaviour {
             enemyCount += cants[i];
         }
         spawnManager.Enemigos(cants);
+    }
+    public void StopOleadas()
+    {
+        spawnManager.ShutDown();
     }
 
 }

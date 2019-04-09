@@ -29,7 +29,10 @@ public class UIManager : MonoBehaviour {
     {
         healthText.text = newHealth.ToString();
         healthBar.localScale = new Vector3(newHealth/maxHealth, 1);
-        healthBarTop.localScale = new Vector3(-maxHealth/newHealth, -1);
+        if(newHealth != 0)
+        {
+            healthBarTop.localScale = new Vector3(-maxHealth / newHealth, -1);
+        }
         Debug.Log(newHealth / maxHealth);
 	}
     public void ChangeWeaponUI(Weapon weaponPrincipal, Weapon weaponSecondary)
