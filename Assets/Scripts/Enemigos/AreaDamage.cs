@@ -6,11 +6,11 @@ public class AreaDamage : MonoBehaviour {
 
     public float rad,knock;
     public int dmg;
-    public LayerMask DamageLayer,PushLayer;
+    public LayerMask TargetLayer;
 
     public void PushArea()
     {
-        Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, rad,PushLayer);
+        Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, rad);
         foreach (Collider2D col in hit)
         {
             //Debug.Log(col.name + " hit");
@@ -19,14 +19,14 @@ public class AreaDamage : MonoBehaviour {
             if (knockback)
             {
                 Vector2 dir = (col.transform.position - transform.position).normalized;
-                Debug.Log(col.name + " pushed for " + dir*knock);
+                //Debug.Log(col.name + " pushed for " + dir*knock);
                 knockback.KnockThis(dir,knock);
             }
         }
     }
     public void DealDamage()
     {
-        Collider2D[] col = Physics2D.OverlapCircleAll(transform.position, rad,DamageLayer);
+        Collider2D[] col = Physics2D.OverlapCircleAll(transform.position, rad,TargetLayer);
         foreach(Collider2D hit in col)
         {
             GameManager.instance.ChangeHealth(-dmg,hit.gameObject);

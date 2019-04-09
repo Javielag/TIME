@@ -41,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1793075531721430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7913518, y: 2.2937293, z: 0}
+  m_LocalPosition: {x: 1.949, y: -5.679, z: 0}
   m_LocalScale: {x: 0.22951, y: 0.22951, z: 0.22951}
   m_Children: []
   m_Father: {fileID: 0}
@@ -129,15 +129,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a98a2abef48024a84130942761880c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rad: 2.5
+  rad: 2.01
   knock: 10
   dmg: 15
-  DamageLayer:
+  PlayerLayer:
     serializedVersion: 2
     m_Bits: 4096
-  PushLayer:
-    serializedVersion: 2
-    m_Bits: 6144
 --- !u!114 &114626617285431272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -162,9 +159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c802e1389fa2514397cb009ab112d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barrera: 0
-  invbarrera: 0
-  pompa: {fileID: 0}
 --- !u!212 &212831705348269952
 SpriteRenderer:
   m_ObjectHideFlags: 1
