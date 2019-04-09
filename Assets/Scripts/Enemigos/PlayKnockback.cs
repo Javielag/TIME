@@ -15,6 +15,8 @@ public class PlayKnockback : MonoBehaviour {
         //cooldown para evitar que se sumen retrocesos
         if (Time.time > timer)
         {
+            if(GetComponent<PlayerController>())
+                Debug.Log("Pushed Player");
             rb.AddForce(direction * force, ForceMode2D.Impulse);
             timer = Time.time + cd;
         }        

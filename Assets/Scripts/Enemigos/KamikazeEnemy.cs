@@ -131,6 +131,6 @@ public class KamikazeEnemy : MonoBehaviour
     public void Resetmove()
     {
         attacking = false;
-        animator.SetBool("isMoving", true);
+        animator.SetBool("isMoving", false);
     }
 }

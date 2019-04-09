@@ -26,7 +26,6 @@ GameObject:
   - component: {fileID: 114751190055763342}
   - component: {fileID: 114849842594360966}
   - component: {fileID: 95179237584896058}
-  - component: {fileID: 114259321142543520}
   m_Layer: 11
   m_Name: WormEnemy
   m_TagString: enemy
@@ -123,17 +122,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   health: 0
---- !u!114 &114259321142543520
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1979421998283894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d9f633c14b321f4ba13d676d62fe524, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114751190055763342
 MonoBehaviour:
   m_ObjectHideFlags: 1

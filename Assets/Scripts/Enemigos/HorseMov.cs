@@ -66,6 +66,7 @@ public class HorseMov : MonoBehaviour
             }
             pointB = new Vector2(transform.position.x + (dir.x * jump), transform.position.y + (dir.y * jump));
             this.gameObject.GetComponent<Collider2D>().enabled = false;
+            Debug.Log("Horsen't");
             jumping = true;
             //nextJump = Time.time + idle;
         }
@@ -102,6 +103,7 @@ public class HorseMov : MonoBehaviour
                 secJump = false;
                 jumping = false;
                 this.gameObject.GetComponent<Collider2D>().enabled = true;
+                Debug.Log("Horse");
                 nextJump = Time.time + idle;
             }
         }

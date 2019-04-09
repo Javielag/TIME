@@ -106,6 +106,17 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -115,16 +126,16 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 176
-        height: 256
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 353ca278877fd3c499d7ce8328d15b91
+      spriteID: 1200e697c0397e0468f98d3cf878b731
       vertices: []
       indices: 
       edges: []
@@ -133,18 +144,18 @@ TextureImporter:
       name: Skeleton React3_1
       rect:
         serializedVersion: 2
-        x: 176
+        x: 22
         y: 0
-        width: 176
-        height: 256
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d841a393eb70f04798917c6e5ed9220
+      spriteID: bf361c2a9b11468408be056caf1522ed
       vertices: []
       indices: 
       edges: []
@@ -153,18 +164,18 @@ TextureImporter:
       name: Skeleton React3_2
       rect:
         serializedVersion: 2
-        x: 352
+        x: 44
         y: 0
-        width: 176
-        height: 256
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80210bf09e5c3e641916e1db27d5fb4d
+      spriteID: 1a12af0ad6c6aad47972a498079483fe
       vertices: []
       indices: 
       edges: []
@@ -173,18 +184,18 @@ TextureImporter:
       name: Skeleton React3_3
       rect:
         serializedVersion: 2
-        x: 528
+        x: 66
         y: 0
-        width: 176
-        height: 256
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b21ef1cb40d97f4b88c2c18631c2e04
+      spriteID: 2de1911961c2f7246ad539f2aa0f5b8d
       vertices: []
       indices: 
       edges: []
@@ -192,7 +203,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 17b026b36ea33ba40a679f5abb9711d9
+    spriteID: fe9db10613911ca41907a807c1e1394d
     vertices: []
     indices: 
     edges: []
