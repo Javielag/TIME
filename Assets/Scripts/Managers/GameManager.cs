@@ -163,7 +163,10 @@ public class GameManager : MonoBehaviour
         {
             CancelInvoke();
             oleadaActual = 0;
-            generadorOleadas.StopOleadas();
+            if(generadorOleadas != null)
+            {
+                generadorOleadas.StopOleadas();
+            }
         }
         SceneManager.LoadScene(button);     //Carga la escena
 
