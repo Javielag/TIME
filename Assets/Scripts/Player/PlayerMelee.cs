@@ -8,8 +8,9 @@ public class PlayerMelee : MonoBehaviour {
     public int dmg;
     private float nextMel;
     IEnumerator weaponSwitch;
+    public SpriteRenderer meleePar;
     //Pega en un rectángulo configurable desde el editor
-    public Transform attackPoint,endPoint;
+    public Transform attackPoint,endPoint,particlePos;
     // Use this for initialization
 	void Start () {
         nextMel = Time.time;
@@ -32,6 +33,7 @@ public class PlayerMelee : MonoBehaviour {
     {
         Collider2D[] attack = Physics2D.OverlapAreaAll(attackPoint.position, endPoint.position);
         nextMel = Time.time + cd;
+        Instantiate<SpriteRenderer>(meleePar, particlePos.position, GetComponentInParent<Transform>().rotation, GetComponentInParent<Transform>());
 
         foreach (Collider2D hit in attack)
         {
