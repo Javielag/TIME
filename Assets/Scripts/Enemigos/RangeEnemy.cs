@@ -7,8 +7,8 @@ public class RangeEnemy : MonoBehaviour
 
     public int speed, rangeMax, rangeMin;
     GameObject player;
-    [SerializeField]bool debugging = false;
-    bool isMoving = false, canMove = true;
+    [SerializeField]
+    bool debugging = false, isMoving = false, canMove = true;
     public bool timer = true;
     float a = 0;
     public Vector2 path;

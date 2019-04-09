@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     bool menuPausa;
     [SerializeField]
     UIManager UI;
+    public bool canTeleport = true;
 
     //Singleton
     private void Awake()
