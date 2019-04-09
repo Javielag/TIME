@@ -1,11 +1,15 @@
 fileFormatVersion: 2
-guid: 21a36729a28867c44b4a0675a3b8b251
+guid: f8deffc7e9eb78543ab778f732f444c7
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Skeleton React3_0
-    21300002: Skeleton React3_1
-    21300004: Skeleton React3_2
-    21300006: Skeleton React3_3
+    21300000: splash03_0
+    21300002: splash03_1
+    21300004: splash03_2
+    21300006: splash03_3
+    21300008: splash03_4
+    21300010: splash03_5
+    21300012: splash03_6
+    21300014: splash03_7
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -84,107 +88,165 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Skeleton React3_0
+      name: splash03_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 176
-        height: 256
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 18
+        y: 87
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 353ca278877fd3c499d7ce8328d15b91
+      spriteID: c6c21219d20af2e45b6b5b24895e3d18
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton React3_1
+      name: splash03_1
       rect:
         serializedVersion: 2
-        x: 176
-        y: 0
-        width: 176
-        height: 256
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 73
+        y: 85
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d841a393eb70f04798917c6e5ed9220
+      spriteID: 0d7eee1448f5e484eac03249fcce2da2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton React3_2
+      name: splash03_2
       rect:
         serializedVersion: 2
-        x: 352
-        y: 0
-        width: 176
-        height: 256
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 134
+        y: 83
+        width: 34
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80210bf09e5c3e641916e1db27d5fb4d
+      spriteID: 3ab2eb2e2f55d7c4ea529687fd246821
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton React3_3
+      name: splash03_3
       rect:
         serializedVersion: 2
-        x: 528
-        y: 0
-        width: 176
-        height: 256
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 198
+        y: 83
+        width: 31
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b21ef1cb40d97f4b88c2c18631c2e04
+      spriteID: 4edfb6f4b11ce774b9b00ab54f78542a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: splash03_4
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 18
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4df540bd36a5bc64db60b18cfca8b041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: splash03_5
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 17
+        width: 33
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9ed76021afb4d64c9911c46723cbf6c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: splash03_6
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 16
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7164554a1ff5b44ebffdf47d8f73d4a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: splash03_7
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 16
+        width: 31
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3567041e6687c34592f8e338f03760d
       vertices: []
       indices: 
       edges: []
@@ -192,7 +254,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 17b026b36ea33ba40a679f5abb9711d9
+    spriteID: dbb8dce3bedda434e95b90d5892f7654
     vertices: []
     indices: 
     edges: []
