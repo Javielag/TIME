@@ -47,6 +47,7 @@ public class KamikazeEnemy : MonoBehaviour
             // Si está cerca del jugador y no está atacando, inicia la secuencia de ataque
             if (Vector2.Distance(player.transform.position, transform.position) <= attackrange && !attacking)
             {
+                animator.SetBool("isMoving", false);
                 Attack();
             }
 
@@ -54,7 +55,6 @@ public class KamikazeEnemy : MonoBehaviour
             if (!attacking)
             {
                 transform.Translate(angle.normalized * speed * Time.deltaTime);
-                animator.SetFloat("speed", speed * Time.deltaTime);
             }
         }
 
@@ -109,7 +109,6 @@ public class KamikazeEnemy : MonoBehaviour
     //Cambia la variable de ataque, y tras un pequeño lapso de tiempo comienza la animación de ataque, y tras ella, otro lapso de tiempo que precede al reseteo del movimiento
     public void Attack()
     {
-        animator.SetFloat("speed", 0);
         attacking = true;
         animator.SetBool("isAttacking", true);
         //aquí va la animación
@@ -120,6 +119,7 @@ public class KamikazeEnemy : MonoBehaviour
     // Si tras el "casteo" del ataque el jugador se encuentra en rango, es dañado
     public void Damage()
     {
+        animator.SetBool("isAttacking", false);
         if (Vector2.Distance(player.transform.position, transform.position) <= attackrange)
         {
             GameManager.instance.ChangeHealth(-damage, player.gameObject);
@@ -131,6 +131,6 @@ public class KamikazeEnemy : MonoBehaviour
     public void Resetmove()
     {
         attacking = false;
-        animator.SetBool("isAttacking", false);
+        animator.SetBool("isMoving", false);
     }
 }

@@ -39,6 +39,7 @@ public class MeleeEnemy : MonoBehaviour
         else Debug.Log(gameObject.name + "No tiene pathfinder");
         if (Vector2.Distance(player.transform.position,transform.position) <=attackrange && !attacking)
         {
+            animator.SetBool("isMoving", false);
             Attack();
         }
 
@@ -46,14 +47,12 @@ public class MeleeEnemy : MonoBehaviour
         if (!attacking)
         {
             transform.Translate(angle.normalized * speed * Time.deltaTime);
-            animator.SetFloat("speed", speed * Time.deltaTime);
         }
     }
 
     //Cambia la variable de ataque, y tras un pequeño lapso de tiempo comienza la animación de ataque, y tras ella, otro lapso de tiempo que precede al reseteo del movimiento
     public void Attack()
     {
-        animator.SetFloat("speed", 0);
         attacking = true;
         animator.SetBool("isAttacking", true);
         //aquí va la animación
@@ -64,6 +63,7 @@ public class MeleeEnemy : MonoBehaviour
     // Si tras el "casteo" del ataque el jugador se encuentra en rango, es dañado
     public void Damage()
     {
+        animator.SetBool("isAttacking", false);
         if (Vector2.Distance(player.transform.position, transform.position) <= attackrange)
         {
             GameManager.instance.ChangeHealth(-damage, player.gameObject);
@@ -75,7 +75,7 @@ public class MeleeEnemy : MonoBehaviour
     public void Resetmove()
     {
         attacking = false;
-        animator.SetBool("isAttacking", false);
+        animator.SetBool("isMoving", true);
     }
 
 
