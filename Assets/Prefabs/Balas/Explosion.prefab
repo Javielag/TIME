@@ -101,7 +101,7 @@ MonoBehaviour:
   dmg: 200
   TargetLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 6144
 --- !u!212 &212624268610880572
 SpriteRenderer:
   m_ObjectHideFlags: 1

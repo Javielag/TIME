@@ -26,6 +26,8 @@ GameObject:
   - component: {fileID: 61613022592706658}
   - component: {fileID: 114981852274208148}
   - component: {fileID: 114920610888746496}
+  - component: {fileID: 114717265744039898}
+  - component: {fileID: 95619910012076154}
   m_Layer: 11
   m_Name: Kamikaze
   m_TagString: enemy
@@ -91,6 +93,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
+--- !u!95 &95619910012076154
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1187744987499806}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aec675dc51bb8814393b481d572a1a18, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114097717363111200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,6 +138,17 @@ MonoBehaviour:
   barrera: 0
   invbarrera: 0
   pompa: {fileID: 0}
+--- !u!114 &114717265744039898
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1187744987499806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b77731b6aa0fd48aa3205131ca6a25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114920610888746496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -138,6 +169,7 @@ MonoBehaviour:
   explodingtime: 3
   explosionPrefab: {fileID: 114034708461958462, guid: f69c488fc80f6d64e8f122a6d9ad533d,
     type: 2}
+  animator: {fileID: 95619910012076154}
 --- !u!114 &114981852274208148
 MonoBehaviour:
   m_ObjectHideFlags: 1

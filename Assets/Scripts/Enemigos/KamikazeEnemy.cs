@@ -4,34 +4,46 @@ using UnityEngine;
 
 public class KamikazeEnemy : MonoBehaviour
 {
-
+    Pathfinder pathfinder;
     public int damage, speed, attackrange, attacktime, casttime, kamikazespeed, explodingtime;
     GameObject player;
     Transform bulletPool;
     public Explosion explosionPrefab;
     private Vector2 angle;
     private bool attacking, kamikazing;
-    private SpriteRenderer sp;
+    public Animator animator;
+    Rigidbody2D rb;
+    SpriteRenderer spriteR;
 
     // Use this for initialization
     void Start()
     {
         //inicialización de player
         player = GameManager.instance.GetPlayer();
+        pathfinder = GetComponent<Pathfinder>();
+        rb = GetComponent<Rigidbody2D>();
+        spriteR = GetComponent<SpriteRenderer>();
         bulletPool = GameObject.FindGameObjectWithTag("BulletPool").transform;
-        sp = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
-    {       
+    {
+        if (pathfinder)
+        {
+            //comparación de la posición del jugador y el enemigo       
+            angle = pathfinder.Direction() - transform.position;
+            //orienta el sprite
+            if (angle.x <= 0) { spriteR.flipX = true; }
+            else spriteR.flipX = false;
+        }
+
+        else Debug.Log(gameObject.name + "No tiene pathfinder");
+
+
         //Comportamiento como enemigo a melé
         if (!kamikazing)
         {
-            //comparación de la posición del jugador y el enemigo
-            angle = player.transform.position - transform.position;
-            if (angle.x >= 0) sp.flipX = false;
-            else sp.flipX = true;
             // Si está cerca del jugador y no está atacando, inicia la secuencia de ataque
             if (Vector2.Distance(player.transform.position, transform.position) <= attackrange && !attacking)
             {
@@ -42,6 +54,7 @@ public class KamikazeEnemy : MonoBehaviour
             if (!attacking)
             {
                 transform.Translate(angle.normalized * speed * Time.deltaTime);
+                animator.SetFloat("speed", speed * Time.deltaTime);
             }
         }
 
@@ -60,6 +73,7 @@ public class KamikazeEnemy : MonoBehaviour
     //Cambia al estado kamikaze e invoca la explosión por tiempo
     public void Kamikaze()
     {
+        animator.SetBool("isKamikazing", true);
         kamikazing = true;
         Invoke("Explode", explodingtime);
     }
@@ -95,7 +109,9 @@ public class KamikazeEnemy : MonoBehaviour
     //Cambia la variable de ataque, y tras un pequeño lapso de tiempo comienza la animación de ataque, y tras ella, otro lapso de tiempo que precede al reseteo del movimiento
     public void Attack()
     {
+        animator.SetFloat("speed", 0);
         attacking = true;
+        animator.SetBool("isAttacking", true);
         //aquí va la animación
         Invoke("Damage", casttime);
         Invoke("Resetmove", attacktime);
@@ -115,5 +131,6 @@ public class KamikazeEnemy : MonoBehaviour
     public void Resetmove()
     {
         attacking = false;
+        animator.SetBool("isAttacking", false);
     }
 }
