@@ -75033,34 +75033,6 @@ Transform:
   m_Father: {fileID: 21317303}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &464329188
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 464329189}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &464329189
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 464329188}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.2, y: 9.04, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1518157716}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &465201904
 GameObject:
   m_ObjectHideFlags: 0
@@ -85761,8 +85733,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.005349, y: -3.602661, z: -0.037245885}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 464329189}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -85783,15 +85754,10 @@ MonoBehaviour:
   c: {fileID: 0}
   d: {fileID: 0}
   enemyCount: 0
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 2048
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 8192
   oleadaActual: 0
   delayOleada: 3
   UI: {fileID: 0}
+  canTeleport: 1
 --- !u!114 &1518157718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85820,7 +85786,7 @@ MonoBehaviour:
   - {fileID: 1022399557797236, guid: 5c134143a40830b49bd32e298ec88223, type: 2}
   prefabCientifico: {fileID: 114803511611613608, guid: de6954d4d8204c34a9a25e2efe9dd22d,
     type: 2}
-  posCientifico: {fileID: 464329189}
+  posCientifico: {fileID: 0}
 --- !u!1 &1519711328
 GameObject:
   m_ObjectHideFlags: 0
@@ -86810,6 +86776,34 @@ Transform:
   m_Father: {fileID: 1622736554}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1853794214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1853794215}
+  m_Layer: 0
+  m_Name: CientificoSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1853794215
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1853794214}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2028180153}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1857772697
 GameObject:
   m_ObjectHideFlags: 0
@@ -87624,6 +87618,7 @@ GameObject:
   - component: {fileID: 2028180153}
   - component: {fileID: 2028180154}
   - component: {fileID: 2028180152}
+  - component: {fileID: 2028180155}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
@@ -87667,6 +87662,7 @@ Transform:
   - {fileID: 21317303}
   - {fileID: 1136339360}
   - {fileID: 283053492}
+  - {fileID: 1853794215}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -87682,6 +87678,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnManager: {fileID: 2028180152}
+--- !u!114 &2028180155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2028180151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c4020ef34dd23c4c905f11f28dfd144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primeraAparicion: 1
+  cadaX: 3
+  perkChance: 0.8
+  weapons:
+  - {fileID: 114271245913642714, guid: bb6abf817675da0458aa938a9207538f, type: 2}
+  - {fileID: 114454490590147162, guid: ebb74679358463d4ba31006c096827c3, type: 2}
+  - {fileID: 114864688325308842, guid: 5e9b17bbc80058042bd734d96800d2b4, type: 2}
+  - {fileID: 114547294297027272, guid: 9fa06e7efb5ec434a85c931f7b129681, type: 2}
+  - {fileID: 114547294297027272, guid: e55c2e99b2f724b4b9208e5df7349a10, type: 2}
+  - {fileID: 114547294297027272, guid: 767f736d9f84d4743852b36221f22a9b, type: 2}
+  perks:
+  - {fileID: 1395367394393130, guid: 96b1189ba8d95af42b67c247e353b420, type: 2}
+  - {fileID: 1790814764629860, guid: 1aeb2b3ea64dadb4fbeff76dd481acc1, type: 2}
+  - {fileID: 1098812770926418, guid: c948c4f192999284a8de4b9c802336e6, type: 2}
+  - {fileID: 1022399557797236, guid: 5c134143a40830b49bd32e298ec88223, type: 2}
+  prefabCientifico: {fileID: 114803511611613608, guid: de6954d4d8204c34a9a25e2efe9dd22d,
+    type: 2}
+  posCientifico: {fileID: 1853794215}
 --- !u!1 &2034676877
 GameObject:
   m_ObjectHideFlags: 0

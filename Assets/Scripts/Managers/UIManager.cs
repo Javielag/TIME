@@ -99,7 +99,10 @@ public class UIManager : MonoBehaviour {
     }
     public void UpdateOleada(int newOleada)
     {
-        oleada.text = "Oleada: " + newOleada.ToString();
+        if (oleada)
+        {
+            oleada.text = "Oleada: " + newOleada.ToString();
+        }
     }
     public void SwitchingWeapon()
     {

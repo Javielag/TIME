@@ -13,6 +13,18 @@ public class SpawnManager : MonoBehaviour
             enemySpawners[i].EmpiezaOleada(cants[i]);
         }
     }
+    public void ShutDown()
+    {
+        foreach(Transform son in transform)
+        {
+            Spawner spawn = GetComponent<Spawner>();
+            if (spawn)
+            {
+                spawn.ShutDown();
+            }
+
+        }
+    }
 }
 
 

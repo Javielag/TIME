@@ -269,7 +269,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.39213014, g: 0.19215688, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -872,15 +872,10 @@ MonoBehaviour:
   c: {fileID: 0}
   d: {fileID: 0}
   enemyCount: 0
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 0
   oleadaActual: -1
   delayOleada: 0
   UI: {fileID: 0}
+  canTeleport: 1
 --- !u!1 &1996394064
 GameObject:
   m_ObjectHideFlags: 0

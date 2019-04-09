@@ -19,6 +19,7 @@ public class Spawner : MonoBehaviour {
     {
         
         remaining = cant;
+        //GeneraEnemigos();
         Invoke("GeneraEnemigos",0);
     }
     //si quedan enemigos por generar, los spawnea
@@ -88,6 +89,11 @@ public class Spawner : MonoBehaviour {
     public void SetSpawner(GameObject newSpawn)
     {
         enemyPrefab = newSpawn;
+    }
+    public void ShutDown()
+    {
+        StopAllCoroutines();
+        remaining = 0;
     }
     
 	

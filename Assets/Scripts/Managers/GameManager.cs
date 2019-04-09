@@ -13,8 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public GameObject a, b, c, d;
     public int enemyCount;
-    public LayerMask enemyLayer, wallLayer;
-    [SerializeField]private int /*enemyCount,*/oleadaActual=-1;
+    [SerializeField]private int /*enemyCount,*/oleadaActual=0;
     public float delayOleada;
     bool menuPausa;
     [SerializeField]
@@ -72,7 +71,6 @@ public class GameManager : MonoBehaviour
         //si era el último, genera una nueva oleada
         if (enemyCount <= 0)
         {
-       
             if ((oleadaActual - cientifico.primeraAparicion) % cientifico.cadaX == 0)
             {
                 //aquí van las visitas del CIENTEFRICO
@@ -151,8 +149,6 @@ public class GameManager : MonoBehaviour
     {
         UI.ActivatePerk(perk);
     }
-    public LayerMask OnlyWalls(){ return wallLayer; }
-    public LayerMask OnlyEnemies() { return enemyLayer; }
     public void SetCienciaManager(CienciaManager dis)
     {
         cientifico = dis;
@@ -163,13 +159,16 @@ public class GameManager : MonoBehaviour
     }
     public void ChangeScene(string button)
     {
+        SceneManager.LoadScene(button);     //Carga la escena
         Time.timeScale = 1;                 //Evita errores con el menú
         menuPausa = false;
         if (button == "Menu")               //Si vuelve al menú principal, reinicia las rondas
         {
-            oleadaActual = -1;
+            oleadaActual = 0;
+            //generadorOleadas.spawnManager.ShutDown();
         }
-        SceneManager.LoadScene(button);     //Carga la escena
+
+
         //switch (button)
         //{
         //    case "start":
