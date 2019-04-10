@@ -89039,7 +89039,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iAmWeapon: 0
-  magSize: 7
+  magSize: 21
   projectiles: 1
   rate: 0.2
   range: 15
