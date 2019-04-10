@@ -701,7 +701,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CRAZY CHRONONAUT
+  m_Text: T.I.M.E
 --- !u!222 &1253036810
 CanvasRenderer:
   m_ObjectHideFlags: 0
