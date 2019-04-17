@@ -55,7 +55,7 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1793075531721430}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -164,7 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 646b10558c37fe94daccde5dafab407a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  acc: 3
+  maxspeed: 5
   attackrange: 2
   attackTime: 3
   casttime: 1

@@ -6,9 +6,10 @@ public class MeleeEnemy : MonoBehaviour
 {
     // variables públicas (velocidad, daño rango de ataque y tiempo de ataque) y privadas (ángulo de movimiento y booleano que indica cuando ataca y cuando no)
     Pathfinder pathfinder;
-    public float speed, attackrange, attackTime, casttime;
+    public float acc,maxspeed, attackrange, attackTime, casttime;
     public int damage;
     GameObject player;
+    Rigidbody2D rb;
     private Vector2 angle;
     private bool attacking;
 
@@ -17,6 +18,7 @@ public class MeleeEnemy : MonoBehaviour
         //inicialización de player
         player = GameManager.instance.GetPlayer();
         pathfinder = GetComponent<Pathfinder>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -29,11 +31,18 @@ public class MeleeEnemy : MonoBehaviour
         {
             Attack();
         }
-
-        // mientras no está atacando, va hacia el jugador
-        if (!attacking)
+    }
+    private void FixedUpdate()
+    {
+        //mientras no está atacando va hacia el jugador
+        if (rb)
         {
-            transform.Translate(angle.normalized * speed * Time.deltaTime);
+            if (!attacking && rb.velocity.magnitude <= maxspeed)
+                rb.AddForce(angle*acc);
+        }
+        else
+        {
+            Debug.Log("Metele un Rigigbody a este " + gameObject.name);
         }
     }
 
