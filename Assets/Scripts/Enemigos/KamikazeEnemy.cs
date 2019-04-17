@@ -5,7 +5,8 @@ using UnityEngine;
 public class KamikazeEnemy : MonoBehaviour
 {
 
-    public int damage, speed, attackrange, attacktime, casttime, kamikazespeed, explodingtime;
+    public int damage, acc,maxSpeed, attackrange, attacktime, casttime, kAcc,kMaxSpeed, explodingtime;
+    Rigidbody2D rb;
     GameObject player;
     Transform bulletPool;
     public Explosion explosionPrefab;
@@ -18,37 +19,53 @@ public class KamikazeEnemy : MonoBehaviour
         //inicialización de player
         player = GameManager.instance.GetPlayer();
         bulletPool = GameObject.FindGameObjectWithTag("BulletPool").transform;
+        rb = GetComponent<Rigidbody2D>();
+        if (rb)
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
     }
 
     // Update is called once per frame
     void Update()
-    {       
+    {
+        //comparación de la posición del jugador y el enemigo
+        angle = (player.transform.position - transform.position).normalized;
         //Comportamiento como enemigo a melé
         if (!kamikazing)
         {
-            //comparación de la posición del jugador y el enemigo
-            angle = player.transform.position - transform.position;
+            
             // Si está cerca del jugador y no está atacando, inicia la secuencia de ataque
             if (Vector2.Distance(player.transform.position, transform.position) <= attackrange && !attacking)
             {
                 Attack();
             }
 
+        }
+
+        
+
+
+    }
+    private void FixedUpdate()
+    {
+        if (rb)
+        {
             // mientras no está atacando, va hacia el jugador
-            if (!attacking)
+            if (!kamikazing && !attacking && rb.velocity.magnitude < maxSpeed)
             {
-                transform.Translate(angle.normalized * speed * Time.deltaTime);
+                rb.AddForce(acc*angle);
+            }
+            //Comportamiento como kamikaze
+            else if (kamikazing && rb.velocity.magnitude < kMaxSpeed)
+            {
+                rb.AddForce(angle*kAcc);
             }
         }
-
-        //Comportamiento como kamikaze
-        else if (kamikazing)
+        else
         {
-            angle = player.transform.position - transform.position;
-            transform.Translate(angle.normalized * kamikazespeed * Time.deltaTime);
+            Debug.Log("Falta el Rigidbody de " + gameObject.name);
         }
-
-
     }
 
     //MÉTODOS DE COMPORTAMIENTO KAMIKAZE
@@ -63,7 +80,7 @@ public class KamikazeEnemy : MonoBehaviour
     //Si está en kamikaze y colisiona con el jugador, explota
     public void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Player" && kamikazing)
+        if (kamikazing && other.gameObject.tag == "Player")
         {
             kamikazing = false;
             Explode();
@@ -112,4 +129,6 @@ public class KamikazeEnemy : MonoBehaviour
     {
         attacking = false;
     }
+
+
 }
