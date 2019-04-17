@@ -5,8 +5,9 @@ using UnityEngine;
 public class HorseMov : MonoBehaviour
 {
 
-    public float idle, jump, turn, speed;
+    public float idle, jump, turn, acc,maxSpeed;
     Transform player;
+    Rigidbody2D rb;
     Vector2 dir,jumpDir,pointA,pointB,jumpStart;
     bool secJump = false,jumping = false;
     private float nextJump;
@@ -17,6 +18,7 @@ public class HorseMov : MonoBehaviour
         player = GameManager.instance.GetPlayer().transform;
         nextJump = Time.time;
         areaDmg = GetComponent<AreaDamage>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -26,16 +28,27 @@ public class HorseMov : MonoBehaviour
         {
             CalculateJumps();
         }
-        else if(jumping && !secJump)
+        //else if(jumping && !secJump)
+        //{
+        //    FirstJump();
+        //}
+        //else if(jumping && secJump)
+        //{
+        //    SecondJump();
+        //}
+        Debug.DrawLine(jumpStart, pointA, Color.red);
+        Debug.DrawLine(pointA,pointB,Color.yellow);
+    }
+    private void FixedUpdate()
+    {
+        if (jumping && !secJump)
         {
             FirstJump();
         }
-        else if(jumping && secJump)
+        else if (jumping && secJump)
         {
             SecondJump();
         }
-        Debug.DrawLine(jumpStart, pointA, Color.red);
-        Debug.DrawLine(pointA,pointB,Color.yellow);
     }
     private void CalculateJumps()
     {
@@ -76,7 +89,8 @@ public class HorseMov : MonoBehaviour
     {
         if (Time.time > nextJump)
         {
-            transform.Translate(jumpDir * speed * Time.deltaTime);
+            if(rb.velocity.magnitude < maxSpeed)
+                rb.AddForce(jumpDir * acc);
             //al acabar el primer salto 3
             if (Vector2.Distance(jumpStart, pointA) < Vector2.Distance(jumpStart, transform.position))
             {
@@ -85,6 +99,7 @@ public class HorseMov : MonoBehaviour
                 else
                     jumpDir = new Vector2(0,1*Mathf.Sign(dir.y));
                 secJump = true;
+                rb.velocity = Vector2.zero;
                 nextJump = Time.time + turn;
             }
 
@@ -95,13 +110,15 @@ public class HorseMov : MonoBehaviour
     {
         if(Time.time > nextJump)
         {
-            transform.Translate(jumpDir * speed * Time.deltaTime);
+            if (rb.velocity.magnitude < maxSpeed)
+                rb.AddForce(jumpDir * acc);
             //al acabar el segundo salto
             if (Vector2.Distance(jumpStart, pointB) < Vector2.Distance(jumpStart, transform.position))
             {
                 Attack();
                 secJump = false;
                 jumping = false;
+                rb.velocity = Vector2.zero;
                 this.gameObject.GetComponent<Collider2D>().enabled = true;
                 //Debug.Log("Horse");
                 nextJump = Time.time + idle;
