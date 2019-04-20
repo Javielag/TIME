@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114990945906791508}
   - component: {fileID: 50214297674968282}
   - component: {fileID: 114851533438746192}
+  - component: {fileID: 95769904910184062}
   m_Layer: 0
   m_Name: MaguitoKomaeda
   m_TagString: Untagged
@@ -91,6 +92,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9747672, y: 0.81265223}
   m_EdgeRadius: 0
+--- !u!95 &95769904910184062
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1964412618404762}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5aadd7724b25a6b4286238bffdf6c932, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114556692980895676
 MonoBehaviour:
   m_ObjectHideFlags: 1
