@@ -12,6 +12,8 @@ public class MeleeEnemy : MonoBehaviour
     Rigidbody2D rb;
     private Vector2 angle;
     private bool attacking;
+    public Animator anim;
+    SpriteRenderer sp;
 
     void Start()
     {
@@ -19,6 +21,7 @@ public class MeleeEnemy : MonoBehaviour
         player = GameManager.instance.GetPlayer();
         pathfinder = GetComponent<Pathfinder>();
         rb = GetComponent<Rigidbody2D>();
+        sp = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -27,6 +30,8 @@ public class MeleeEnemy : MonoBehaviour
             //comparación de la posición del jugador y el enemigo       
             angle = pathfinder.Direction() - transform.position;
         else Debug.Log(gameObject.name + "No tiene pathfinder");
+        if (angle.x > 0) { sp.flipX = true; }
+        else sp.flipX = false;
         if (Vector2.Distance(player.transform.position,transform.position) <=attackrange && !attacking)
         {
             Attack();
@@ -38,7 +43,11 @@ public class MeleeEnemy : MonoBehaviour
         if (rb)
         {
             if (!attacking && rb.velocity.magnitude <= maxspeed)
-                rb.AddForce(angle*acc);
+            {
+                rb.AddForce(angle * acc);
+                anim.SetBool("isMoving",true);
+            }
+                
         }
         else
         {
@@ -50,6 +59,8 @@ public class MeleeEnemy : MonoBehaviour
     public void Attack()
     {
         attacking = true;
+        anim.SetBool("isAttacking",true);
+        anim.SetBool("isMoving", false);
         //aquí va la animación
         Invoke("Damage", casttime);
         Invoke("Resetmove", attackTime);
@@ -68,6 +79,7 @@ public class MeleeEnemy : MonoBehaviour
     //Despúes de atacar, haya dañado o no al jugador, vuelve a moverse
     public void Resetmove()
     {
+        anim.SetBool("isAttacking",false);
         attacking = false;
     }
 
