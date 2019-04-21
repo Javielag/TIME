@@ -39,14 +39,15 @@ public class RayoLaser : MonoBehaviour {
         SetSprite(GetComponentInChildren<Transform>(), centre, ancho, distance);
         Collider2D[] hits = Physics2D.OverlapBoxAll(centre,new Vector2(distance ,ancho)
             ,Vector2.Angle(transform.right,new Vector2(1,0)));
-        int i = 0;
         foreach (Collider2D hit in hits)
         {
-            i++;
-            Debug.Log("Lazered " + hit.name + " " + i);
-            GameManager.instance.ChangeHealth(-dmg,hit.gameObject);
+            Enemy en = hit.GetComponent<Enemy>();
+            //no afecta a los enemigos con barrera
+            if (en && !en.barrera)
+                GameManager.instance.ChangeHealth(-dmg,hit.gameObject);
         }
     }
+    //ajusta el cuadrado para que tome el tamaño del laser
     private void SetSprite(Transform child,Vector2 position,float ancho, float largo)
     {
         child.localScale = new Vector3(largo, ancho);
