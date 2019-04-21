@@ -12,6 +12,7 @@ public class KamikazeEnemy : MonoBehaviour
     public Explosion explosionPrefab;
     private Vector2 angle;
     private bool attacking, kamikazing;
+    public Animator anim;
 
     // Use this for initialization
     void Start()
@@ -55,11 +56,16 @@ public class KamikazeEnemy : MonoBehaviour
             if (!kamikazing && !attacking && rb.velocity.magnitude < maxSpeed)
             {
                 rb.AddForce(acc*angle);
+                anim.SetBool("isMoving",true);
+
             }
             //Comportamiento como kamikaze
             else if (kamikazing && rb.velocity.magnitude < kMaxSpeed)
             {
                 rb.AddForce(angle*kAcc);
+                anim.SetBool("isMoving", false);
+                anim.SetBool("isAttacking", false);
+                anim.SetBool("isKamikazing",true);
             }
         }
         else
@@ -74,6 +80,7 @@ public class KamikazeEnemy : MonoBehaviour
     public void Kamikaze()
     {
         kamikazing = true;
+        anim.SetBool("isKamikazing",true);
         Invoke("Explode", explodingtime);
     }
 
@@ -110,6 +117,7 @@ public class KamikazeEnemy : MonoBehaviour
     {
         attacking = true;
         //aquí va la animación
+        anim.SetBool("isAttacking",true);
         Invoke("Damage", casttime);
         Invoke("Resetmove", attacktime);
     }
@@ -128,6 +136,9 @@ public class KamikazeEnemy : MonoBehaviour
     public void Resetmove()
     {
         attacking = false;
+        //pasa a la animación de Idle
+        anim.SetBool("isAttacking", false);
+        anim.SetBool("isMoving", false);
     }
 
 
