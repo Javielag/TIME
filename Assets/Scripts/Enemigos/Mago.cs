@@ -10,6 +10,7 @@ public class Mago : MonoBehaviour {
     IEnumerator coroutine;
     RangeEnemy thisEnemy;
     Transform bulletPool;
+    public Animator animator;
     void Start()
     {
         bulletPool = GameObject.FindGameObjectWithTag("BulletPool").transform;
@@ -25,6 +26,7 @@ public class Mago : MonoBehaviour {
             Debug.Log("Iniciando casteamiento");
             thisEnemy.SetCanMove(false);        //Impide el movimiento
             generated = true;
+            animator.SetBool("isAttacking", true); //inicia animacion de ataque
             Invoke("CreaPortales", 0);
         }
     }
@@ -41,14 +43,16 @@ public class Mago : MonoBehaviour {
         {
             GameManager.instance.canTeleport = false;
             yield return new WaitForSeconds(tiempoCasteo);                          //Espera el tiempo indicado
+
             portal1.Teleport(portal2.transform.position); portal2.Teleport(portal1.transform.position);                 //Realiza el teletransporte
             thisEnemy.SetCanMove(true);                                             //Les deja moverse
+            animator.SetBool("isAttacking", false); //deja de atacar
             Invoke("PuedeGenerar", tiempoCooldown);                                   //Tras un tiempo puede volver a crear portales
         }
         else Invoke("PuedeGenerar", tiempoCasteo + tiempoCooldown);
     }
     void PuedeGenerar()
-    {
+    {       
         generated = false;
         GameManager.instance.canTeleport = true;
     }

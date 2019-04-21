@@ -12,13 +12,17 @@ public class RangeEnemy : MonoBehaviour
     public bool timer = true;
     float a = 0;
     public Vector2 path;
+    SpriteRenderer sp;
     private void Start()
     {
         player = GameManager.instance.GetPlayer();
+        sp = GetComponent<SpriteRenderer>();
     }
     void Update()
     {
         Vector2 pos = player.transform.position - transform.position;
+        if (pos.x < 0) { sp.flipX = false; }
+        else sp.flipX = true;
         path = this.GetComponent<Pathfinder>().Direction() - transform.position;
         pos = pos.normalized;
         if (canMove)
