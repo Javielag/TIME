@@ -172,7 +172,6 @@ MonoBehaviour:
   range: 15
   reload: 2
   maxSpread: 0
-  bulletSpeed: 20
   automatic: 1
   canShoot: 1
   isReloading: 0
@@ -238,7 +237,6 @@ MonoBehaviour:
   range: 10
   reload: 5
   maxSpread: 7.72
-  bulletSpeed: 20
   automatic: 1
   canShoot: 1
   isReloading: 0
@@ -596,11 +594,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4968006903510630, guid: 32580552ce0035f4b8491010d769c1f2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.1212425
+      value: 1.519
       objectReference: {fileID: 0}
     - target: {fileID: 4968006903510630, guid: 32580552ce0035f4b8491010d769c1f2, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.17887631
+      value: 0.466
       objectReference: {fileID: 0}
     - target: {fileID: 4968006903510630, guid: 32580552ce0035f4b8491010d769c1f2, type: 2}
       propertyPath: m_LocalPosition.z
@@ -673,12 +671,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9aa99fe64012de479876447068c58d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 25
+  speedMax: 5
   accel: 25
   melee: 0
   weaponChange: 32
   reloadKey: 114
   interact: 101
+  pauseMenu: 0
   changeTime: 2
   interactRange: 2.05
   interactableLayer:
@@ -908,12 +907,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fcae323190074043adfda10828f5d4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  generadorOleadas: {fileID: 0}
   player: {fileID: 892804873}
+  a: {fileID: 0}
+  b: {fileID: 0}
+  c: {fileID: 0}
+  d: {fileID: 0}
   enemyCount: 0
   oleadaActual: -1
   delayOleada: 0
   UI: {fileID: 0}
+  canTeleport: 1
 --- !u!4 &1344870927
 Transform:
   m_ObjectHideFlags: 0
@@ -1060,6 +1063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSwitching: 0
+  first: 1
   currentWeapon: 0
 --- !u!114 &1816068990
 MonoBehaviour:
@@ -1246,7 +1250,6 @@ MonoBehaviour:
   range: 6.44
   reload: 2
   maxSpread: 45
-  bulletSpeed: 20
   automatic: 0
   canShoot: 1
   isReloading: 0

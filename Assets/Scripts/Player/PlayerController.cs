@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour {
     private void Awake()
     {
         //le dice al GameManager que es el jugador  
-        GameManager.instance.SetPlayer(this.gameObject);
+       // GameManager.instance.SetPlayer(this.gameObject);
     }
     void Start () {
         xtraSpeed = maxSpeed=speedMax;
@@ -23,8 +23,9 @@ public class PlayerController : MonoBehaviour {
         wm = GetComponentInChildren<WeaponManager>();
         StartCoroutine(wm.SwitchWeapon(0));
         StartCoroutine(wm.SwitchWeapon(0));
-        wm.first = false;   
-	}
+        wm.first = false;
+        GameManager.instance.SetPlayer(this.gameObject);
+    }
 	
 	// Update is called once per frame
 	void Update () {
