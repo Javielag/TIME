@@ -13,7 +13,7 @@ public class GeneradorOleadas : MonoBehaviour {
     }
     public void GeneraOleada(int ol, out int enemyCount)
     {
-        int a;
+        int a, b; //Variables auxiliares para números aleatorios
         int[] cants = new int[9];
         enemyCount = 0;
         //ol = 1;
@@ -25,8 +25,10 @@ public class GeneradorOleadas : MonoBehaviour {
             {
                 a = Random.Range(2, cants.Length);
                 cants[a] = (int)(Mathf.Pow(1.2f, ol) + 4) / 8;
-                a = Random.Range(2, cants.Length);
-                cants[a] = cants[a] + (int)(Mathf.Pow(1.2f, ol) + 4) / 8;
+                do
+                    b = Random.Range(2, cants.Length);
+                while (b == a);
+                cants[b] = (int)(Mathf.Pow(1.2f, ol) + 4) / 8;
             }
                 
         }

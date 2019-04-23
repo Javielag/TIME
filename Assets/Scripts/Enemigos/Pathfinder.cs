@@ -69,7 +69,7 @@ public class Pathfinder : MonoBehaviour
                 }
                 if (playerSala % 3 > sala % 3) //Si está a la derecha
                 {
-                    return waypoints[wp].closeWaypoints[1].position;
+                    return waypoints[wp].closeWaypoints[1].position; //Devuelve la dirección del waypoint en la dirección hacia la que tiene que ir
                 }
                 else if (playerSala % 3 < sala % 3) //Si está a la izquierda
                 {

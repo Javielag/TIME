@@ -10,7 +10,7 @@ public class RangeEnemy : MonoBehaviour
     [SerializeField]
     bool debugging = false, isMoving = false, canMove = true;
     public bool timer = true;
-    float a = 0;
+    float timeCount = 0;
     public Vector2 path;
     SpriteRenderer sp;
     private void Start()
@@ -23,37 +23,37 @@ public class RangeEnemy : MonoBehaviour
         Vector2 pos = player.transform.position - transform.position;
         if (pos.x < 0) { sp.flipX = false; }
         else sp.flipX = true;
-        path = this.GetComponent<Pathfinder>().Direction() - transform.position;
+        path = this.GetComponent<Pathfinder>().Direction() - transform.position; //Pilla la dirección del pathfinder
         pos = pos.normalized;
         if (canMove)
         {
-            if (Vector2.Distance(player.transform.position, transform.position) >= rangeMax)
+            if (Vector2.Distance(player.transform.position, transform.position) >= rangeMax) //Si está fuera de rango
             {
-                if (timer)
+                if (timer) //Empieza a correr un contador
                 {
-                    a = Time.time;
+                    timeCount = Time.time;
                     timer = false;
                 }
-                if (Time.time - a >= 2)
+                if (Time.time - timeCount >= 2)//Si ese contador dura 2 segundos
                 {
-                    transform.Translate(path.normalized * speed * Time.deltaTime);
+                    transform.Translate(path.normalized * speed * Time.deltaTime); //Se mueve hacia el jugador  ESTO ES LO QUE HAY QUE CAMBIAR PARA EL REWORK
                     isMoving = true;
                 }
             }
-            else if (Vector2.Distance(player.transform.position, transform.position) <= rangeMin)
+            else if (Vector2.Distance(player.transform.position, transform.position) <= rangeMin) //Igual que arriba
             {
                 if (timer)
                 {
-                    a = Time.time;
+                    timeCount = Time.time;
                     timer = false;
                 }
-                if (Time.time - a >= 0.5)
+                if (Time.time - timeCount >= 0.5)
                 {
-                    transform.Translate(-pos * speed * Time.deltaTime);
+                    transform.Translate(-pos * speed * Time.deltaTime); //ESTO ES LO QUE HAY QUE CAMBIAR PARA EL REWORK
                     isMoving = true;
                 }
             }
-            else
+            else //Si está dentro del rango resetea el timer y se para
             {
                 timer = true;
                 isMoving = false;
