@@ -78,6 +78,9 @@ public class Gusano : MonoBehaviour
     //salta, activa el collider para que sea posible dañarlo, y crea una zona de daño en su posición inicial
     public void Jump()
     {
+
+        transform.right = GameManager.instance.GetPlayer().transform.position - transform.position;
+        //GetComponent<FlipTowardsPlayer>().enabled = false; //no cambia de orientación en el aire
         dealDmg.enabled = true;
         anim.SetBool("advice", false);
         anim.SetBool("jump", true);
@@ -93,6 +96,8 @@ public class Gusano : MonoBehaviour
     //Al terminar el tiempo de salto, vuelve a introducirse bajo tierra y crea otra zona de daño
     public void Dig()
     {
+        transform.right = Vector2.right;
+        //deja de hacer daño
         dealDmg.enabled = false;
         //se para
         rb.velocity = Vector2.zero;
@@ -108,6 +113,8 @@ public class Gusano : MonoBehaviour
     //al estar bajo tierra reseteal el movimiento normal y desactiva su collider para ser invulnerable de nuevo
     public void Resetmove()
     {
+        //se vuelve a orientar hacia el jugador
+        //GetComponent<FlipTowardsPlayer>().enabled = true;
         //color bajo tierra 
         sp.color = new Color(0.247f, 0.247f, 0.247f, 1.0f);
         anim.SetBool("dig",false);

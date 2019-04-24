@@ -1,7 +1,55 @@
 fileFormatVersion: 2
 guid: f49ac6478f8d9634bb32e4d0e0984f2d
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Worm_SpriteSheet_Reescalado_0
+    21300002: Worm_SpriteSheet_Reescalado_1
+    21300004: Worm_SpriteSheet_Reescalado_2
+    21300006: Worm_SpriteSheet_Reescalado_3
+    21300008: Worm_SpriteSheet_Reescalado_4
+    21300010: Worm_SpriteSheet_Reescalado_5
+    21300012: Worm_SpriteSheet_Reescalado_6
+    21300014: Worm_SpriteSheet_Reescalado_7
+    21300016: Worm_SpriteSheet_Reescalado_8
+    21300018: Worm_SpriteSheet_Reescalado_9
+    21300020: Worm_SpriteSheet_Reescalado_10
+    21300022: Worm_SpriteSheet_Reescalado_11
+    21300024: Worm_SpriteSheet_Reescalado_12
+    21300026: Worm_SpriteSheet_Reescalado_13
+    21300028: Worm_SpriteSheet_Reescalado_14
+    21300030: Worm_SpriteSheet_Reescalado_15
+    21300032: Worm_SpriteSheet_Reescalado_16
+    21300034: Worm_SpriteSheet_Reescalado_17
+    21300036: Worm_SpriteSheet_Reescalado_18
+    21300038: Worm_SpriteSheet_Reescalado_19
+    21300040: Worm_SpriteSheet_Reescalado_20
+    21300042: Worm_SpriteSheet_Reescalado_21
+    21300044: Worm_SpriteSheet_Reescalado_22
+    21300046: Worm_SpriteSheet_Reescalado_23
+    21300048: Worm_SpriteSheet_Reescalado_24
+    21300050: Worm_SpriteSheet_Reescalado_25
+    21300052: Worm_SpriteSheet_Reescalado_26
+    21300054: Worm_SpriteSheet_Reescalado_27
+    21300056: Worm_SpriteSheet_Reescalado_28
+    21300058: Worm_SpriteSheet_Reescalado_29
+    21300060: Worm_SpriteSheet_Reescalado_30
+    21300062: Worm_SpriteSheet_Reescalado_31
+    21300064: Worm_SpriteSheet_Reescalado_32
+    21300066: Worm_SpriteSheet_Reescalado_33
+    21300068: Worm_SpriteSheet_Reescalado_34
+    21300070: Worm_SpriteSheet_Reescalado_35
+    21300072: Worm_SpriteSheet_Reescalado_36
+    21300074: Worm_SpriteSheet_Reescalado_37
+    21300076: Worm_SpriteSheet_Reescalado_38
+    21300078: Worm_SpriteSheet_Reescalado_39
+    21300080: Worm_SpriteSheet_Reescalado_40
+    21300082: Worm_SpriteSheet_Reescalado_41
+    21300084: Worm_SpriteSheet_Reescalado_42
+    21300086: Worm_SpriteSheet_Reescalado_43
+    21300088: Worm_SpriteSheet_Reescalado_44
+    21300090: Worm_SpriteSheet_Reescalado_45
+    21300092: Worm_SpriteSheet_Reescalado_46
+    21300094: Worm_SpriteSheet_Reescalado_47
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -40,7 +88,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,9 +117,980 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 456
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e6b124536b7bb747881a8546a08ff56
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_1
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 456
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b13e5a1b4661c1c44bfc5cb09e793a49
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_2
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 456
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a36c60821e7b7fd4dabb8f77bfdecbb1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_3
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 456
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2658268151da3c04cba718d8d0afbb53
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_4
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 456
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba13e3374b572fd4eaf25b93f21bc718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_5
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 456
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b2cf0fec03de8e4e9a90f89568e537f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_6
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 456
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3eb230893e0df14ebf5714652ad8d4b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_7
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 456
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcb4ff2beb87c1a4aa2f463b75973745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_8
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 392
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: affe780893c93174ea4da0c789044424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_9
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 392
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27acd0c64fed57d4e8b97f0d6117bae8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_10
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 392
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af67bf5b8ef5711499155547ea21eedc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_11
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 406
+        width: 36
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fec0078e4b6f474e876887e6901b3ba
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_12
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 398
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1775ca4d16a683f4ab0ef8a4518791c9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_13
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 392
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76cd18e606c08cb40b2ce0d3d5ed580c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_14
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 398
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49abc987e5d3db241aada415c5d1dc99
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_15
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 392
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a211ca609a378a94888d682809b9e2ca
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_16
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 328
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03fc7877b3d1085428c790fd583f1606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_17
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 328
+        width: 18
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a9e3e07f2996bc4980b31ba879c92c6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_18
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 328
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 221899c3178640f4e93e74f09804675e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_19
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 328
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 231158819e5ba174b94fce1783834427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_20
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 264
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89d327b485004b0438e83971a068672a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_21
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 264
+        width: 18
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d66d96430a8c91469d506b2ea0dae70
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_22
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 264
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d50b17d91a0ce0f47b0b2d866e31ac23
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_23
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 264
+        width: 34
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfe081a13fe67f544b64034078ecd1fe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_24
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 260
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e7fd0c982629784c98a1dd53caeef64
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_25
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 262
+        width: 28
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82997057f47a9be478b53efa279dd6c9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_26
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 194
+        width: 30
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bde7d7ca90136c438254c7af7dd3ec1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_27
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 130
+        width: 28
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c09e372c4e57784b849d98180bdd64b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_28
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 84
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 387895eb69308b4478badfdd021048e9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_29
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 90
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 450ce74562b4dd8428acee4212664c72
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_30
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 76
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 864d48f5164e3f643aa6c5d013cb5287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_31
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 76
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc5d54f1b671b684794dced9dd37dd86
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_32
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 80
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 077101d85e4893f4a962d27c0e921c36
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_33
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 82
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e005062d6b044d64799520348cf8f065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_34
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 66
+        width: 30
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dc616f57f87df8448e54b4e610bdb8e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_35
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 64
+        width: 32
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7093a0a662059824f9a8f1b7db155a31
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_36
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 68
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17cc57d570e7bfa48ad1800914e1efd4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_37
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 70
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28072710407a80943afef2eabedd137b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_38
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 72
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fa1ad58eab5ffe418a102424a72832f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_39
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 64
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e69df44c1c52daa48972ef6eae0ece68
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_40
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 64
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f186dec9342f36e4480c8175aca2127d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_41
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 64
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55a11b67ccf66ca4a9d29447fb257c6d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_42
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 64
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23ab0490684336248bc8aba680d18020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_43
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 2
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4740bc62792ac34995053f709d44722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_44
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 16
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d47fad21a936904086cad0f0b66fca1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_45
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 2
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6de564c7c1276ec49b235d33b990ee54
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_46
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 14
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0203b9f7681ef974caa9c71d379fa27b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Worm_SpriteSheet_Reescalado_47
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 2
+        width: 30
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c659ed861fffcd345b3098e53e1e150e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

@@ -27,6 +27,7 @@ public class Pathfinder : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        player = GameManager.instance.GetPlayer().transform;
         //WaypointManager = GameObject.Find("WaypointManager");
         //waypoints = new Waypoint[WaypointManager.transform.childCount];
         //for (int i = 0; i < waypoints.Length; i++)
