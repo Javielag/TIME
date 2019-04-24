@@ -13,6 +13,8 @@ public class KamikazeEnemy : MonoBehaviour
     private Vector2 angle;
     private bool attacking, kamikazing;
     public Animator anim;
+    SpriteRenderer sp;
+    Pathfinder pathfinder;
 
     // Use this for initialization
     void Start()
@@ -21,6 +23,8 @@ public class KamikazeEnemy : MonoBehaviour
         player = GameManager.instance.GetPlayer();
         bulletPool = GameObject.FindGameObjectWithTag("BulletPool").transform;
         rb = GetComponent<Rigidbody2D>();
+        sp = GetComponent<SpriteRenderer>();
+        pathfinder = GetComponent<Pathfinder>();
         if (rb)
         {
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -30,8 +34,13 @@ public class KamikazeEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //comparación de la posición del jugador y el enemigo
-        angle = (player.transform.position - transform.position).normalized;
+
+        if (pathfinder)
+            //comparación de la posición del jugador y el enemigo       
+            angle = pathfinder.Direction() - transform.position;
+        else Debug.Log(gameObject.name + "No tiene pathfinder");
+        if (angle.x > 0) { sp.flipX = true; }
+        else sp.flipX = false;
         //Comportamiento como enemigo a melé
         if (!kamikazing)
         {
@@ -43,9 +52,6 @@ public class KamikazeEnemy : MonoBehaviour
             }
 
         }
-
-        
-
 
     }
     private void FixedUpdate()
@@ -63,9 +69,6 @@ public class KamikazeEnemy : MonoBehaviour
             else if (kamikazing && rb.velocity.magnitude < kMaxSpeed)
             {
                 rb.AddForce(angle*kAcc);
-                anim.SetBool("isMoving", false);
-                anim.SetBool("isAttacking", false);
-                anim.SetBool("isKamikazing",true);
             }
         }
         else
@@ -118,6 +121,7 @@ public class KamikazeEnemy : MonoBehaviour
         attacking = true;
         //aquí va la animación
         anim.SetBool("isAttacking",true);
+        anim.SetBool("isMoving", false);
         Invoke("Damage", casttime);
         Invoke("Resetmove", attacktime);
     }
@@ -125,11 +129,12 @@ public class KamikazeEnemy : MonoBehaviour
     // Si tras el "casteo" del ataque el jugador se encuentra en rango, es dañado
     public void Damage()
     {
+        anim.SetBool("isAttacking", false);
+
         if (Vector2.Distance(player.transform.position, transform.position) <= attackrange)
         {
             GameManager.instance.ChangeHealth(-damage, player.gameObject);
         }
-
     }
 
     //Despúes de atacar, haya dañado o no al jugador, vuelve a moverse
@@ -137,8 +142,6 @@ public class KamikazeEnemy : MonoBehaviour
     {
         attacking = false;
         //pasa a la animación de Idle
-        anim.SetBool("isAttacking", false);
-        anim.SetBool("isMoving", false);
     }
 
 
