@@ -7,10 +7,13 @@ public class Health : MonoBehaviour
     [SerializeField]
     private int maxHealth = 100;
     public int health;
+    private bool invencible;
     // Use this for initialization
     void Start()
     {
         health = maxHealth;
+        invencible = false;
+
     }
 
     public void ChangeHealth(int change)
@@ -25,14 +28,16 @@ public class Health : MonoBehaviour
             if (this.GetComponent<KamikazeEnemy>())
             {
                 //Kamikazing() devuelve un booleano que indica su estado (enemigo normal/ kamikaze)
-                if (!this.GetComponent<KamikazeEnemy>().Kamikazing())
+                if (!this.GetComponent<KamikazeEnemy>().Kamikazing() && !invencible)
                 {
                     //Si devuelve false (está en modo normal) ejecuta el método kamikaze, que induce al enemigo en su estado de kamikaze y le otorga una pequeña cantidad de vida
                     this.GetComponent<KamikazeEnemy>().Kamikaze();
+                    invencible = true;                    
                     health = 50;
+                    Invoke("Invencible", 2);
                 }
                 //Si devuelve true, ya está en estado kamikaze, y ñe hace explotar
-                else
+                else if (this.GetComponent<KamikazeEnemy>().CheckDie())
                 {
                     this.GetComponent<KamikazeEnemy>().Explode();
                 }
@@ -55,4 +60,8 @@ public class Health : MonoBehaviour
     }
     public int GetMaxHealth() { return maxHealth; }
 
+    public void Invencible()
+    {
+        invencible=false;
+    }
 }

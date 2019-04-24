@@ -5,13 +5,13 @@ using UnityEngine;
 public class KamikazeEnemy : MonoBehaviour
 {
 
-    public int damage, acc,maxSpeed, attackrange, attacktime, casttime, kAcc,kMaxSpeed, explodingtime;
+    public int damage, acc,maxSpeed, attackrange, attacktime, casttime, kAcc,kMaxSpeed, dyingtime, explodingtime;
     Rigidbody2D rb;
     GameObject player;
     Transform bulletPool;
     public Explosion explosionPrefab;
     private Vector2 angle;
-    private bool attacking, kamikazing;
+    private bool attacking, kamikazing, dying;
     public Animator anim;
     SpriteRenderer sp;
     Pathfinder pathfinder;
@@ -66,7 +66,7 @@ public class KamikazeEnemy : MonoBehaviour
 
             }
             //Comportamiento como kamikaze
-            else if (kamikazing && rb.velocity.magnitude < kMaxSpeed)
+            else if (dying && rb.velocity.magnitude < kMaxSpeed)
             {
                 rb.AddForce(angle*kAcc);
             }
@@ -83,8 +83,8 @@ public class KamikazeEnemy : MonoBehaviour
     public void Kamikaze()
     {
         kamikazing = true;
-        anim.SetBool("isKamikazing",true);
-        Invoke("Explode", explodingtime);
+        anim.SetBool("isKamikazing", true);
+        Invoke("Die", dyingtime);
     }
 
     //Si está en kamikaze y colisiona con el jugador, explota
@@ -108,6 +108,18 @@ public class KamikazeEnemy : MonoBehaviour
     public bool Kamikazing()
     {
         return kamikazing;
+    }
+
+    public void Die()
+    {
+        dying = true;
+        anim.SetBool("isDying", true);
+        Invoke("Explode", explodingtime);
+    }
+
+    public bool CheckDie()
+    {
+        return dying;
     }
 
 
