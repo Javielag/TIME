@@ -71,7 +71,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1542008795369918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.57, y: -0.2414426, z: 0}
+  m_LocalPosition: {x: 3.9056153, y: 0.73756886, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4078283382144634}
@@ -85,7 +85,7 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1542008795369918}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -147,6 +147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c802e1389fa2514397cb009ab112d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barrera: 0
+  invbarrera: 0
+  pompa: {fileID: 0}
 --- !u!114 &114237438935437922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,9 +161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b77731b6aa0fd48aa3205131ca6a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WaypointManager: {fileID: 0}
-  player: {fileID: 0}
-  hitt: {fileID: 0}
 --- !u!114 &114242193225163968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -172,10 +172,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23a3ef40036010f4790e0544e8cef8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  acc: 5
+  speedMax: 10
   rangeMax: 5
   rangeMin: 4
   debugging: 0
+  isMoving: 0
+  canMove: 1
   timer: 1
   path: {x: 0, y: 0}
 --- !u!114 &114249534960846176

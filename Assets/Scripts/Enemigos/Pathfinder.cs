@@ -48,7 +48,8 @@ public class Pathfinder : MonoBehaviour
             if (player == null)
                 //Debug.Log("Noplayer");
             if (transform == null) Debug.Log("NoTransform");
-            hit = Physics2D.Raycast(transform.position, player.position - transform.position, 1000, 1 << 12 | 1 << 13 | 1 << 16);
+                hit = Physics2D.Raycast(transform.position, player.position - transform.position, 1000, 1 << 12 | 1 << 13 | 1 << 16);
+            
         } while (!hit && casted < 100);
         if(casted >= 100) { Debug.Log("ROTTTTO"); }
         if (hit.collider.gameObject.transform != player) //Si no ve al jugador
