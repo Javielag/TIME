@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour {
     public bool barrera, invbarrera;
     public GameObject pompa;
 
-    public void DestroyPompa()
+    public void DestroyPompa()  // Este método se llama desde PlayerMelee y HealtChange
     {
         Destroy(pompa);
     }
