@@ -62,8 +62,8 @@ public class MeleeEnemy : MonoBehaviour
         anim.SetBool("isAttacking",true);
         anim.SetBool("isMoving", false);
         //aquí va la animación
-        Invoke("Damage", casttime);
-        Invoke("Resetmove", attackTime);
+        //Invoke("Damage", casttime);
+        
     }
 
     // Si tras el "casteo" del ataque el jugador se encuentra en rango, es dañado
@@ -73,13 +73,18 @@ public class MeleeEnemy : MonoBehaviour
         {
             GameManager.instance.ChangeHealth(-damage, player.gameObject);
         }
-
     }
 
     //Despúes de atacar, haya dañado o no al jugador, vuelve a moverse
     public void Resetmove()
     {
-        anim.SetBool("isAttacking",false);
+        anim.SetBool("isAttacking", false);
+        anim.Play("Melee_Idle");
+        Invoke("Reset", attackTime);
+    }
+    public void Reset()
+    {
+        anim.SetBool("isAttacking", false);
         attacking = false;
     }
 
