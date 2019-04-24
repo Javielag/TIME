@@ -5,7 +5,7 @@ using UnityEngine;
 public class Gusano : MonoBehaviour
 {
     // variables públicas (velocidad bajo tierra, en el aire, distancia con el jugador a partir de la cual salta, tiempo que tarda en saltar, tiempo en el aire, tiempo excavando)
-    public int speed,jumpspeed,jumprange,idletime, jumptime, digtime;
+    public int acc,maxSpeed,jumpspeed,jumprange,idletime, jumptime, digtime;
     GameObject player;
     // prefabs de aviso de salto y objeto encargado de hacer daño
     public GameObject wormholeprefab,wormholeadvice;
@@ -15,6 +15,8 @@ public class Gusano : MonoBehaviour
     private Vector2 angle,wormhole1, wormhole2;
     private bool jumping, advicing,digging;
     public Animator anim;
+    Rigidbody2D rb;
+    private BoxCollider2D dealDmg;
 
     void Start()
     {
@@ -22,6 +24,8 @@ public class Gusano : MonoBehaviour
         player = GameManager.instance.GetPlayer();
         Collider = GetComponent<BoxCollider2D>();
         bulletPool = GameObject.FindGameObjectWithTag("BulletPool").transform;
+        rb = GetComponent<Rigidbody2D>();
+        dealDmg = GetComponent<BoxCollider2D>();
     }
 
     void Update()
@@ -29,10 +33,7 @@ public class Gusano : MonoBehaviour
         //Si está bajo tierra, se mueve lentamente hasta estar cerca del jugador
         if (!jumping && !advicing && !digging)
         {
-            //comparación de la posición del jugador y el enemigo
-            angle = player.transform.position - transform.position;
-            transform.Translate(angle.normalized * speed * Time.deltaTime);
-            //Si entra en rango de salto activa el aviso de salto
+            angle = (player.transform.position - transform.position).normalized;
             if (Vector2.Distance(player.transform.position, transform.position) <= jumprange)
             {
                 Advice();
@@ -41,16 +42,27 @@ public class Gusano : MonoBehaviour
         //si está saltando, se mueve rápidamente
         if (jumping)
         {
-            transform.Translate(angle * jumpspeed * Time.deltaTime);
+           // transform.Translate(angle * jumpspeed * Time.deltaTime);
         }
 
 
 
     }
+    private void FixedUpdate()
+    {
+        if (jumping) { rb.AddForce(jumpspeed*angle); }
+        else if (!jumping && !advicing && !digging && rb.velocity.magnitude < maxSpeed)
+        {
+            rb.AddForce(acc * angle);
+        }
+    }
 
     //Avisa al jugador de que va a saltar,decide la dirección del salto, instancia un "aviso de salto" y comienza la secuencia de salto
     public void Advice()
     {
+        
+        //se para
+        rb.velocity = Vector2.zero;
         anim.SetBool("crawl", false);
         anim.SetBool("advice",true);
         advicing = true;
@@ -63,6 +75,7 @@ public class Gusano : MonoBehaviour
     //salta, activa el collider para que sea posible dañarlo, y crea una zona de daño en su posición inicial
     public void Jump()
     {
+        dealDmg.enabled = true;
         anim.SetBool("advice", false);
         anim.SetBool("jump", true);
         Collider.enabled = true;
@@ -77,6 +90,9 @@ public class Gusano : MonoBehaviour
     //Al terminar el tiempo de salto, vuelve a introducirse bajo tierra y crea otra zona de daño
     public void Dig()
     {
+        dealDmg.enabled = false;
+        //se para
+        rb.velocity = Vector2.zero;
         anim.SetBool("jump", false);
         anim.SetBool("dig", true);
         wormhole1 = transform.position;

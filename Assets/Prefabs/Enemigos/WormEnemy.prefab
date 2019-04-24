@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114849842594360966}
   - component: {fileID: 95081437263902210}
   - component: {fileID: 114508599199111786}
+  - component: {fileID: 114924767470095796}
   m_Layer: 11
   m_Name: WormEnemy
   m_TagString: enemy
@@ -160,8 +161,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f190147bd15e742925f7bbfd0f0101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  jumpspeed: 4
+  acc: 3
+  maxSpeed: 5
+  jumpspeed: 15
   jumprange: 5
   idletime: 2
   jumptime: 2
@@ -171,6 +173,18 @@ MonoBehaviour:
   wormholeadvice: {fileID: 1777619792452444, guid: 969c3899410e15d49966a83a671f3b18,
     type: 2}
   anim: {fileID: 95081437263902210}
+--- !u!114 &114924767470095796
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1979421998283894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b92162d967fbd84e9135ed186428762, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 75
 --- !u!212 &212532450811710704
 SpriteRenderer:
   m_ObjectHideFlags: 1

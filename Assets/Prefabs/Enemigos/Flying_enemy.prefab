@@ -27,9 +27,10 @@ GameObject:
   - component: {fileID: 61223119840532868}
   - component: {fileID: 114598924422342524}
   - component: {fileID: 114237438935437922}
+  - component: {fileID: 114470425795225288}
   m_Layer: 11
   m_Name: Flying_enemy
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -207,6 +208,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+--- !u!114 &114470425795225288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1542008795369918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b92162d967fbd84e9135ed186428762, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 75
 --- !u!114 &114598924422342524
 MonoBehaviour:
   m_ObjectHideFlags: 1
