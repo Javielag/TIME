@@ -17,6 +17,7 @@ public class Gusano : MonoBehaviour
     public Animator anim;
     Rigidbody2D rb;
     private BoxCollider2D dealDmg;
+    SpriteRenderer sp;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class Gusano : MonoBehaviour
         bulletPool = GameObject.FindGameObjectWithTag("BulletPool").transform;
         rb = GetComponent<Rigidbody2D>();
         dealDmg = GetComponent<BoxCollider2D>();
+        sp = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -60,7 +62,8 @@ public class Gusano : MonoBehaviour
     //Avisa al jugador de que va a saltar,decide la dirección del salto, instancia un "aviso de salto" y comienza la secuencia de salto
     public void Advice()
     {
-        
+        //se hace visible
+        sp.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         //se para
         rb.velocity = Vector2.zero;
         anim.SetBool("crawl", false);
@@ -105,6 +108,8 @@ public class Gusano : MonoBehaviour
     //al estar bajo tierra reseteal el movimiento normal y desactiva su collider para ser invulnerable de nuevo
     public void Resetmove()
     {
+        //color bajo tierra 
+        sp.color = new Color(0.247f, 0.247f, 0.247f, 1.0f);
         anim.SetBool("dig",false);
         anim.SetBool("crawl",true);
         Collider.enabled = false;
