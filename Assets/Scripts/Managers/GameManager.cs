@@ -115,7 +115,6 @@ public class GameManager : MonoBehaviour
     }
     public void AvisoPortal(string pos)
     {
-        Debug.Log(pos);
         UI.AvisoPortal(pos);
     }
     public GameObject GetA()
@@ -165,7 +164,7 @@ public class GameManager : MonoBehaviour
             oleadaActual = 0;
             if(generadorOleadas != null)
             {
-                generadorOleadas.StopOleadas();
+                generadorOleadas.AcabaOleada();
             }
         }
         SceneManager.LoadScene(button);     //Carga la escena
@@ -196,5 +195,20 @@ public class GameManager : MonoBehaviour
     public void SetOleada(int estaOleada)
     {
         oleadaActual = estaOleada;
+    }
+    public void SaltaOleada()
+    {
+        Transform enemyPool = GameObject.FindGameObjectWithTag("EnemyPool").transform;
+        foreach (Transform enemy in enemyPool)
+        {
+            Destroy(enemy.gameObject);
+        }
+        generadorOleadas.AcabaOleada();
+        //int actOl = oleadaActual;
+        for(int i = enemyCount; i > 0; i--)
+        {
+            EnemySlain();
+        }
+        //enemyCount = 0;
     }
 }

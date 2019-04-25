@@ -12,8 +12,9 @@ public class Enemy : MonoBehaviour {
         Destroy(pompa);
     }
 
-    public void OnDestroy()
+    public void OnDead()
     {
         GameManager.instance.EnemySlain();
+        Destroy(this.gameObject);
     }
 }

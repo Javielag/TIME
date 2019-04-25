@@ -20,6 +20,7 @@ public class CienciaManager : MonoBehaviour {
     }
     public void Visita()
     {
+        Debug.Log(StackTraceUtility.ExtractStackTrace());   
         count++;
         Debug.Log(count);
         Cientifico cientifico = Instantiate<Cientifico>(prefabCientifico,posCientifico.position,Quaternion.identity,transform);

@@ -47,7 +47,8 @@ public class Health : MonoBehaviour
                 PlayerDead die = GetComponent<PlayerDead>();
                 if (die)
                     die.OnDead();
-                Destroy(this.gameObject);
+                Enemy en = GetComponent<Enemy>();
+                if (en) en.OnDead();
             }
                     
         }

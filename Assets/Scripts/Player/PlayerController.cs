@@ -87,6 +87,7 @@ public class PlayerController : MonoBehaviour {
         {
             GameManager.instance.ChangeMenuState();
         }
+
     }
     private void FixedUpdate(){
         if(rb.velocity.magnitude < maxSpeed)

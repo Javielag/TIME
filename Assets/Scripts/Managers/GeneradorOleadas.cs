@@ -20,8 +20,8 @@ public class GeneradorOleadas : MonoBehaviour {
         cants[0] = (int)Mathf.Pow(1.2f, ol) + 4;
         if (ol >= 5)
         {
-            cants[1] = (int)(Mathf.Pow(1.2f, ol) + 4) / 2;
-            if (ol >= 10)
+            cants[1] = (int)(Mathf.Pow(1.2f, ol) + 4) / 2;  //A partir de la oleada 5 genera enemigos a rango
+            if (ol >= 10)   //A partir de la oleada 10 genera enemigos élite
             {
                 a = Random.Range(2, cants.Length);
                 cants[a] = (int)(Mathf.Pow(1.2f, ol) + 4) / 8;
@@ -38,7 +38,7 @@ public class GeneradorOleadas : MonoBehaviour {
             cants[2] = 0;
         }
 
-        if (ol % 3 == 2)
+        if (ol % 3 == 2) //Genera portales cada 3 oleadas
             cants[3] = (ol + 1) / 6;
         else cants[3] = 0;
 
@@ -47,8 +47,14 @@ public class GeneradorOleadas : MonoBehaviour {
             enemyCount += cants[i];
         }
         spawnManager.Enemigos(cants);
+        int x = 0;
+        Debug.Log("OLEADA " +ol);
+        for(int i = 0; i < cants.Length; i++)
+        {
+            Debug.Log(i + " " + cants[i]);
+        }
     }
-    public void StopOleadas()
+    public void AcabaOleada()
     {
         spawnManager.ShutDown();
     }

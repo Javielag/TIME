@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 114549603876818738}
   m_Layer: 8
   m_Name: Portal
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -267,6 +267,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c802e1389fa2514397cb009ab112d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barrera: 0
+  invbarrera: 0
+  pompa: {fileID: 0}
 --- !u!114 &114253958094066920
 MonoBehaviour:
   m_ObjectHideFlags: 1
