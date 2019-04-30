@@ -14,6 +14,19 @@ public class Pathfinder : MonoBehaviour
     Vector3 dir;
     private void Awake()
     {
+        //player = GameManager.instance.GetPlayer().transform;
+        //WaypointManager = GameObject.Find("WaypointManager");
+        //waypoints = new Waypoint[WaypointManager.transform.childCount];
+        //for (int i = 0; i < waypoints.Length; i++)
+        //{
+        //    waypoints[i] = WaypointManager.transform.GetChild(i).GetComponent<Waypoint>();
+        //}
+        //wp = CloseWaypoint(this.transform);
+        //this.sala = waypoints[wp].sala;
+    }
+    // Use this for initialization
+    void Start()
+    {
         player = GameManager.instance.GetPlayer().transform;
         WaypointManager = GameObject.Find("WaypointManager");
         waypoints = new Waypoint[WaypointManager.transform.childCount];
@@ -23,20 +36,6 @@ public class Pathfinder : MonoBehaviour
         }
         wp = CloseWaypoint(this.transform);
         this.sala = waypoints[wp].sala;
-    }
-    // Use this for initialization
-    void Start()
-    {
-        player = GameManager.instance.GetPlayer().transform;
-        //WaypointManager = GameObject.Find("WaypointManager");
-        //waypoints = new Waypoint[WaypointManager.transform.childCount];
-        //for (int i = 0; i < waypoints.Length; i++)
-        //{
-        //    waypoints[i] = WaypointManager.transform.GetChild(i).GetComponent<Waypoint>();
-        //}
-        ////player = GameManager.instance.GetPlayer().transform;
-        //wp = CloseWaypoint(this.transform);
-        //this.sala = waypoints[wp].sala;
     }
 
     public Vector3 Direction()
