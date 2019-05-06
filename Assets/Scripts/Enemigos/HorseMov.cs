@@ -89,10 +89,11 @@ public class HorseMov : MonoBehaviour
     }
     private void FirstJump()
     {
-        anim.SetBool("Jumping", true);        
-
+        anim.SetBool("Jumping", true);
         if (Time.time > nextJump)
-        {           
+        {
+            
+
             if (rb.velocity.magnitude < maxSpeed)
                 rb.AddForce(jumpDir * acc);
             //al acabar el primer salto 3
@@ -108,12 +109,15 @@ public class HorseMov : MonoBehaviour
                 
             }           
         }
+        
     }
 
     private void SecondJump()
     {
-        if(Time.time > nextJump)
+        anim.SetBool("Falling", true);
+        if (Time.time > nextJump)
         {
+            
             if (rb.velocity.magnitude < maxSpeed)
                 rb.AddForce(jumpDir * acc);
             //al acabar el segundo salto
@@ -127,9 +131,11 @@ public class HorseMov : MonoBehaviour
                 //Debug.Log("Horse");
                 nextJump = Time.time + idle;
 
+                anim.SetBool("Falling", false);
                 anim.SetBool("Jumping", false);                
             }
-        }              
+        }
+        
 
     }
     private void Attack()
