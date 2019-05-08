@@ -41,6 +41,7 @@ public class RangeEnemy : MonoBehaviour
                 }
                 if (Time.time - timeCount >= 2)//Si ese contador dura 2 segundos
                 {
+                    acc = Mathf.Abs(acc);
                     isMoving = true;
                 }
             }
@@ -53,11 +54,13 @@ public class RangeEnemy : MonoBehaviour
                 }
                 if (Time.time - timeCount >= 0.5)
                 {
+                    acc = -Mathf.Abs(acc);
                     isMoving = true;
                 }
             }
             else //Si está dentro del rango resetea el timer y se para
             {
+                rb.velocity = Vector2.zero;
                 timer = true;
                 isMoving = false;
             }
