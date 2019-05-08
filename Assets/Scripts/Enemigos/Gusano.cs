@@ -85,7 +85,7 @@ public class Gusano : MonoBehaviour
         anim.SetBool("advice", false);
         anim.SetBool("jump", true);
         Collider.enabled = true;
-        GameObject thisWormHole = Instantiate<GameObject>(wormholeprefab, wormhole1, Quaternion.identity, bulletPool);
+        //GameObject thisWormHole = Instantiate<GameObject>(wormholeprefab, wormhole1, Quaternion.identity, bulletPool);
         jumping = true;
         advicing = false;
         angle = (wormhole2 - wormhole1).normalized;
@@ -104,7 +104,7 @@ public class Gusano : MonoBehaviour
         anim.SetBool("jump", false);
         anim.SetBool("dig", true);
         wormhole1 = transform.position;
-        GameObject thisWormHole = Instantiate<GameObject>(wormholeprefab, wormhole1, Quaternion.identity, bulletPool);
+        //GameObject thisWormHole = Instantiate<GameObject>(wormholeprefab, wormhole1, Quaternion.identity, bulletPool);
         digging = true;
         jumping = false;
         Invoke("Resetmove", digtime);
