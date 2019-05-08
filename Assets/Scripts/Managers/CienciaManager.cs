@@ -2,39 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CienciaManager : MonoBehaviour {
+public class CienciaManager : MonoBehaviour
+{
 
     public int primeraAparicion, cadaX;
-    public float perkChance=0.8f;//probabilidad de que te toque una mejora, en caso contrario un arma
+    public float perkChance = 0.8f;//probabilidad de que te toque una mejora, en caso contrario un arma
     public WeaponPickup[] weapons = new WeaponPickup[6];//todos los pickups de armas
     public GameObject[] perks = new GameObject[4];//todas las mejoras
-    private bool[] perkGiven = new bool[4];//indica true cuando la mejora en el mismo sitio ya ha sido otorgada
+    private int[] perkOrder; int perkCount = 0;
     WeaponManager wm;
     public Cientifico prefabCientifico;
     public Transform posCientifico;
-    int count =0;
+    int count = 0;
 
     private void Start()
     {
-        GameManager.instance.SetCienciaManager(this);
+        ImCienciaManager();
+        perkOrder = shufflePerks(perks);
     }
     public void Visita()
     {
-        Debug.Log(StackTraceUtility.ExtractStackTrace());   
+        Debug.Log(StackTraceUtility.ExtractStackTrace());
         count++;
         Debug.Log(count);
-        Cientifico cientifico = Instantiate<Cientifico>(prefabCientifico,posCientifico.position,Quaternion.identity,transform);
+        Cientifico cientifico = Instantiate<Cientifico>(prefabCientifico, posCientifico.position, Quaternion.identity, transform);
+        //si toca perk
         if ((Random.Range(0f, 1f) <= perkChance) && MissingPerks())
         {
-            int spawnPerk;
-            //elige un perk sin repetir
-            do
-            {
-                spawnPerk = Random.Range(0, perks.Length);
-            } while (perkGiven[spawnPerk]);
-            cientifico.Ofrece(perks[spawnPerk]);
-            perkGiven[spawnPerk] = true;
+            cientifico.Ofrece(perks[perkOrder[perkCount]]);
+            perkCount++;
         }
+        //si toca arma
         else
         {
             wm = GameManager.instance.GetPlayer().GetComponentInChildren<WeaponManager>();
@@ -48,9 +46,24 @@ public class CienciaManager : MonoBehaviour {
     }
     private bool MissingPerks()
     {
-        int i = 0;
-        while (i < perkGiven.Length && perkGiven[i])
-            i++;
-        return (i < perkGiven.Length);  
+        return (perkCount < perkOrder.Length);
+    }
+    private int[] shufflePerks(GameObject[] perks)
+    {
+        int[] shuffled = new int[perks.Length];
+        //inicializa los valores del array
+        for (int i = 0; i < shuffled.Length; i++) { shuffled[i] = i; }
+        for (int i = 0; i < shuffled.Length; i++)
+        {
+            int aux = shuffled[i];
+            int rnd = Random.Range(i, shuffled.Length);
+            shuffled[i] = shuffled[rnd];
+            shuffled[rnd] = aux;
+        }
+        return shuffled;
+    }
+    private void ImCienciaManager()
+    {
+        GameManager.instance.SetCienciaManager(this);
     }
 }
