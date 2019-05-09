@@ -9,8 +9,9 @@ public class WeaponManager : MonoBehaviour
     float changeTime;
     public bool isSwitching = false, first = true;
     [SerializeField] int currentWeapon = 0;
-    IEnumerator reload;
+    IEnumerator reload, fb;
     Weapon[] equipadas = new Weapon[] { Weapon.pistola, Weapon.nothing };
+    public GameObject fbBar, fbBarBg;
     private void Start()
     {
         changeTime = GetComponentInParent<PlayerController>().changeTime;
@@ -31,6 +32,8 @@ public class WeaponManager : MonoBehaviour
                 Debug.Log("Recarga cancelada");
                 CancelReload();
             }
+            fb = FeedbackBar(changeTime);
+            StartCoroutine(fb);
             isSwitching = true;
             yield return new WaitForSeconds(changeTime);
             weapon.Switched();
@@ -91,6 +94,8 @@ public class WeaponManager : MonoBehaviour
         {
             weapon = GetComponentInChildren<Gun>();
             StopCoroutine(reload);
+            StopCoroutine(fb);
+            fbBarBg.SetActive(false);
             weapon.NotReload();
             GameManager.instance.ReloadingIconUI(false);
         }
@@ -101,6 +106,8 @@ public class WeaponManager : MonoBehaviour
         if (!isSwitching && !CheckAmmo())
         {
             weapon = GetComponentInChildren<Gun>();
+            fb = FeedbackBar(weapon.reload);
+            StartCoroutine(fb);
             reload = weapon.Reload();
             StartCoroutine(reload);
             GameManager.instance.ReloadingIconUI(true);
@@ -181,6 +188,20 @@ public class WeaponManager : MonoBehaviour
     public Weapon equipedWeapon(int n)
     {
         return equipadas[n];
+    }
+    public IEnumerator FeedbackBar(float time)
+    {
+        fbBarBg.gameObject.SetActive(true);
+        float timeMax = time + Time.time;
+        float startTime = Time.time;
+        float progress = startTime;
+        while (progress < timeMax)
+        {
+            progress = Time.time;
+            fbBar.transform.localScale = new Vector2(Mathf.Clamp01((progress - startTime) / time), 1);
+            yield return null;
+        }
+        fbBarBg.gameObject.SetActive(false);
     }
 }
 
