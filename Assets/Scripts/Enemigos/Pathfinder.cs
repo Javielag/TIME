@@ -40,19 +40,23 @@ public class Pathfinder : MonoBehaviour
 
     public Vector3 Direction()
     {
-        RaycastHit2D hit;
+        RaycastHit2D[] hit = new RaycastHit2D[4];
         int casted = 0;
         do
         {
             casted++;
-            if (player == null)
+            //if (player == null)
                 //Debug.Log("Noplayer");
             if (transform == null) Debug.Log("NoTransform");
-                hit = Physics2D.Raycast(transform.position, player.position - transform.position, 1000, 1 << 12 | 1 << 13 | 1 << 16);
-            
-        } while (!hit && casted < 100);
+
+             hit[0] = Physics2D.Raycast(transform.position, player.position - transform.position, 1000, 1 << 12 | 1 << 13 | 1 << 16);
+             hit[1] = Physics2D.Raycast(transform.position, player.position - transform.position, 1000, 1 << 12 | 1 << 13 | 1 << 16);
+             hit[2] = Physics2D.Raycast(transform.position, player.position - transform.position, 1000, 1 << 12 | 1 << 13 | 1 << 16);
+             hit[3] = Physics2D.Raycast(transform.position, player.position - transform.position, 1000, 1 << 12 | 1 << 13 | 1 << 16);
+
+        } while (!hit[0] && !hit[1] && !hit[2] && !hit[3] && casted < 100);
         if(casted >= 100) { Debug.Log("ROTTTTO"); }
-        if (hit.collider.gameObject.transform != player) //Si no ve al jugador
+        if (hit[0].collider.gameObject.transform != player && hit[1].collider.gameObject.transform != player && hit[2].collider.gameObject.transform != player && hit[3].collider.gameObject.transform != player) //Si no ve al jugador
         {
             wp = CloseWaypoint(transform);
             if (Vector3.Distance(transform.position, waypoints[wp].transform.position) > 2 && !isInRoute)
