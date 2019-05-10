@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
             {
                 UI.UpdateHealth(tgHealth.health);
             }
+
         }        
     }
 

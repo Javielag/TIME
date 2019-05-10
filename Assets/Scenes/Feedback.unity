@@ -91950,6 +91950,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 500
   health: 0
+  fbTime: 1
 --- !u!114 &1936691971
 MonoBehaviour:
   m_ObjectHideFlags: 0
