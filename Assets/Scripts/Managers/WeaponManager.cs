@@ -23,6 +23,8 @@ public class WeaponManager : MonoBehaviour
         //first = variable de seguridad para evitar errores la primera vez que se realiza(que siempre tiene nothing de secundaria)
         if (first || equipadas[(currentWeapon + 1) % equipadas.Length] != Weapon.nothing)
         {
+            fb = FeedbackBar(changeTime, new Vector4(255, 125, 0, 255));            //Naranja
+            StartCoroutine(fb);
             currentWeapon = (currentWeapon + 1) % equipadas.Length;
             weapon = GetComponentInChildren<Gun>();
             weapon.CannotShoot();
@@ -32,8 +34,6 @@ public class WeaponManager : MonoBehaviour
                 Debug.Log("Recarga cancelada");
                 CancelReload();
             }
-            fb = FeedbackBar(changeTime);
-            StartCoroutine(fb);
             isSwitching = true;
             yield return new WaitForSeconds(changeTime);
             weapon.Switched();
@@ -106,7 +106,7 @@ public class WeaponManager : MonoBehaviour
         if (!isSwitching && !CheckAmmo())
         {
             weapon = GetComponentInChildren<Gun>();
-            fb = FeedbackBar(weapon.reload);
+            fb = FeedbackBar(weapon.reload, new Vector4(0,255,0,255));      //Verde
             StartCoroutine(fb);
             reload = weapon.Reload();
             StartCoroutine(reload);
@@ -189,12 +189,14 @@ public class WeaponManager : MonoBehaviour
     {
         return equipadas[n];
     }
-    public IEnumerator FeedbackBar(float time)
+    IEnumerator FeedbackBar(float time, Vector4 color)
     {
+        SpriteRenderer sp = fbBar.GetComponent<SpriteRenderer>();
+        sp.color = color;                       //Le cambia el color
         fbBarBg.gameObject.SetActive(true);
-        float timeMax = time + Time.time;
-        float startTime = Time.time;
-        float progress = startTime;
+        float timeMax = time + Time.time;       //Tiempo donde acaba de llenarse
+        float startTime = Time.time;            //Tiempo inicial
+        float progress = startTime;             //Lo que lleva
         while (progress < timeMax)
         {
             progress = Time.time;
