@@ -15,11 +15,13 @@ public class Gun : MonoBehaviour {
     public Bullet bulletPrefab;
     Transform bulletPool;
     Random rnd = new Random();
+    WeaponManager wm;
     private void Start()
     {
         bulletPool = GameObject.FindGameObjectWithTag("BulletPool").transform;
         nextShot = Time.time;
         bulletsLeft = magSize;
+        wm = GetComponentInParent<WeaponManager>();
         //coge el transform de su abuelo GunPivot
     }
     private void OnEnable()
@@ -48,7 +50,7 @@ public class Gun : MonoBehaviour {
                 }
                 else if(!isReloading)
                 {
-                    StartCoroutine(Reload());
+                    wm.StartReload();
                 }
                 
             }
@@ -63,7 +65,7 @@ public class Gun : MonoBehaviour {
                 }
                 else if(!isReloading)
                 {
-                    StartCoroutine(Reload());
+                    wm.StartReload();
                 }
             }
         }
@@ -108,7 +110,6 @@ public class Gun : MonoBehaviour {
     public bool MaxAmmo()                                   //Dice si tiene munición máxima
     {
         return (magSize == bulletsLeft);
-
     }
     public void CannotShoot()
     {
