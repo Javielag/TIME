@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212076715801093956}
   - component: {fileID: 61536962352934636}
   - component: {fileID: 114271245913642714}
+  - component: {fileID: 95793665864257976}
   m_Layer: 8
   m_Name: PickPistoles
   m_TagString: Untagged
@@ -97,6 +98,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7872735, y: 0.5288758}
   m_EdgeRadius: 0
+--- !u!95 &95793665864257976
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1679979970930946}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dc4f950056c5a97458ba6a02b795b92e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114271245913642714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -109,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisWeapon: 0
+  anim: {fileID: 95793665864257976}
 --- !u!212 &212038593249550560
 SpriteRenderer:
   m_ObjectHideFlags: 1

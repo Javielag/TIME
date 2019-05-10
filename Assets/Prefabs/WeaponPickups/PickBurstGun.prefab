@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212805302381434326}
   - component: {fileID: 61065790690539686}
   - component: {fileID: 114547294297027272}
+  - component: {fileID: 95297422026121350}
   m_Layer: 8
   m_Name: PickBurstGun
   m_TagString: Untagged
@@ -97,6 +98,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.0868816, y: 4}
   m_EdgeRadius: 0
+--- !u!95 &95297422026121350
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1646977470386244}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ceb1ab75e8b41184fb55f52a82929724, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114547294297027272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -109,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisWeapon: 5
+  anim: {fileID: 95297422026121350}
 --- !u!212 &212639086282183734
 SpriteRenderer:
   m_ObjectHideFlags: 1
