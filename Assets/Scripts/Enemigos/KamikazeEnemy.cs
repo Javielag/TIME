@@ -9,12 +9,13 @@ public class KamikazeEnemy : MonoBehaviour
     Rigidbody2D rb;
     GameObject player;
     Transform bulletPool;
-    public Explosion explosionPrefab;
+    public GameObject explosionPrefab;
     private Vector2 angle;
     private bool attacking, kamikazing, dying;
     public Animator anim;
     SpriteRenderer sp;
     Pathfinder pathfinder;
+    AreaDamage areaDmg;
 
     // Use this for initialization
     void Start()
@@ -25,6 +26,7 @@ public class KamikazeEnemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sp = GetComponent<SpriteRenderer>();
         pathfinder = GetComponent<Pathfinder>();
+        areaDmg = GetComponent<AreaDamage>();
         if (rb)
         {
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -100,7 +102,9 @@ public class KamikazeEnemy : MonoBehaviour
     //Explota, activa el trigger de daño y se destruye
     public void Explode()
     {
-        Explosion newExplosion = Instantiate<Explosion>(explosionPrefab, transform.position, Quaternion.identity, bulletPool);
+        areaDmg.DealDamage();
+        areaDmg.PushArea();
+        GameObject newExplosion = Instantiate<GameObject>(explosionPrefab, transform.position, Quaternion.identity, bulletPool);
         Destroy(this.gameObject);
     }
 
