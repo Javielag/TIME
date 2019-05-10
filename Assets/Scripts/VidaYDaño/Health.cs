@@ -8,17 +8,22 @@ public class Health : MonoBehaviour
     private int maxHealth = 100;
     public int health;
     private bool invencible;
-    public float fbTime;
+    public float fbTime, fbRate;
     // Use this for initialization
     void Start()
     {
         health = maxHealth;
         invencible = false;
-
     }
 
     public void ChangeHealth(int change)
     {
+        if(health + change < health)
+        {
+            CancelInvoke("DamageFeedback");
+            InvokeRepeating("DamageFeedback", 0, fbRate);
+            Invoke("StopFeedback", fbTime);
+        }
         health = health + change;
         if (health <= 0)
         {
@@ -54,7 +59,6 @@ public class Health : MonoBehaviour
 
         }
         else if (health > maxHealth) health = maxHealth;
-        InvokeRepeating("DamageFeedback", 0, fbTime);
     }
 
     public void ChangeMaxHealth(int newMax)
@@ -70,8 +74,23 @@ public class Health : MonoBehaviour
     void DamageFeedback()
     {
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        if (sr.color.a == 255)
-            sr.color = new Vector4(sr.color.r, sr.color.g, sr.color.b, 0);
-        else sr.color = new Vector4(sr.color.r, sr.color.g, sr.color.b, 255);
+        if (this.gameObject.name == "Player")
+        {
+            if (sr.color.a == 255)
+                sr.color = new Vector4(sr.color.r, sr.color.g, sr.color.b, 0);
+            else sr.color = new Vector4(sr.color.r, sr.color.g, sr.color.b, 255);
+        }
+        else
+        {
+            if (sr.color.g == 255)
+                sr.color = new Vector4(140, 0, 0, 255);
+            else sr.color = new Vector4(255, 255, 255, 255);
+        }
+    }
+    void StopFeedback()
+    {
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        CancelInvoke("DamageFeedback");
+        sr.color = new Vector4(255, 255, 255, 255);
     }
 }

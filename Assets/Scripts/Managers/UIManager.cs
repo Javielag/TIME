@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
     public Text healthText;
-    public Transform healthBar, healthBarTop, switchIcon, reloadIcon, healthContainer, perkCadencia, perkVelocidad, perkRecarga, perkVida, menuPausa;    
+    public Slider healthBarSlider;
+    public Transform switchIcon, reloadIcon, healthContainer, perkCadencia, perkVelocidad, perkRecarga, perkVida, menuPausa;    
     public Text oleada;
     public Text ammo1, mag1, ammo2, mag2;
     public Text avisoPortalTexto;
@@ -23,16 +24,10 @@ public class UIManager : MonoBehaviour {
             UpdateHealth(maxHealth);
         }
 	}
-	
-	// Update is called once per frame
 	public void UpdateHealth(float newHealth)
     {
         healthText.text = newHealth.ToString();
-        healthBar.localScale = new Vector3(newHealth/maxHealth, 1);
-        if(newHealth != 0)
-        {
-            healthBarTop.localScale = new Vector3(-maxHealth / newHealth, -1);
-        }
+        healthBarSlider.value = newHealth / maxHealth;
 	}
     public void ChangeWeaponUI(Weapon weaponPrincipal, Weapon weaponSecondary)
     {
