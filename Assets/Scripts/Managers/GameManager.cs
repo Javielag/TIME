@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
             {
                 UI.UpdateHealth(tgHealth.health);
             }
+
         }        
     }
 
@@ -180,6 +181,7 @@ public class GameManager : MonoBehaviour
     void pauseGame()            //Para el juego
     {
         Time.timeScale = Time.timeScale == 0 ? 1 : 0;               //Si el tiempo avanza, lo para, y viceversa
+
     }
     public void ChangeMenuState()
     {
@@ -187,6 +189,10 @@ public class GameManager : MonoBehaviour
         menuPausa = !menuPausa;
         UI.PauseMenu(menuPausa);
         pauseGame();
+    }
+    public bool GetPauseState()
+    {
+        return menuPausa;
     }
     public void ExitGame()
     {

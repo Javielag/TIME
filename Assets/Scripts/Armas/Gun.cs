@@ -40,35 +40,38 @@ public class Gun : MonoBehaviour {
     }
     private void Update()
     {
-        if (automatic)
+        if (!GameManager.instance.GetPauseState())
         {
-            if (Input.GetMouseButton(0) && canShoot)
+            if (automatic)
             {
-                if (bulletsLeft > 0)
+                if (Input.GetMouseButton(0) && canShoot)
                 {
-                    Shoot();
-                }
-                else if(!isReloading)
-                {
-                    wm.StartReload();
-                }
-                
-            }
-        }
-        else
-        {
-            if(Input.GetMouseButtonDown(0) && canShoot)
-            {
-                if (bulletsLeft > 0)
-                {
-                    Shoot();
-                }
-                else if(!isReloading)
-                {
-                    wm.StartReload();
+                    if (bulletsLeft > 0)
+                    {
+                        Shoot();
+                    }
+                    else if (!isReloading)
+                    {
+                        wm.StartReload();
+                    }
+
                 }
             }
-        }
+            else
+            {
+                if (Input.GetMouseButtonDown(0) && canShoot)
+                {
+                    if (bulletsLeft > 0)
+                    {
+                        Shoot();
+                    }
+                    else if (!isReloading)
+                    {
+                        wm.StartReload();
+                    }
+                }
+            }
+        }        
     }
     private void Shoot()
     {

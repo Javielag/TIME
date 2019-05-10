@@ -8,16 +8,23 @@ public class Health : MonoBehaviour
     private int maxHealth = 100;
     public int health;
     private bool invencible;
+    public float fbTime, fbRate;
+    public Color fbColor;
     // Use this for initialization
     void Start()
     {
         health = maxHealth;
         invencible = false;
-
     }
 
     public void ChangeHealth(int change)
     {
+        if(health + change < health)
+        {
+            CancelInvoke("DamageFeedback");
+            InvokeRepeating("DamageFeedback", 0, fbRate);
+            Invoke("StopFeedback", fbTime);
+        }
         health = health + change;
         if (health <= 0)
         {
@@ -32,7 +39,7 @@ public class Health : MonoBehaviour
                 {
                     //Si devuelve false (está en modo normal) ejecuta el método kamikaze, que induce al enemigo en su estado de kamikaze y le otorga una pequeña cantidad de vida
                     this.GetComponent<KamikazeEnemy>().Kamikaze();
-                    invencible = true;                    
+                    invencible = true;
                     health = 50;
                     Invoke("Invencible", 2);
                 }
@@ -50,7 +57,7 @@ public class Health : MonoBehaviour
                 Enemy en = GetComponent<Enemy>();
                 if (en) en.OnDead();
             }
-                    
+
         }
         else if (health > maxHealth) health = maxHealth;
     }
@@ -64,5 +71,20 @@ public class Health : MonoBehaviour
     public void Invencible()
     {
         invencible=false;
+    }
+    void DamageFeedback()
+    {
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr.color != fbColor)
+        {
+            sr.color = fbColor;
+        }
+        else sr.color = new Vector4(255, 255, 255, 255);
+    }
+    void StopFeedback()
+    {
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        CancelInvoke("DamageFeedback");
+        sr.color = new Vector4(255, 255, 255, 255);
     }
 }
