@@ -47,7 +47,8 @@ public class Pathfinder : MonoBehaviour
             casted++;
             //if (player == null)
                 //Debug.Log("Noplayer");
-                if (transform == null) Debug.Log("NoTransform");
+            if (transform == null) Debug.Log("NoTransform");
+
              hit[0] = Physics2D.Raycast(transform.position, player.position - transform.position, 1000, 1 << 12 | 1 << 13 | 1 << 16);
              hit[1] = Physics2D.Raycast(transform.position, player.position - transform.position, 1000, 1 << 12 | 1 << 13 | 1 << 16);
              hit[2] = Physics2D.Raycast(transform.position, player.position - transform.position, 1000, 1 << 12 | 1 << 13 | 1 << 16);

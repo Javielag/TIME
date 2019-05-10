@@ -22,12 +22,12 @@ GameObject:
   - component: {fileID: 212695917168491104}
   - component: {fileID: 61063146517652822}
   - component: {fileID: 114139455392519920}
-  - component: {fileID: 114556692980895676}
   - component: {fileID: 114977823951229592}
   - component: {fileID: 114990945906791508}
   - component: {fileID: 50214297674968282}
   - component: {fileID: 114851533438746192}
   - component: {fileID: 95769904910184062}
+  - component: {fileID: 114422933685403366}
   m_Layer: 11
   m_Name: MaguitoKomaeda
   m_TagString: enemy
@@ -62,7 +62,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -125,7 +125,7 @@ MonoBehaviour:
   barrera: 0
   invbarrera: 0
   pompa: {fileID: 0}
---- !u!114 &114556692980895676
+--- !u!114 &114422933685403366
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,10 +136,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23a3ef40036010f4790e0544e8cef8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acc: 1
-  speedMax: 1
-  rangeMax: 2
-  rangeMin: 1
+  acc: 4
+  speedMax: 4
+  rangeMax: 5
+  rangeMin: 4
   debugging: 0
   isMoving: 0
   canMove: 1
