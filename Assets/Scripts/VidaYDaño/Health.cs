@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     public int health;
     private bool invencible;
     public float fbTime, fbRate;
+    public Color fbColor;
     // Use this for initialization
     void Start()
     {
@@ -74,18 +75,11 @@ public class Health : MonoBehaviour
     void DamageFeedback()
     {
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        if (this.gameObject.name == "Player")
+        if (sr.color != fbColor)
         {
-            if (sr.color.a == 255)
-                sr.color = new Vector4(sr.color.r, sr.color.g, sr.color.b, 0);
-            else sr.color = new Vector4(sr.color.r, sr.color.g, sr.color.b, 255);
+            sr.color = fbColor;
         }
-        else
-        {
-            if (sr.color.g == 255)
-                sr.color = new Vector4(140, 0, 0, 255);
-            else sr.color = new Vector4(255, 255, 255, 255);
-        }
+        else sr.color = new Vector4(255, 255, 255, 255);
     }
     void StopFeedback()
     {

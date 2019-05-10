@@ -12,6 +12,7 @@ public class WeaponManager : MonoBehaviour
     IEnumerator reload, fb;
     Weapon[] equipadas = new Weapon[] { Weapon.pistola, Weapon.nothing };
     public GameObject fbBar, fbBarBg;
+    public Color fbBarReload, fbBarChange;
     private void Start()
     {
         changeTime = GetComponentInParent<PlayerController>().changeTime;
@@ -23,7 +24,7 @@ public class WeaponManager : MonoBehaviour
         //first = variable de seguridad para evitar errores la primera vez que se realiza(que siempre tiene nothing de secundaria)
         if (first || equipadas[(currentWeapon + 1) % equipadas.Length] != Weapon.nothing)
         {
-            fb = FeedbackBar(changeTime, new Vector4(255, 125, 0, 255));            //Naranja
+            fb = FeedbackBar(changeTime, fbBarChange);            //Naranja
             StartCoroutine(fb);
             currentWeapon = (currentWeapon + 1) % equipadas.Length;
             weapon = GetComponentInChildren<Gun>();
@@ -106,7 +107,7 @@ public class WeaponManager : MonoBehaviour
         if (!isSwitching && !CheckAmmo())
         {
             weapon = GetComponentInChildren<Gun>();
-            fb = FeedbackBar(weapon.reload, new Vector4(0,255,0,255));      //Verde
+            fb = FeedbackBar(weapon.reload, fbBarReload);      //Verde
             StartCoroutine(fb);
             reload = weapon.Reload();
             StartCoroutine(reload);
@@ -189,7 +190,7 @@ public class WeaponManager : MonoBehaviour
     {
         return equipadas[n];
     }
-    IEnumerator FeedbackBar(float time, Vector4 color)
+    IEnumerator FeedbackBar(float time, Color color)
     {
         SpriteRenderer sp = fbBar.GetComponent<SpriteRenderer>();
         sp.color = color;                       //Le cambia el color
