@@ -136,7 +136,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 3356456}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31, y: 23.1, z: 0}
+  m_LocalPosition: {x: 28.4, y: 22.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 362521473}
@@ -797,6 +797,8 @@ MonoBehaviour:
   currentWeapon: 0
   fbBar: {fileID: 0}
   fbBarBg: {fileID: 0}
+  fbBarReload: {r: 0, g: 0, b: 0, a: 0}
+  fbBarChange: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &175729592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85106,8 +85108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthText: {fileID: 1857772700}
-  healthBar: {fileID: 1677473294}
-  healthBarTop: {fileID: 1469577203}
+  healthBarSlider: {fileID: 0}
   switchIcon: {fileID: 1339100192}
   reloadIcon: {fileID: 505871020}
   healthContainer: {fileID: 698333686}
@@ -88572,7 +88573,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1435178628}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.4, y: 14.8, z: 0}
+  m_LocalPosition: {x: 11.98, y: 13.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 362521473}
@@ -91261,6 +91262,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 500
   health: 0
+  fbTime: 0
+  fbRate: 0
+  fbColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1936691971
 MonoBehaviour:
   m_ObjectHideFlags: 0

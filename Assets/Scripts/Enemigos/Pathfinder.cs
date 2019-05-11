@@ -8,13 +8,13 @@ public class Pathfinder : MonoBehaviour
     GameObject WaypointManager;
     Waypoint[] waypoints;
     Transform player;   
-    int sala = -1, wp = -1;
+    public int sala = -1, wp = -1;
     bool isInRoute = false;
     int playerSala;
     Vector3 dir;
     Vector2 extents;
-    public Vector2[] corners;
-    RaycastHit2D[] hit = new RaycastHit2D[4];
+    public Vector3[] corners;
+    [SerializeField] Transform[] hit = new Transform[4];
     private void Awake()
     {
         //player = GameManager.instance.GetPlayer().transform;
@@ -40,11 +40,7 @@ public class Pathfinder : MonoBehaviour
         wp = CloseWaypoint(this.transform);
         this.sala = waypoints[wp].sala;
         extents = GetComponent<BoxCollider2D>().size / 2 * transform.lossyScale;
-        corners = new Vector2[4];
-        corners[0] = new Vector2(transform.position.x + extents.x, transform.position.y + extents.y);
-        corners[1] = new Vector2(transform.position.x + extents.x, transform.position.y - extents.y);
-        corners[2] = new Vector2(transform.position.x - extents.x, transform.position.y + extents.y);
-        corners[3] = new Vector2(transform.position.x - extents.x, transform.position.y - extents.y);
+        corners = new Vector3[4];
     }
 
     public Vector3 Direction()
@@ -55,15 +51,21 @@ public class Pathfinder : MonoBehaviour
             casted++;
             //if (player == null)
                 //Debug.Log("Noplayer");
+            corners[0] = new Vector2(transform.position.x + extents.x, transform.position.y + extents.y);
+            corners[1] = new Vector2(transform.position.x + extents.x, transform.position.y - extents.y);
+            corners[2] = new Vector2(transform.position.x - extents.x, transform.position.y + extents.y);
+            corners[3] = new Vector2(transform.position.x - extents.x, transform.position.y - extents.y);
+
             if (transform == null) Debug.Log("NoTransform");
-             hit[0] = Physics2D.Raycast(corners[0], player.position - transform.position, 1000, 1 << 12 | 1 << 13 | 1 << 16);
-             hit[1] = Physics2D.Raycast(corners[1], player.position - transform.position, 1000, 1 << 12 | 1 << 13 | 1 << 16);
-             hit[2] = Physics2D.Raycast(corners[2], player.position - transform.position, 1000, 1 << 12 | 1 << 13 | 1 << 16);
-             hit[3] = Physics2D.Raycast(corners[3], player.position - transform.position, 1000, 1 << 12 | 1 << 13 | 1 << 16);
+
+            hit[0] = Physics2D.Raycast(corners[0], player.position - corners[0], 1000, 1 << 12 | 1 << 13 | 1 << 16).collider.transform;
+            hit[1] = Physics2D.Raycast(corners[1], player.position - corners[1], 1000, 1 << 12 | 1 << 13 | 1 << 16).collider.transform;
+            hit[2] = Physics2D.Raycast(corners[2], player.position - corners[2], 1000, 1 << 12 | 1 << 13 | 1 << 16).collider.transform;
+            hit[3] = Physics2D.Raycast(corners[3], player.position - corners[3], 1000, 1 << 12 | 1 << 13 | 1 << 16).collider.transform;
 
         } while (!hit[0] && !hit[1] && !hit[2] && !hit[3] && casted < 100);
         if(casted >= 100) { Debug.Log("ROTTTTO"); }
-        if (hit[0].collider.gameObject.transform != player && hit[1].collider.gameObject.transform != player && hit[2].collider.gameObject.transform != player && hit[3].collider.gameObject.transform != player) //Si no ve al jugador
+        if (hit[0] != player || hit[1] != player || hit[2] != player || hit[3] != player) //Si no ve al jugador
         {
             wp = CloseWaypoint(transform);
             if (Vector3.Distance(transform.position, waypoints[wp].transform.position) > 2 && !isInRoute)

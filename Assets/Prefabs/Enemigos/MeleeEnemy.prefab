@@ -75,7 +75,7 @@ CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1793075531721430}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -149,6 +149,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b77731b6aa0fd48aa3205131ca6a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sala: -1
+  wp: -1
+  corners: []
+  hit:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114626617285431272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -162,6 +170,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   health: 0
+  fbTime: 0
+  fbRate: 0
+  fbColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114684912989540086
 MonoBehaviour:
   m_ObjectHideFlags: 1
