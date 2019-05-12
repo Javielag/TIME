@@ -67,7 +67,7 @@ public class GeneradorOleadas : MonoBehaviour {
             //y 5 elites
             cants[0] = 5;
             cants[1] = 5;
-            cants[ol+1] = 5;
+            cants[ol+2] = 5;
             for(int i = 0; i < cants.Length; i++) { enemyCount += cants[i]; }
         }
         spawnManager.Enemigos(cants);

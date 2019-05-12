@@ -89230,6 +89230,7 @@ MonoBehaviour:
   - {fileID: 1790814764629860, guid: 1aeb2b3ea64dadb4fbeff76dd481acc1, type: 2}
   - {fileID: 1098812770926418, guid: c948c4f192999284a8de4b9c802336e6, type: 2}
   - {fileID: 1022399557797236, guid: 5c134143a40830b49bd32e298ec88223, type: 2}
+  DEBUG: 0
   prefabCientifico: {fileID: 114803511611613608, guid: de6954d4d8204c34a9a25e2efe9dd22d,
     type: 2}
   posCientifico: {fileID: 0}
@@ -91833,8 +91834,8 @@ MonoBehaviour:
   enemySpawners:
   - {fileID: 1108848303}
   - {fileID: 1622736553}
-  - {fileID: 1176643616}
   - {fileID: 350197718}
+  - {fileID: 1176643616}
   - {fileID: 21317302}
   - {fileID: 1136339359}
   - {fileID: 283053491}
@@ -91875,6 +91876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnManager: {fileID: 2028180152}
+  TESTING: 0
 --- !u!114 &2028180155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91901,6 +91903,7 @@ MonoBehaviour:
   - {fileID: 1790814764629860, guid: 1aeb2b3ea64dadb4fbeff76dd481acc1, type: 2}
   - {fileID: 1098812770926418, guid: c948c4f192999284a8de4b9c802336e6, type: 2}
   - {fileID: 1022399557797236, guid: 5c134143a40830b49bd32e298ec88223, type: 2}
+  DEBUG: 0
   prefabCientifico: {fileID: 114803511611613608, guid: de6954d4d8204c34a9a25e2efe9dd22d,
     type: 2}
   posCientifico: {fileID: 1853794215}
