@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 114454490590147162}
   - component: {fileID: 61836897270593120}
   - component: {fileID: 95629021683840584}
+  - component: {fileID: 114254436612170742}
   m_Layer: 8
   m_Name: PickRevolverOcelot
   m_TagString: Untagged
@@ -85,7 +86,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.025743842, y: -0.02788926}
+  m_Offset: {x: -0.0042359754, y: 0.006522946}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -96,7 +97,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.74048424, y: 0.39166087}
+  m_Size: {x: 0.35334688, y: 0.23680647}
   m_EdgeRadius: 0
 --- !u!95 &95629021683840584
 Animator:
@@ -116,6 +117,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114254436612170742
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1092013595172858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ac67b8d2ea8d4140a3446e4e0a47523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0.5
+  anim: {fileID: 95629021683840584}
 --- !u!114 &114454490590147162
 MonoBehaviour:
   m_ObjectHideFlags: 1
