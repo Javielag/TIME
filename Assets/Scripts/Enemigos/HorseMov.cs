@@ -131,9 +131,9 @@ public class HorseMov : MonoBehaviour
                 //Debug.Log("Horse");
                 nextJump = Time.time + idle;
 
+                anim.SetBool("Jumping", false);
                 anim.SetBool("Falling", false);
-                anim.SetBool("Jumping", false);                
-            }
+            }            
         }
         
 
