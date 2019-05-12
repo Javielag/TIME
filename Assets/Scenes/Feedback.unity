@@ -92582,6 +92582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnManager: {fileID: 2028180152}
+  TESTING: 1
 --- !u!114 &2028180155
 MonoBehaviour:
   m_ObjectHideFlags: 0
