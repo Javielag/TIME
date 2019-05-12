@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212805302381434326}
   - component: {fileID: 61065790690539686}
   - component: {fileID: 114547294297027272}
+  - component: {fileID: 95234612802866850}
+  - component: {fileID: 114433370385756526}
   m_Layer: 8
   m_Name: PickLaser
   m_TagString: Untagged
@@ -65,8 +67,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1646977470386244}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5236626, y: -6.1574464, z: 0}
-  m_LocalScale: {x: 0.527, y: 0.527, z: 0.527}
+  m_LocalPosition: {x: 26.03, y: -6.49, z: 0}
+  m_LocalScale: {x: 1.290623, y: 1.290623, z: 1.290623}
   m_Children:
   - {fileID: 4153364044099498}
   m_Father: {fileID: 0}
@@ -84,7 +86,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1897155, y: 0}
+  m_Offset: {x: -0.015175223, y: -0.013658807}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -95,8 +97,39 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.0868816, y: 4}
+  m_Size: {x: 0.9235667, y: 0.6943823}
   m_EdgeRadius: 0
+--- !u!95 &95234612802866850
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1646977470386244}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d70d6fc566967ca429a8e24aa1f5d77a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114433370385756526
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1646977470386244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ac67b8d2ea8d4140a3446e4e0a47523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0.5
+  anim: {fileID: 95234612802866850}
 --- !u!114 &114547294297027272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -109,6 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisWeapon: 6
+  anim: {fileID: 95234612802866850}
 --- !u!212 &212639086282183734
 SpriteRenderer:
   m_ObjectHideFlags: 1

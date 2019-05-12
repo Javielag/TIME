@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212668039407058050}
   - component: {fileID: 61936626050093320}
   - component: {fileID: 114864688325308842}
+  - component: {fileID: 95902624198427192}
+  - component: {fileID: 114189163666088850}
   m_Layer: 8
   m_Name: PickMachineGun
   m_TagString: Untagged
@@ -51,8 +53,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1156859391696450}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.04, y: -7.45, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.75, y: -6.22, z: 0}
   m_LocalScale: {x: 3.247452, y: 3.247452, z: 3.247452}
   m_Children:
   - {fileID: 4784411870862406}
@@ -84,7 +86,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.017959356, y: 0.015393913}
+  m_Offset: {x: -0.010667056, y: 0.019040108}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -95,8 +97,39 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0693142, y: 0.55813694}
+  m_Size: {x: 0.36924964, y: 0.24456608}
   m_EdgeRadius: 0
+--- !u!95 &95902624198427192
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1156859391696450}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ca23b0ebf71bdce4f92c0333fd6dd884, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114189163666088850
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1156859391696450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ac67b8d2ea8d4140a3446e4e0a47523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0.5
+  anim: {fileID: 95902624198427192}
 --- !u!114 &114864688325308842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -109,6 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisWeapon: 2
+  anim: {fileID: 95902624198427192}
 --- !u!212 &212668039407058050
 SpriteRenderer:
   m_ObjectHideFlags: 1
