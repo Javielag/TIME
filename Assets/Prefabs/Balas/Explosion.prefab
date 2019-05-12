@@ -20,8 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4196951629713102}
   - component: {fileID: 212150144226489954}
-  - component: {fileID: 114792587805062594}
-  - component: {fileID: 114561718785990768}
   - component: {fileID: 95699240825551310}
   - component: {fileID: 114094742854883310}
   m_Layer: 0
@@ -74,37 +72,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seconds: 1
---- !u!114 &114561718785990768
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1620265013412382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86a98a2abef48024a84130942761880c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rad: 5
-  knock: 6
-  dmg: 200
-  DamageLayer:
-    serializedVersion: 2
-    m_Bits: 4096
-  PushLayer:
-    serializedVersion: 2
-    m_Bits: 6144
---- !u!114 &114792587805062594
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1620265013412382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e5bdfbcb0b880944a4b67549a66121f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212150144226489954
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -1245,6 +1245,8 @@ MonoBehaviour:
   isSwitching: 0
   first: 1
   currentWeapon: 0
+  fbBar: {fileID: 0}
+  fbBarBg: {fileID: 0}
 --- !u!114 &1832159619
 MonoBehaviour:
   m_ObjectHideFlags: 0
