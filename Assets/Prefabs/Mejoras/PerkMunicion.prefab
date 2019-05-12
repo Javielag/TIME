@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 61859456559574304}
   - component: {fileID: 114001522102360160}
   - component: {fileID: 114967757680347358}
+  - component: {fileID: 95912786683443050}
+  - component: {fileID: 114271832948772024}
   m_Layer: 8
   m_Name: PerkMunicion
   m_TagString: Untagged
@@ -38,7 +40,7 @@ Transform:
   m_GameObject: {fileID: 1790814764629860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.27, y: -3.62, z: 0}
-  m_LocalScale: {x: 0.324, y: 0.324, z: 0.324}
+  m_LocalScale: {x: 1.75, y: 1.75, z: 1.75}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -59,15 +61,33 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
+    oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 5.12, y: 5.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!95 &95912786683443050
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1790814764629860}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c7f61d3e32f0bcc45b695841bd1256bc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114001522102360160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -80,6 +100,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoPercentage: 50
+--- !u!114 &114271832948772024
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1790814764629860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ac67b8d2ea8d4140a3446e4e0a47523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 95912786683443050}
 --- !u!114 &114967757680347358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,7 +158,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b60b13343814f034eaeda6fe25effb62, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d37e45cfb639f974096b5a9aa2eb8cc4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
