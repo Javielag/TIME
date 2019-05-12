@@ -14,4 +14,8 @@ public class Cientifico : MonoBehaviour {
     {
         Instantiate(esto, transform.GetChild(0).position, Quaternion.identity, transform);
     }
+    public void Ofrece2(WeaponPickup esto)
+    {
+        Instantiate(esto, transform.GetChild(1).position, Quaternion.identity, transform);
+    }
 }

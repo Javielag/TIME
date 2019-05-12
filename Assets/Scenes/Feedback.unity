@@ -89788,7 +89788,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1518157716}
   - component: {fileID: 1518157717}
-  - component: {fileID: 1518157718}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -89830,35 +89829,6 @@ MonoBehaviour:
   delayOleada: 3
   UI: {fileID: 0}
   canTeleport: 1
---- !u!114 &1518157718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1518157715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c4020ef34dd23c4c905f11f28dfd144, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  primeraAparicion: 1
-  cadaX: 3
-  perkChance: 0.1
-  weapons:
-  - {fileID: 114271245913642714, guid: bb6abf817675da0458aa938a9207538f, type: 2}
-  - {fileID: 114454490590147162, guid: ebb74679358463d4ba31006c096827c3, type: 2}
-  - {fileID: 114864688325308842, guid: 5e9b17bbc80058042bd734d96800d2b4, type: 2}
-  - {fileID: 114547294297027272, guid: 9fa06e7efb5ec434a85c931f7b129681, type: 2}
-  - {fileID: 114547294297027272, guid: e55c2e99b2f724b4b9208e5df7349a10, type: 2}
-  - {fileID: 114547294297027272, guid: 767f736d9f84d4743852b36221f22a9b, type: 2}
-  perks:
-  - {fileID: 1395367394393130, guid: 96b1189ba8d95af42b67c247e353b420, type: 2}
-  - {fileID: 1790814764629860, guid: 1aeb2b3ea64dadb4fbeff76dd481acc1, type: 2}
-  - {fileID: 1098812770926418, guid: c948c4f192999284a8de4b9c802336e6, type: 2}
-  - {fileID: 1022399557797236, guid: 5c134143a40830b49bd32e298ec88223, type: 2}
-  prefabCientifico: {fileID: 114803511611613608, guid: de6954d4d8204c34a9a25e2efe9dd22d,
-    type: 2}
-  posCientifico: {fileID: 0}
 --- !u!1 &1527864302
 GameObject:
   m_ObjectHideFlags: 0
@@ -91807,6 +91777,7 @@ GameObject:
   - component: {fileID: 1936691965}
   - component: {fileID: 1936691970}
   - component: {fileID: 1936691971}
+  - component: {fileID: 1936691972}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -91970,6 +91941,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f89b387221cdc54b89301a5b911998d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1936691972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1936691964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4f5e1ca960ecb549b354d31434fb16b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skipKey: 98
+  yeetThroughOleadas: 1
 --- !u!1 &1941225091
 GameObject:
   m_ObjectHideFlags: 0
@@ -92610,7 +92594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   primeraAparicion: 1
-  cadaX: 3
+  cadaX: 1
   perkChance: 0.2
   weapons:
   - {fileID: 114271245913642714, guid: bb6abf817675da0458aa938a9207538f, type: 2}
@@ -92624,6 +92608,7 @@ MonoBehaviour:
   - {fileID: 1790814764629860, guid: 1aeb2b3ea64dadb4fbeff76dd481acc1, type: 2}
   - {fileID: 1098812770926418, guid: c948c4f192999284a8de4b9c802336e6, type: 2}
   - {fileID: 1022399557797236, guid: 5c134143a40830b49bd32e298ec88223, type: 2}
+  DEBUG: 1
   prefabCientifico: {fileID: 114803511611613608, guid: de6954d4d8204c34a9a25e2efe9dd22d,
     type: 2}
   posCientifico: {fileID: 1853794215}

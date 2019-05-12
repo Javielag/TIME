@@ -10,6 +10,8 @@ public class CienciaManager : MonoBehaviour
     public WeaponPickup[] weapons = new WeaponPickup[6];//todos los pickups de armas
     public GameObject[] perks = new GameObject[4];//todas las mejoras
     private int[] perkOrder; int perkCount = 0;
+    private int wpCount=1; //solo se usa en modo debug, se salta la pistola
+    public bool DEBUG;
     WeaponManager wm;
     public Cientifico prefabCientifico;
     public Transform posCientifico;
@@ -18,30 +20,48 @@ public class CienciaManager : MonoBehaviour
     private void Start()
     {
         ImCienciaManager();
-        perkOrder = shufflePerks(perks);
+        if(!DEBUG)
+            perkOrder = shufflePerks(perks);
     }
     public void Visita()
     {
-        Debug.Log(StackTraceUtility.ExtractStackTrace());
-        count++;
-        Debug.Log(count);
         Cientifico cientifico = Instantiate<Cientifico>(prefabCientifico, posCientifico.position, Quaternion.identity, transform);
-        //si toca perk
-        if ((Random.Range(0f, 1f) <= perkChance) && MissingPerks())
+        if (!DEBUG)
         {
-            cientifico.Ofrece(perks[perkOrder[perkCount]]);
-            perkCount++;
+            Debug.Log(StackTraceUtility.ExtractStackTrace());
+            count++;
+            Debug.Log(count);
+
+            //si toca perk
+            if ((Random.Range(0f, 1f) <= perkChance) && MissingPerks())
+            {
+                cientifico.Ofrece(perks[perkOrder[perkCount]]);
+                perkCount++;
+            }
+            //si toca arma
+            else
+            {
+                wm = GameManager.instance.GetPlayer().GetComponentInChildren<WeaponManager>();
+                int n;
+                do
+                {
+                    n = Random.Range(0, weapons.Length);
+                } while (weapons[n].thisWeapon == wm.equipedWeapon(0) || weapons[n].thisWeapon == wm.equipedWeapon(1));
+                cientifico.Ofrece(weapons[n].gameObject);
+            }
         }
-        //si toca arma
         else
         {
-            wm = GameManager.instance.GetPlayer().GetComponentInChildren<WeaponManager>();
-            int n;
-            do
+            if (perkCount < perks.Length) {
+                cientifico.Ofrece(perks[perkCount]);
+                perkCount++;
+            }
+            if (wpCount < weapons.Length)
             {
-                n = Random.Range(0, weapons.Length);
-            } while (weapons[n].thisWeapon == wm.equipedWeapon(0) || weapons[n].thisWeapon == wm.equipedWeapon(1));
-            cientifico.Ofrece(weapons[n].gameObject);
+                cientifico.Ofrece2(weapons[wpCount]);
+                wpCount++;
+            }
+
         }
     }
     private bool MissingPerks()
