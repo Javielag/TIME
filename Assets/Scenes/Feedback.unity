@@ -922,6 +922,8 @@ MonoBehaviour:
   currentWeapon: 0
   fbBar: {fileID: 495828721}
   fbBarBg: {fileID: 2122714725}
+  fbBarReload: {r: 1, g: 0, b: 0, a: 1}
+  fbBarChange: {r: 0.23822331, g: 0.9811321, b: 0, a: 1}
 --- !u!114 &175729592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91956,6 +91958,7 @@ MonoBehaviour:
   health: 0
   fbTime: 1
   fbRate: 0.15
+  fbColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1936691971
 MonoBehaviour:
   m_ObjectHideFlags: 0
