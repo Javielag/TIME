@@ -172,7 +172,8 @@ MonoBehaviour:
   kMaxSpeed: 15
   dyingtime: 2
   explodingtime: 5
-  explosionPrefab: {fileID: 0}
+  explosionPrefab: {fileID: 1620265013412382, guid: f69c488fc80f6d64e8f122a6d9ad533d,
+    type: 2}
   anim: {fileID: 95502094131449796}
 --- !u!114 &114541863371515732
 MonoBehaviour:

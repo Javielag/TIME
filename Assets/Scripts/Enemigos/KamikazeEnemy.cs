@@ -102,8 +102,8 @@ public class KamikazeEnemy : MonoBehaviour
     //Explota, activa el trigger de daño y se destruye
     public void Explode()
     {
-        areaDmg.DealDamage();
-        areaDmg.PushArea();
+        //areaDmg.DealDamage();
+        //areaDmg.PushArea();
         GameObject newExplosion = Instantiate<GameObject>(explosionPrefab, transform.position, Quaternion.identity, bulletPool);
         Destroy(this.gameObject);
     }
