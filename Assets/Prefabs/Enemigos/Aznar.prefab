@@ -22,12 +22,12 @@ GameObject:
   - component: {fileID: 212831705348269952}
   - component: {fileID: 50712054447796172}
   - component: {fileID: 114762891714474150}
-  - component: {fileID: 114626617285431272}
   - component: {fileID: 114193418798180168}
   - component: {fileID: 114166464526185592}
   - component: {fileID: 114522935006617906}
   - component: {fileID: 61089087270522516}
   - component: {fileID: 95064978338685930}
+  - component: {fileID: 114971250086941830}
   m_Layer: 11
   m_Name: Aznar
   m_TagString: enemy
@@ -159,19 +159,6 @@ MonoBehaviour:
   PushLayer:
     serializedVersion: 2
     m_Bits: 6144
---- !u!114 &114626617285431272
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1793075531721430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbedf1e1b40daa1479059937f40532cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  health: 0
 --- !u!114 &114762891714474150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -186,6 +173,22 @@ MonoBehaviour:
   barrera: 0
   invbarrera: 0
   pompa: {fileID: 0}
+--- !u!114 &114971250086941830
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1793075531721430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbedf1e1b40daa1479059937f40532cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  health: 0
+  fbTime: 1
+  fbRate: 0.15
+  fbColor: {r: 0.59607846, g: 0.13932894, b: 0.13932894, a: 1}
 --- !u!212 &212831705348269952
 SpriteRenderer:
   m_ObjectHideFlags: 1

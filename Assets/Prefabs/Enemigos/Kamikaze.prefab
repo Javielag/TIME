@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4308702675853410}
   - component: {fileID: 212130956609730066}
-  - component: {fileID: 114373276626797352}
   - component: {fileID: 114615103288258340}
   - component: {fileID: 50248662507209860}
   - component: {fileID: 61476344026548590}
@@ -30,6 +29,7 @@ GameObject:
   - component: {fileID: 95502094131449796}
   - component: {fileID: 114443627635235150}
   - component: {fileID: 114541863371515732}
+  - component: {fileID: 114915642317581904}
   m_Layer: 11
   m_Name: Kamikaze
   m_TagString: enemy
@@ -113,19 +113,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114373276626797352
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1035511036804480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbedf1e1b40daa1479059937f40532cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  health: 0
 --- !u!114 &114378119014760782
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -137,6 +124,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b77731b6aa0fd48aa3205131ca6a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sala: -1
+  wp: -1
+  corners: []
+  hit:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114443627635235150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -148,6 +143,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b77731b6aa0fd48aa3205131ca6a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sala: -1
+  wp: -1
+  corners: []
+  hit:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114516531004349438
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -169,8 +172,7 @@ MonoBehaviour:
   kMaxSpeed: 15
   dyingtime: 2
   explodingtime: 5
-  explosionPrefab: {fileID: 114792587805062594, guid: f69c488fc80f6d64e8f122a6d9ad533d,
-    type: 2}
+  explosionPrefab: {fileID: 0}
   anim: {fileID: 95502094131449796}
 --- !u!114 &114541863371515732
 MonoBehaviour:
@@ -209,6 +211,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9f633c14b321f4ba13d676d62fe524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114915642317581904
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1035511036804480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbedf1e1b40daa1479059937f40532cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  health: 0
+  fbTime: 1
+  fbRate: 0.15
+  fbColor: {r: 0.59607846, g: 0.13932894, b: 0.13932894, a: 1}
 --- !u!212 &212130956609730066
 SpriteRenderer:
   m_ObjectHideFlags: 1
