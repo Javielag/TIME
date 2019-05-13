@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour {
     public Text oleada;
     public Text ammo1, mag1, ammo2, mag2;
     public Text avisoPortalTexto;
+    public Text descript;
     public Transform avportal;
     public Transform ArmaPrincipal, ArmaSecundaria;
     [SerializeField]int maxHealth, timerPortales;
@@ -166,5 +167,15 @@ public class UIManager : MonoBehaviour {
     public void ChangeScene(string scene)
     {
         GameManager.instance.ChangeScene(scene);
+    }
+    public void ShowDescription(string description)
+    {
+        descript.enabled = true;
+        descript.text = description;
+        Invoke("HideDescription", 2);
+    }
+    private void HideDescription()
+    {
+        descript.enabled = false;
     }
 }

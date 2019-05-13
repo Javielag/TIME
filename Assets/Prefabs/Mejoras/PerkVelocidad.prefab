@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c39a4bca748adb489265eef57149855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  description: Aumenta la velocidad de movimiento
   speedBonus: 100
   isPorcentual: 1
 --- !u!114 &114990971127604772

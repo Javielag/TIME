@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PickUp_Municion : MonoBehaviour {
 
+    public string description;
     public float ammoPercentage;
     WeaponManager wm;
     public void Interacted()
@@ -13,6 +14,7 @@ public class PickUp_Municion : MonoBehaviour {
         {
             wm.UpgradeMagSize(ammoPercentage);
             GameManager.instance.UpdatePerk("Recarga");
+            GameManager.instance.Description(description);
         }
     }
 }

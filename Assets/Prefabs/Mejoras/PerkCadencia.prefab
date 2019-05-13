@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f366d5b05f855634899e915328dae1c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  description: Aumenta la cadencia de fuego
   cadence: 15
 --- !u!212 &212399302434308602
 SpriteRenderer:

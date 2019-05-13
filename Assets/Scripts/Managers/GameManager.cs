@@ -217,4 +217,8 @@ public class GameManager : MonoBehaviour
         }
         //enemyCount = 0;
     }
+    public void Description(string description)
+    {
+        UI.ShowDescription(description);
+    }
 }
