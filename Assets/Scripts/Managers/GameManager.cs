@@ -42,7 +42,6 @@ public class GameManager : MonoBehaviour
             {
                 UI.UpdateHealth(tgHealth.health);
             }
-
         }        
     }
 
@@ -65,19 +64,21 @@ public class GameManager : MonoBehaviour
     //cada vez que muere un enemigo
     public void EnemySlain()
     {
-        enemyCount--;
-        //si era el último, genera una nueva oleada
-        if (enemyCount <= 0)
+        if (enemyCount >= 0)
         {
-            if ((oleadaActual - cientifico.primeraAparicion) % cientifico.cadaX == 0)
+            enemyCount--;
+            //si era el último, genera una nueva oleada
+            if (enemyCount <= 0)
             {
-                //aquí van las visitas del CIENTEFRICO
-                cientifico.Visita();
-               // Invoke("GeneraOleada", delayOleada);
-            }
-            else
-            {
-                GeneraOleada();
+                if ((oleadaActual - cientifico.primeraAparicion) % cientifico.cadaX == 0)
+                {
+                    //aquí van las visitas del CIENTEFRICO
+                    cientifico.Visita();
+                }
+                else
+                {
+                    GeneraOleada();
+                }
             }
         }
           
@@ -170,13 +171,6 @@ public class GameManager : MonoBehaviour
         }
         SceneManager.LoadScene(button);     //Carga la escena
 
-
-        //switch (button)
-        //{
-        //    case "start":
-        //        SceneManager.LoadScene("Hito02");
-        //        break;
-        //}
     }
     void pauseGame()            //Para el juego
     {
@@ -211,11 +205,10 @@ public class GameManager : MonoBehaviour
         }
         generadorOleadas.AcabaOleada();
         //int actOl = oleadaActual;
-        for(int i = enemyCount; i > 0; i--)
+        for (int i = enemyCount; i > 0; i--)
         {
             EnemySlain();
         }
-        //enemyCount = 0;
     }
     public void Description(string description)
     {
