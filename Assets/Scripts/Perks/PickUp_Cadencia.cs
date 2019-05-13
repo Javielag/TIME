@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PickUp_Cadencia : MonoBehaviour {
 
+    public string description;
     public float cadence;
     WeaponManager wm;
     public void Interacted()
@@ -13,6 +14,7 @@ public class PickUp_Cadencia : MonoBehaviour {
         {
             wm.UpgradeFireRate(cadence);
             GameManager.instance.UpdatePerk("Cadencia");
+            GameManager.instance.Description(description);
         }
     }
 }

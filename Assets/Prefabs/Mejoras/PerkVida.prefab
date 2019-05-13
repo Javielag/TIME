@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthGain: 55
   isPercentage: 1
+  description: "Aumenta la vida m\xE1xima"
 --- !u!114 &114805972419596796
 MonoBehaviour:
   m_ObjectHideFlags: 1
