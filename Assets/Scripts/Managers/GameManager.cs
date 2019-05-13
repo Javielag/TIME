@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     private CienciaManager cientifico;
     public GameObject player;
     public GameObject a, b, c, d;
-    public int enemyCount;
+    private int enemyCount;
     [SerializeField]private int /*enemyCount,*/oleadaActual=0;
     public float delayOleada;
     bool menuPausa;
@@ -214,4 +214,5 @@ public class GameManager : MonoBehaviour
     {
         UI.ShowDescription(description);
     }
+    public void ExtraEnemies(int xtra) { enemyCount += xtra; }
 }
