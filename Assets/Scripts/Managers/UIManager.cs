@@ -137,7 +137,7 @@ public class UIManager : MonoBehaviour {
     public void UpdateMaxHealthVariable(int newMax)
     {
         maxHealth = newMax;
-        UpdateScale();
+        //UpdateScale();
     }
     //Dependiendo del perk que haya recogido activa el correspondiente
     public void ActivatePerk(string perk)
@@ -151,11 +151,11 @@ public class UIManager : MonoBehaviour {
         }
     }
     //Cambia la escala de HealthContainer y mantiene su texto a su escala original
-    void UpdateScale()
-    {
-        healthContainer.localScale = new Vector3(1.25f, 1);
-        healthText.transform.localScale = new Vector3(0.8f, 1);
-    }
+    //void UpdateScale()
+    //{
+    //    healthContainer.localScale = new Vector3(1.25f, 1);
+    //    healthText.transform.localScale = new Vector3(0.8f, 1);
+    //}
     public void PauseMenu(bool state)
     {
         menuPausa.gameObject.SetActive(state);
