@@ -24,8 +24,8 @@ public class PlayerMelee : MonoBehaviour {
         if (Input.GetMouseButtonDown(1) && Time.time > nextMel && !GameManager.instance.player.GetComponentInChildren<WeaponManager>().isSwitching)
         {
             Debug.Log("SAITAMA");
-            GameManager.instance.player.GetComponentInChildren<WeaponManager>().CancelReload();
-            MeleeAttack();
+            GameManager.instance.player.GetComponentInChildren<WeaponManager>().CancelReload();            
+            MeleeAttack();           
         }
 	}
     void MeleeAttack()
@@ -56,7 +56,7 @@ public class PlayerMelee : MonoBehaviour {
                 }
             }
 
-
+            
         }
     }
     
