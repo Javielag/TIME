@@ -30,7 +30,6 @@ GameObject:
   - component: {fileID: 95502094131449796}
   - component: {fileID: 114443627635235150}
   - component: {fileID: 114541863371515732}
-  - component: {fileID: 114313631208567322}
   m_Layer: 11
   m_Name: Kamikaze
   m_TagString: enemy
@@ -114,26 +113,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114313631208567322
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1035511036804480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86a98a2abef48024a84130942761880c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rad: 5
-  knock: 6
-  dmg: 200
-  DamageLayer:
-    serializedVersion: 2
-    m_Bits: 4096
-  PushLayer:
-    serializedVersion: 2
-    m_Bits: 6144
 --- !u!114 &114373276626797352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -147,6 +126,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   health: 0
+  fbTime: 0
+  fbRate: 0
+  fbColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114378119014760782
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,6 +140,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b77731b6aa0fd48aa3205131ca6a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sala: -1
+  wp: -1
+  corners: []
+  hit:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114443627635235150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -169,6 +159,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b77731b6aa0fd48aa3205131ca6a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sala: -1
+  wp: -1
+  corners: []
+  hit:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114516531004349438
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -190,7 +188,7 @@ MonoBehaviour:
   kMaxSpeed: 15
   dyingtime: 2
   explodingtime: 5
-  explosionPrefab: {fileID: 1620265013412382, guid: f69c488fc80f6d64e8f122a6d9ad533d,
+  explosionPrefab: {fileID: 1035282198211332, guid: f8f070fca7060b64ea34eb6e4a3a720c,
     type: 2}
   anim: {fileID: 95502094131449796}
 --- !u!114 &114541863371515732

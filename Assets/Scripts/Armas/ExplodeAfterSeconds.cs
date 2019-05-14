@@ -6,8 +6,11 @@ public class ExplodeAfterSeconds : MonoBehaviour {
 
     public float time;
     AreaDamage areaDamage;
+    public GameObject explosion;
+    Transform bulletPool;
     private void Start()
     {
+        bulletPool = GameObject.FindGameObjectWithTag("BulletPool").transform;
         areaDamage = GetComponent<AreaDamage>();
         Invoke("Explosion", time);
     }
@@ -19,6 +22,7 @@ public class ExplodeAfterSeconds : MonoBehaviour {
             areaDamage.DealDamage();
             
         }
+        GameObject newExplosion = Instantiate<GameObject>(explosion, transform.position, Quaternion.identity, bulletPool);
         Destroy(this.gameObject);
     }
 }
