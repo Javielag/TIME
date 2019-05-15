@@ -12,6 +12,8 @@ public class HorseMov : MonoBehaviour
     bool secJump = false,jumping = false;
     private float nextJump;
     AreaDamage areaDmg;
+    public Animator anim;
+
     // Use this for initialization
     void Start()
     {
@@ -43,11 +45,11 @@ public class HorseMov : MonoBehaviour
     {
         if (jumping && !secJump)
         {
-            FirstJump();
+            FirstJump();           
         }
         else if (jumping && secJump)
-        {
-            SecondJump();
+        {            
+            SecondJump();           
         }
     }
     private void CalculateJumps()
@@ -87,9 +89,12 @@ public class HorseMov : MonoBehaviour
     }
     private void FirstJump()
     {
+        anim.SetBool("Jumping", true);
         if (Time.time > nextJump)
         {
-            if(rb.velocity.magnitude < maxSpeed)
+            
+
+            if (rb.velocity.magnitude < maxSpeed)
                 rb.AddForce(jumpDir * acc);
             //al acabar el primer salto 3
             if (Vector2.Distance(jumpStart, pointA) < Vector2.Distance(jumpStart, transform.position))
@@ -101,15 +106,18 @@ public class HorseMov : MonoBehaviour
                 secJump = true;
                 rb.velocity = Vector2.zero;
                 nextJump = Time.time + turn;
-            }
-
+                
+            }           
         }
-
+        
     }
+
     private void SecondJump()
     {
-        if(Time.time > nextJump)
+        anim.SetBool("Falling", true);
+        if (Time.time > nextJump)
         {
+            
             if (rb.velocity.magnitude < maxSpeed)
                 rb.AddForce(jumpDir * acc);
             //al acabar el segundo salto
@@ -122,9 +130,13 @@ public class HorseMov : MonoBehaviour
                 this.gameObject.GetComponent<Collider2D>().enabled = true;
                 //Debug.Log("Horse");
                 nextJump = Time.time + idle;
-            }
+
+                anim.SetBool("Jumping", false);
+                anim.SetBool("Falling", false);
+            }            
         }
         
+
     }
     private void Attack()
     {

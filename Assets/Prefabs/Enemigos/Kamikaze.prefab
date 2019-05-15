@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4308702675853410}
   - component: {fileID: 212130956609730066}
-  - component: {fileID: 114373276626797352}
   - component: {fileID: 114615103288258340}
   - component: {fileID: 50248662507209860}
   - component: {fileID: 61476344026548590}
@@ -30,6 +29,7 @@ GameObject:
   - component: {fileID: 95502094131449796}
   - component: {fileID: 114443627635235150}
   - component: {fileID: 114541863371515732}
+  - component: {fileID: 114915642317581904}
   m_Layer: 11
   m_Name: Kamikaze
   m_TagString: enemy
@@ -228,6 +228,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9f633c14b321f4ba13d676d62fe524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114915642317581904
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1035511036804480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbedf1e1b40daa1479059937f40532cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  health: 0
+  fbTime: 1
+  fbRate: 0.15
+  fbColor: {r: 0.59607846, g: 0.13932894, b: 0.13932894, a: 1}
 --- !u!212 &212130956609730066
 SpriteRenderer:
   m_ObjectHideFlags: 1

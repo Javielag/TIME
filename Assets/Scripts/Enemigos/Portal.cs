@@ -21,10 +21,12 @@ public class Portal : MonoBehaviour {
     public void PortalSpawn()
     {
         Spawner portalSpawner = GetComponent<Spawner>();
+        int cant;
         if (portalSpawner)
         {
             portalSpawner.SetSpawner(possibleEnemies[Random.Range(0, possibleEnemies.Length)]);
-            portalSpawner.EmpiezaOleada(Random.Range(sizeMin,sizeMax));
+            cant = Random.Range(sizeMin, sizeMax);
+            portalSpawner.EmpiezaOleada(cant);
         }
     }
     private void OnDestroy()

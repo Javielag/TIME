@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9274f2f703f9016499d80911b3d92b81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  description: "Aumenta la munici\xF3n m\xE1xima"
   ammoPercentage: 50
 --- !u!114 &114271832948772024
 MonoBehaviour:

@@ -37,13 +37,13 @@ GameObject:
   - component: {fileID: 4382273046042346}
   - component: {fileID: 212407111906658884}
   - component: {fileID: 114996126607235808}
-  - component: {fileID: 114578011135773906}
   - component: {fileID: 50544911772765078}
   - component: {fileID: 61072342710954300}
   - component: {fileID: 114688628897056148}
   - component: {fileID: 114234168180527246}
   - component: {fileID: 114202960519977166}
   - component: {fileID: 95513279628607106}
+  - component: {fileID: 114333410394610090}
   m_Layer: 11
   m_Name: Barrera
   m_TagString: enemy
@@ -152,6 +152,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b77731b6aa0fd48aa3205131ca6a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sala: -1
+  wp: -1
+  corners: []
+  hit:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114234168180527246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -170,7 +178,7 @@ MonoBehaviour:
   casttime: 0
   damage: 10
   anim: {fileID: 95513279628607106}
---- !u!114 &114578011135773906
+--- !u!114 &114333410394610090
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,6 +191,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   health: 0
+  fbTime: 1
+  fbRate: 0.15
+  fbColor: {r: 0.59607846, g: 0.13932894, b: 0.13932894, a: 1}
 --- !u!114 &114688628897056148
 MonoBehaviour:
   m_ObjectHideFlags: 1

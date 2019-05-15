@@ -5,6 +5,7 @@ using UnityEngine;
 public class PickUp_Vida : MonoBehaviour {
     public int healthGain;//cantidad de vida que se gana
     public bool isPercentage;//marcar si es porcentual, en caso contrario es absoluto
+    public string description;
     // Use this for initialization
     public void Interacted()
     {
@@ -25,6 +26,7 @@ public class PickUp_Vida : MonoBehaviour {
                 }
                 GameManager.instance.ChangeHealth(playerHealth.GetMaxHealth(), GameManager.instance.GetPlayer());
                 GameManager.instance.UpdatePerk("Vida");
+                GameManager.instance.Description(description);
             }
         
     }

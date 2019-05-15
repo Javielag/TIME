@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour {
     public Text oleada;
     public Text ammo1, mag1, ammo2, mag2;
     public Text avisoPortalTexto;
+    public Text descript;
     public Transform avportal;
     public Transform ArmaPrincipal, ArmaSecundaria;
     [SerializeField]int maxHealth, timerPortales;
@@ -136,7 +137,7 @@ public class UIManager : MonoBehaviour {
     public void UpdateMaxHealthVariable(int newMax)
     {
         maxHealth = newMax;
-        UpdateScale();
+        //UpdateScale();
     }
     //Dependiendo del perk que haya recogido activa el correspondiente
     public void ActivatePerk(string perk)
@@ -150,11 +151,11 @@ public class UIManager : MonoBehaviour {
         }
     }
     //Cambia la escala de HealthContainer y mantiene su texto a su escala original
-    void UpdateScale()
-    {
-        healthContainer.localScale = new Vector3(1.25f, 1);
-        healthText.transform.localScale = new Vector3(0.8f, 1);
-    }
+    //void UpdateScale()
+    //{
+    //    healthContainer.localScale = new Vector3(1.25f, 1);
+    //    healthText.transform.localScale = new Vector3(0.8f, 1);
+    //}
     public void PauseMenu(bool state)
     {
         menuPausa.gameObject.SetActive(state);
@@ -166,5 +167,15 @@ public class UIManager : MonoBehaviour {
     public void ChangeScene(string scene)
     {
         GameManager.instance.ChangeScene(scene);
+    }
+    public void ShowDescription(string description)
+    {
+        descript.enabled = true;
+        descript.text = description;
+        Invoke("HideDescription", 2);
+    }
+    private void HideDescription()
+    {
+        descript.enabled = false;
     }
 }

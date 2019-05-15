@@ -11,7 +11,6 @@ public class Enemy : MonoBehaviour {
     {
         Destroy(pompa);
     }
-
     public void OnDead()
     {
         GameManager.instance.EnemySlain();
