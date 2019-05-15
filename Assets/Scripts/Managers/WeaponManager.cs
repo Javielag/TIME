@@ -55,7 +55,7 @@ public class WeaponManager : MonoBehaviour
                 }
                 else
                 {
-                    equipadas[currentWeapon] = wpPick.WhatWeapon();
+                    equipadas[currentWeapon] = wpPick.WhatWeapon();                   
                 }
                 SelectWeapon(currentWeapon);
                 wpPick.OnPicked();

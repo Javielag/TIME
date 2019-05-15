@@ -30,6 +30,7 @@ GameObject:
   - component: {fileID: 114443627635235150}
   - component: {fileID: 114541863371515732}
   - component: {fileID: 114915642317581904}
+  - component: {fileID: 114373276626797352}
   m_Layer: 11
   m_Name: Kamikaze
   m_TagString: enemy
@@ -115,7 +116,7 @@ Animator:
   m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114373276626797352
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1035511036804480}

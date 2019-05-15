@@ -13,11 +13,13 @@ public class Gun : MonoBehaviour {
     [SerializeField]
     private int bulletsLeft;//balas que quedan en el cargador
     public Bullet bulletPrefab;
+    AudioSource sound;
     Transform bulletPool;
     Random rnd = new Random();
     WeaponManager wm;
     private void Start()
     {
+        sound = GetComponent<AudioSource>();
         bulletPool = GameObject.FindGameObjectWithTag("BulletPool").transform;
         nextShot = Time.time;
         bulletsLeft = magSize;
@@ -82,6 +84,7 @@ public class Gun : MonoBehaviour {
             newBullet.PointAt(direction,Random.Range(-maxSpread,maxSpread));
             //le dice a la bala que se destruya tras recorrer una distancia
             newBullet.gameObject.GetComponent<DestroyAfterSeconds>().Override(range / newBullet.GetSpeed());
+            sound.PlayOneShot(sound.clip);
         }
         bulletsLeft--;
         GameManager.instance.UpdateAmmo(bulletsLeft);

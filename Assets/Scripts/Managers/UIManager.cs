@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour {
     public Transform ArmaPrincipal, ArmaSecundaria;
     [SerializeField]int maxHealth, timerPortales;
     bool avisoPortal = false;
+    public AudioSource alarmaPortal;
     IEnumerator portalCoroutine;
     void Start ()
     {
@@ -24,6 +25,7 @@ public class UIManager : MonoBehaviour {
             maxHealth = GameManager.instance.GetPlayer().GetComponent<Health>().GetMaxHealth();
             UpdateHealth(maxHealth);
         }
+        //alarmaPortal = GetComponent<AudioSource>();
 	}
 	public void UpdateHealth(float newHealth)
     {
@@ -120,6 +122,7 @@ public class UIManager : MonoBehaviour {
         yield return new WaitWhile(AvisoIsActive);              //Hasta que el método AvisoIsActive sea false
         avisoPortal = true;
         avportal.gameObject.SetActive(true);
+        alarmaPortal.PlayOneShot(alarmaPortal.clip);
         avisoPortalTexto.text = "Ha aparecido un portal en la sala de" + pos;
         Invoke("DesactivaTexto", timerPortales);
     }
