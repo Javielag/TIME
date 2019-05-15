@@ -7,7 +7,7 @@ public class UIManager : MonoBehaviour {
     public Text healthText;
     public Slider healthBarSlider;
     public Transform switchIcon, reloadIcon, healthContainer, perkCadencia, perkVelocidad, perkRecarga, perkVida, menuPausa;    
-    public Text oleada;
+    public Text oleada, record;
     public Text ammo1, mag1, ammo2, mag2;
     public Text avisoPortalTexto;
     public Text descript;
@@ -177,5 +177,9 @@ public class UIManager : MonoBehaviour {
     private void HideDescription()
     {
         descript.enabled = false;
+    }
+    public void UpdateRecord(int newRecord)
+    {
+        record.text = "Record: " + newRecord.ToString();
     }
 }

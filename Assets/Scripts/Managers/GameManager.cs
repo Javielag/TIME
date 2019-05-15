@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     UIManager UI;
     public bool canTeleport = true;
+    public int record = -1;
 
     //Singleton
     private void Awake()
@@ -30,7 +31,7 @@ public class GameManager : MonoBehaviour
         }
         else
             Destroy(this.gameObject);
-
+        LoadScore();
     }
     public void ChangeHealth(int value, GameObject target)
     {
@@ -86,8 +87,10 @@ public class GameManager : MonoBehaviour
     //Ordena generar una oleada
     public void GeneraOleada()
     {
+        if (oleadaActual == 0) UI.UpdateRecord(record);
         oleadaActual++;
         UI.UpdateOleada(oleadaActual);
+        if (oleadaActual - 1 > record) UI.UpdateRecord(oleadaActual - 1);
         generadorOleadas.GeneraOleada(oleadaActual,out enemyCount);
     }
     //añade enemigos a la oleada(ej. portales)
@@ -160,9 +163,10 @@ public class GameManager : MonoBehaviour
        
         Time.timeScale = 1;                 //Evita errores con el menú
         menuPausa = false;
-        if (button == "Menu")               //Si vuelve al menú principal, reinicia las rondas
+        if (button == "Menu")               //Si vuelve al menú principal, reinicia las rondasy guarda el record
         {
             CancelInvoke();
+            SaveScore();
             oleadaActual = 0;
             if(generadorOleadas != null)
             {
@@ -190,6 +194,7 @@ public class GameManager : MonoBehaviour
     }
     public void ExitGame()
     {
+        SaveScore();
         Application.Quit();
     }
     public void SetOleada(int estaOleada)
@@ -215,4 +220,19 @@ public class GameManager : MonoBehaviour
         UI.ShowDescription(description);
     }
     public void ExtraEnemies(int xtra) { enemyCount += xtra; }
+    void LoadScore()
+    {
+        if (PlayerPrefs.HasKey("record"))
+        {
+            record = PlayerPrefs.GetInt("record");
+        }
+    }
+    public void SaveScore()
+    {
+        if(oleadaActual - 1 > record)
+        {
+            PlayerPrefs.SetInt("record", oleadaActual - 1);
+            record = oleadaActual - 1;
+        }
+    }
 }
