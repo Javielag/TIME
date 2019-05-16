@@ -85444,7 +85444,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 790241302}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9, y: 22.4, z: 0}
+  m_LocalPosition: {x: 12.6, y: 22.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 362521473}
@@ -88597,7 +88597,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1285091912}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.4, y: 1.7, z: 0}
+  m_LocalPosition: {x: 9.1, y: 2.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 362521473}
@@ -89976,7 +89976,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1435178628}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.4, y: 14.8, z: 0}
+  m_LocalPosition: {x: 11.44, y: 14.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 362521473}
@@ -90687,14 +90687,16 @@ MonoBehaviour:
   b: {fileID: 432747836}
   c: {fileID: 1268312478}
   d: {fileID: 1060840166}
+  enemyCount: 0
   oleadaActual: 0
   delayOleada: 3
   UI: {fileID: 0}
   canTeleport: 1
   record: -1
-  enemyPool: {fileID: 371339483}
+  waypoingManag: {fileID: 362521472}
   enemyArrow: {fileID: 114678981613347454, guid: af5988a800dc9204eb3a0bc9ff55f33f,
     type: 2}
+  en: []
 --- !u!1 &1527864302
 GameObject:
   m_ObjectHideFlags: 0

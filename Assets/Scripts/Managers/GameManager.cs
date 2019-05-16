@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     private CienciaManager cientifico;
     public GameObject player;
     public GameObject a, b, c, d;
-    private int enemyCount;
+    [SerializeField] int enemyCount;
     [SerializeField]private int /*enemyCount,*/oleadaActual=0;
     public float delayOleada;
     bool menuPausa;
@@ -21,8 +21,9 @@ public class GameManager : MonoBehaviour
     public bool canTeleport = true;
     public int record = -1;
     bool flechas = false;
-    public GameObject enemyPool;
+    public GameObject waypoingManag;
     public PointAtEnemy enemyArrow;
+    public Enemy[] en;
 
     //Singleton
     private void Awake()
@@ -75,12 +76,12 @@ public class GameManager : MonoBehaviour
             if(enemyCount <= 3 && !flechas)
             {
                 flechas = true;
-                Transform[] en = new Transform[enemyPool.GetComponentsInChildren<Transform>().Length];
-                en = enemyPool.GetComponentsInChildren<Transform>();
-                for (int i = 0; i<enemyCount; i++)
+                en = new Enemy[waypoingManag.GetComponentsInChildren<Enemy>().Length];
+                en = waypoingManag.GetComponentsInChildren<Enemy>();
+                for (int i = 0; i<en.Length; i++)
                 {
                     PointAtEnemy arrow = Instantiate(enemyArrow, player.transform);
-                    arrow.SetTarget(en[i]);
+                    arrow.SetTarget(en[i].transform);
                 }
             }
             if (enemyCount <= 0)
