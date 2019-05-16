@@ -29,7 +29,7 @@ public class WeaponManager : MonoBehaviour
             currentWeapon = (currentWeapon + 1) % equipadas.Length;
             weapon = GetComponentInChildren<Gun>();
             weapon.CannotShoot();
-            GameManager.instance.SwitchingWeaponUI();
+            //GameManager.instance.SwitchingWeaponUI();
             if (IsReloading())
             {
                 Debug.Log("Recarga cancelada");
