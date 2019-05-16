@@ -111,6 +111,10 @@ public class PlayerController : MonoBehaviour {
     {
         xtraSpeed = xtra;
     }
+    public void CheatSpeed(float newSpeedMax, float newAccel)
+    {
+        speedMax = newSpeedMax; accel = newAccel;
+    }
     public void AnimBoolFalse()
     {
         this.GetComponentInChildren<PlayerMelee>().AnimBoolFalse(); 

@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
     [SerializeField]
     private int maxHealth = 100;
     public int health;
+    [SerializeField]
     private bool invencible;
     public float fbTime, fbRate;
     public Color fbColor;
@@ -19,13 +20,16 @@ public class Health : MonoBehaviour
 
     public void ChangeHealth(int change)
     {
-        if(health + change < health)
+        if (!invencible)
         {
-            CancelInvoke("DamageFeedback");
-            InvokeRepeating("DamageFeedback", 0, fbRate);
-            Invoke("StopFeedback", fbTime);
-        }
-        health = health + change;
+            if (health + change < health)
+            {
+                CancelInvoke("DamageFeedback");
+                InvokeRepeating("DamageFeedback", 0, fbRate);
+                Invoke("StopFeedback", fbTime);
+            }
+            health = health + change;
+        }        
         if (health <= 0)
         {
             health = 0;
@@ -86,5 +90,10 @@ public class Health : MonoBehaviour
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         CancelInvoke("DamageFeedback");
         sr.color = new Vector4(255, 255, 255, 255);
+    }
+    public void CheatInvencible()
+    {
+        Debug.Log("yeeeeeeeeee");
+        invencible = true;
     }
 }
