@@ -21,11 +21,14 @@ public class AnimateInteractable : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
     {
-        playerpos = player.position;
-        if ((Vector2.Distance(objpos, playerpos) <= range+offset))
+        if (player)
         {
-            anim.SetBool("pickup", true);
-        }
-        else anim.SetBool("pickup", false);
+            playerpos = player.position;
+            if ((Vector2.Distance(objpos, playerpos) <= range + offset))
+            {
+                anim.SetBool("pickup", true);
+            }
+            else anim.SetBool("pickup", false);
+        }       
     }
 }
