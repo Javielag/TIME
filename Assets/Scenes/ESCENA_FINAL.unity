@@ -180,7 +180,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skipKey: 98
+  totKey: 116
+  dorifKey: 104
+  inmKey: 105
   yeetThroughOleadas: 1
+  Totalitarismo: 1
+  Dorifto: 1
+  inmatable: 1
+  newSpeedMax: 100
+  newAccelMax: 100
+  totalidadPrefab: {fileID: 1998796674902102, guid: c0c46d500a498f04da0f966ed93c45a9,
+    type: 2}
 --- !u!114 &764845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,6 +215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 500
   health: 0
+  invencible: 0
   fbTime: 1
   fbRate: 0.15
   fbColor: {r: 0, g: 0, b: 0, a: 0}
