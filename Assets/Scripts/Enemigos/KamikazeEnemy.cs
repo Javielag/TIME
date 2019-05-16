@@ -101,6 +101,12 @@ public class KamikazeEnemy : MonoBehaviour
     public void Explode()
     {
         GameObject newExplosion = Instantiate<GameObject>(explosionPrefab, transform.position, Quaternion.identity, bulletPool);
+        Enemy en = GetComponent<Enemy>();
+        if (en)
+        {
+            en.OnDead();
+        }
+        else { Debug.Log("El kamikaze no tiene componente enemigo"); }
         Destroy(this.gameObject);
     }
 
