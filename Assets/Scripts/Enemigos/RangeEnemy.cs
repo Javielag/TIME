@@ -15,6 +15,7 @@ public class RangeEnemy : MonoBehaviour
     SpriteRenderer sp;
     private Pathfinder find;
     Rigidbody2D rb;
+    public Animator anim;
 
     private void Start()
     {
@@ -69,6 +70,8 @@ public class RangeEnemy : MonoBehaviour
         {
             Debug.Log(isMoving);
         }
+        if (isMoving) anim.SetBool("Move", true);
+        else anim.SetBool("Move", false);
 
     }
     private void FixedUpdate()

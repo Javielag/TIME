@@ -9,6 +9,8 @@ public class EnemyShoot : MonoBehaviour {
     public Bullet enemyBullet;
     Vector2 direction;
     Transform bulletPool;
+    public Animator anim;
+
     void Start () {
         bulletPool = GameObject.FindGameObjectWithTag("BulletPool").transform;
         InvokeRepeating("Shoot", 0, 1 / bulletsPerSecond);
@@ -22,9 +24,11 @@ public class EnemyShoot : MonoBehaviour {
     {
         if (this.gameObject.GetComponentInParent<RangeEnemy>().timer)
         {
+            anim.SetBool("Attack", true);
             Bullet newBullet = Instantiate(enemyBullet, transform.position, Quaternion.identity, bulletPool);
             newBullet.PointAt(transform.right, 0);
         }
+        anim.SetBool("Attack", false);
     }
 }
 
