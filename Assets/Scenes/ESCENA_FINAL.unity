@@ -238,6 +238,7 @@ MonoBehaviour:
   reloadKey: 114
   interact: 101
   pauseMenu: 112
+  pauseMenu2: 27
   changeTime: 2
   interactRange: 2.05
   interactableLayer:
@@ -90967,7 +90968,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1508014387
 RectTransform:
   m_ObjectHideFlags: 0
