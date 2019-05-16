@@ -139,6 +139,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   health: 0
+  fbTime: 1
+  fbRate: 0.15
+  fbColor: {r: 0.59607846, g: 0.14117648, b: 0.14117648, a: 0}
 --- !u!114 &114508599199111786
 MonoBehaviour:
   m_ObjectHideFlags: 1

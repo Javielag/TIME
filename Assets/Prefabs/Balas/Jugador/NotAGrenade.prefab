@@ -130,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rad: 3
   knock: 15
-  dmg: 20
+  dmg: 30
   DamageLayer:
     serializedVersion: 2
     m_Bits: 2048

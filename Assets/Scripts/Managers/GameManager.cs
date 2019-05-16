@@ -172,7 +172,9 @@ public class GameManager : MonoBehaviour
             {
                 generadorOleadas.AcabaOleada();
             }
+            Cursor.visible = true;
         }
+        if (button == "Hub") Cursor.visible = false;
         SceneManager.LoadScene(button);     //Carga la escena
 
     }
@@ -185,6 +187,7 @@ public class GameManager : MonoBehaviour
     {
         //Invierte el booleano de menú y activa/desactiva el menú
         menuPausa = !menuPausa;
+        Cursor.visible = !Cursor.visible;
         UI.PauseMenu(menuPausa);
         pauseGame();
     }

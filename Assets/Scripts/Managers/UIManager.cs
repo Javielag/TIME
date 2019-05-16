@@ -159,6 +159,10 @@ public class UIManager : MonoBehaviour {
     //    healthContainer.localScale = new Vector3(1.25f, 1);
     //    healthText.transform.localScale = new Vector3(0.8f, 1);
     //}
+    public void GMPauseMenu()
+    {
+        GameManager.instance.ChangeMenuState();
+    }
     public void PauseMenu(bool state)
     {
         menuPausa.gameObject.SetActive(state);
