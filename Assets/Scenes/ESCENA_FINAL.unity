@@ -238,6 +238,7 @@ MonoBehaviour:
   reloadKey: 114
   interact: 101
   pauseMenu: 112
+  pauseMenu2: 27
   changeTime: 2
   interactRange: 2.05
   interactableLayer:

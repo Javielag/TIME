@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour {
     public float speedMax = 5f, accel = 2f;//limite basico de velocidad y aceleracion
     private float xtraSpeed,maxSpeed;//tope extra y tope actual
     WeaponManager wm;
-    public KeyCode melee, weaponChange, reloadKey,interact, pauseMenu;
+    public KeyCode melee, weaponChange, reloadKey,interact, pauseMenu, pauseMenu2;
     public float changeTime,interactRange;
     public LayerMask interactableLayer;
     Vector2 moveDir;//almacena la direccion en la que se mueve el jugador
@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour {
             }
            
         }
-        if (Input.GetKeyDown(pauseMenu))
+        if (Input.GetKeyDown(pauseMenu) || Input.GetKeyDown(pauseMenu2))
         {
             GameManager.instance.ChangeMenuState();
         }
