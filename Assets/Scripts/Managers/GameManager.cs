@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     public bool canTeleport = true;
     public int record = -1;
     bool flechas = false;
-    public GameObject waypoingManag;
+    public GameObject enemyPool;
     public PointAtEnemy enemyArrow;
     public Enemy[] en;
     public PointAtEnemy[] arrow;
@@ -82,8 +82,8 @@ public class GameManager : MonoBehaviour
             if(enemyCount <= 2 && !flechas)
             {
                 flechas = true;
-                en = new Enemy[waypoingManag.GetComponentsInChildren<Enemy>().Length];
-                en = waypoingManag.GetComponentsInChildren<Enemy>();
+                en = new Enemy[enemyPool.GetComponentsInChildren<Enemy>().Length];
+                en = enemyPool.GetComponentsInChildren<Enemy>();
                 for (int i = 0; i<en.Length; i++)
                 {
                     if(en[i].gameObject.GetComponent<Health>().health > 0)
@@ -108,10 +108,11 @@ public class GameManager : MonoBehaviour
             if (enemyCount <= 0)
             {
                 flechas = false;
-                GameObject[] arrows = new GameObject[player.GetComponentsInChildren<PointAtEnemy>().Length];
+                PointAtEnemy[] arrows = new PointAtEnemy[player.GetComponentsInChildren<PointAtEnemy>().Length];
+                arrows = player.GetComponentsInChildren<PointAtEnemy>();
                 for (int i =0; i<arrows.Length; i++)
                 {
-                    Destroy(arrows[i]);
+                    Destroy(arrows[i].gameObject);
                 }
                 if ((oleadaActual - cientifico.primeraAparicion) % cientifico.cadaX == 0)
                 {
@@ -260,6 +261,13 @@ public class GameManager : MonoBehaviour
         for (int i = enemyCount; i > 0; i--)
         {
             EnemySlain();
+        }
+        flechas = false;
+        PointAtEnemy[] arrows = new PointAtEnemy[player.GetComponentsInChildren<PointAtEnemy>().Length];
+        arrows = player.GetComponentsInChildren<PointAtEnemy>();
+        for (int i = 0; i < arrows.Length; i++)
+        {
+            Destroy(arrows[i].gameObject);
         }
     }
     public void Description(string description)
