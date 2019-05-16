@@ -70,16 +70,15 @@ public class RangeEnemy : MonoBehaviour
         {
             Debug.Log(isMoving);
         }
-        if (isMoving) anim.SetBool("Move", true);
-        else anim.SetBool("Move", false);
-
-    }
+           }
     private void FixedUpdate()
     {
         if (isMoving && rb.velocity.magnitude < speedMax)
         {
             rb.AddForce(acc*path);
         }
+        if (isMoving) anim.SetBool("Move", true);
+        else anim.SetBool("Move", false);
     }
     public bool Moving()
     {
