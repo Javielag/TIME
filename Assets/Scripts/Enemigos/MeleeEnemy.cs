@@ -80,6 +80,7 @@ public class MeleeEnemy : MonoBehaviour
     {
         anim.SetBool("isAttacking", false);
         anim.Play("Melee_Idle");
+        anim.Play("Idle");
         Invoke("Reset", attackTime);
     }
     public void Reset()
