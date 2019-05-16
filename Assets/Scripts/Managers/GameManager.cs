@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     private CienciaManager cientifico;
     public GameObject player;
     public GameObject a, b, c, d;
-    [SerializeField] int enemyCount;
+    public int enemyCount;
     [SerializeField]private int /*enemyCount,*/oleadaActual=0;
     public float delayOleada;
     bool menuPausa;
@@ -78,8 +78,7 @@ public class GameManager : MonoBehaviour
         if (enemyCount >= 0)
         {
             enemyCount--;
-            //si era el último, genera una nueva oleada
-            if(enemyCount <= 2 && !flechas)
+            if(enemyCount > 0 && enemyCount <= 2 && !flechas)
             {
                 flechas = true;
                 en = new Enemy[enemyPool.GetComponentsInChildren<Enemy>().Length];
@@ -105,6 +104,7 @@ public class GameManager : MonoBehaviour
                     }
                 }
             }
+            //si era el último, genera una nueva oleada
             if (enemyCount <= 0)
             {
                 flechas = false;
@@ -258,9 +258,15 @@ public class GameManager : MonoBehaviour
         }
         generadorOleadas.AcabaOleada();
         //int actOl = oleadaActual;
-        for (int i = enemyCount; i > 0; i--)
+        enemyCount = 0;
+        if ((oleadaActual - cientifico.primeraAparicion) % cientifico.cadaX == 0)
         {
-            EnemySlain();
+            //aquí van las visitas del CIENTEFRICO
+            cientifico.Visita();
+        }
+        else
+        {
+            GeneraOleada();
         }
         flechas = false;
         PointAtEnemy[] arrows = new PointAtEnemy[player.GetComponentsInChildren<PointAtEnemy>().Length];
