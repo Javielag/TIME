@@ -71,13 +71,12 @@ public class Spawner : MonoBehaviour {
 
             Vector2 pos = transform.GetChild(index).transform.position;
 
-
+            GameObject enemy = Instantiate<GameObject>(enemyPrefab, pos, Quaternion.identity, enemyPool);
             if (enemyPrefab.GetComponent<Portal>())
             {
                 PointAtPortal arrow = Instantiate(this.GetComponent<PortalArrow>().portal, GameManager.instance.GetPlayer().transform);
-                arrow.SetTarget(GameManager.instance.GetPlayer().transform);
+                arrow.SetTarget(enemy.transform);
             }
-           Instantiate<GameObject>(enemyPrefab,pos,Quaternion.identity,enemyPool);
            remaining--;
            if (portal)
            {

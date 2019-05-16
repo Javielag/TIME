@@ -114,15 +114,19 @@ public class GameManager : MonoBehaviour
                 {
                     Destroy(arrows[i].gameObject);
                 }
-                if ((oleadaActual - cientifico.primeraAparicion) % cientifico.cadaX == 0)
+                if (!GameObject.FindGameObjectWithTag("Ciencia"))
                 {
-                    //aquí van las visitas del CIENTEFRICO
-                    cientifico.Visita();
+                    if ((oleadaActual - cientifico.primeraAparicion) % cientifico.cadaX == 0)
+                    {
+                        //aquí van las visitas del CIENTEFRICO
+                        cientifico.Visita();
+                    }
+                    else
+                    {
+                        GeneraOleada();
+                    }
                 }
-                else
-                {
-                    GeneraOleada();
-                }
+
             }
         }
           
@@ -259,14 +263,17 @@ public class GameManager : MonoBehaviour
         generadorOleadas.AcabaOleada();
         //int actOl = oleadaActual;
         enemyCount = 0;
-        if ((oleadaActual - cientifico.primeraAparicion) % cientifico.cadaX == 0)
+        if (!GameObject.FindGameObjectWithTag("Ciencia"))
         {
-            //aquí van las visitas del CIENTEFRICO
-            cientifico.Visita();
-        }
-        else
-        {
-            GeneraOleada();
+            if ((oleadaActual - cientifico.primeraAparicion) % cientifico.cadaX == 0)
+            {
+                //aquí van las visitas del CIENTEFRICO
+                cientifico.Visita();
+            }
+            else
+            {
+                GeneraOleada();
+            }
         }
         flechas = false;
         PointAtEnemy[] arrows = new PointAtEnemy[player.GetComponentsInChildren<PointAtEnemy>().Length];
@@ -274,6 +281,12 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < arrows.Length; i++)
         {
             Destroy(arrows[i].gameObject);
+        }
+        PointAtPortal[] arrowsPortal = new PointAtPortal[player.GetComponentsInChildren<PointAtPortal>().Length];
+        arrowsPortal = player.GetComponentsInChildren<PointAtPortal>();
+        for (int i = 0; i < arrowsPortal.Length; i++)
+        {
+            Destroy(arrowsPortal[i].gameObject);
         }
     }
     public void Description(string description)
