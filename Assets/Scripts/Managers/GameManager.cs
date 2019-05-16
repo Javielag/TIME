@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     public GameObject waypoingManag;
     public PointAtEnemy enemyArrow;
     public Enemy[] en;
+    public PointAtEnemy[] arrow;
 
     //Singleton
     private void Awake()
@@ -73,15 +74,30 @@ public class GameManager : MonoBehaviour
         {
             enemyCount--;
             //si era el último, genera una nueva oleada
-            if(enemyCount <= 3 && !flechas)
+            if(enemyCount <= 2 && !flechas)
             {
                 flechas = true;
                 en = new Enemy[waypoingManag.GetComponentsInChildren<Enemy>().Length];
                 en = waypoingManag.GetComponentsInChildren<Enemy>();
                 for (int i = 0; i<en.Length; i++)
                 {
-                    PointAtEnemy arrow = Instantiate(enemyArrow, player.transform);
-                    arrow.SetTarget(en[i].transform);
+                    if(en[i].gameObject.GetComponent<Health>().health > 0)
+                    {
+                        PointAtEnemy arrow = Instantiate(enemyArrow, player.transform);
+                        arrow.SetTarget(en[i].transform);
+                    }
+                }
+            }
+            else if (flechas)
+            {
+                arrow = new PointAtEnemy[player.GetComponentsInChildren<PointAtEnemy>().Length];
+                arrow = player.GetComponentsInChildren<PointAtEnemy>();
+                for (int i = 0; i < arrow.Length; i++)
+                {
+                    if (arrow[i].Target.gameObject.GetComponent<Health>().health <= 0)
+                    {
+                        Destroy(arrow[i].gameObject);
+                    }
                 }
             }
             if (enemyCount <= 0)
