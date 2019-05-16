@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public PointAtEnemy enemyArrow;
     public Enemy[] en;
     public PointAtEnemy[] arrow;
+    VolumeControl vc;
 
     //Singleton
     private void Awake()
@@ -58,6 +59,10 @@ public class GameManager : MonoBehaviour
     public void SetUI(GameObject newUI)
     {
         UI = newUI.GetComponent<UIManager>();
+    }
+    public void SetVC(GameObject newVC)
+    {
+        vc = newVC.GetComponent<VolumeControl>();
     }
     public GameObject GetPlayer()
     {
@@ -204,6 +209,7 @@ public class GameManager : MonoBehaviour
         {
             CancelInvoke();
             SaveScore();
+            SaveVolume();
             oleadaActual = 0;
             if(generadorOleadas != null)
             {
@@ -235,6 +241,7 @@ public class GameManager : MonoBehaviour
     public void ExitGame()
     {
         SaveScore();
+        SaveVolume();
         Application.Quit();
     }
     public void SetOleada(int estaOleada)
@@ -274,5 +281,9 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("record", oleadaActual - 1);
             record = oleadaActual - 1;
         }
+    }
+    public void SaveVolume()
+    {
+        vc.SaveVolume();
     }
 }

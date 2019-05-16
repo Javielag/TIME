@@ -7,6 +7,7 @@ public class PlayerDead : MonoBehaviour {
 	public void OnDead()
     {
         GameManager.instance.SaveScore();
+        GameManager.instance.SaveVolume();
         GameManager.instance.ChangeScene("Menu");
     }
 }
