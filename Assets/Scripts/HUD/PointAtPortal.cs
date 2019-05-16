@@ -19,4 +19,8 @@ public class PointAtPortal : MonoBehaviour {
     {
         transform.up = -newDir;
     }
+    public void SetTarget(Transform target)
+    {
+        Target = target;
+    }
 }
