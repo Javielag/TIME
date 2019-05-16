@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
     public LayerMask interactableLayer;
     Vector2 moveDir;//almacena la direccion en la que se mueve el jugador
     Rigidbody2D rb;
+    public Animator anim;
     int[] weapon = new int[] {0, 1};
     // Use this for initialization
     private void Awake()
@@ -35,6 +36,9 @@ public class PlayerController : MonoBehaviour {
         else maxSpeed = speedMax;
         //actualiza en input de movimiento
         moveDir = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+
+        if (Mathf.Abs(rb.velocity.x) > 0.5 || Mathf.Abs(rb.velocity.y) > 0.5) anim.SetBool("Moving", true);
+        else anim.SetBool("Moving", false);
 
         //cambio de armas
         if (Input.GetKeyDown(weaponChange))  
@@ -106,5 +110,9 @@ public class PlayerController : MonoBehaviour {
     public void setXtraSpeed(float xtra)
     {
         xtraSpeed = xtra;
+    }
+    public void AnimBoolFalse()
+    {
+        this.GetComponentInChildren<PlayerMelee>().AnimBoolFalse(); 
     }
 }

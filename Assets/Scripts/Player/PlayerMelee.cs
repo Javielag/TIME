@@ -8,6 +8,7 @@ public class PlayerMelee : MonoBehaviour {
     public int dmg;
     private float nextMel;
     IEnumerator weaponSwitch;
+    public Animator anim;
     //Pega en un rectángulo configurable desde el editor
     public Transform attackPoint,endPoint;
     // Use this for initialization
@@ -30,6 +31,7 @@ public class PlayerMelee : MonoBehaviour {
 	}
     void MeleeAttack()
     {
+        anim.SetBool("Melee", true);
         Collider2D[] attack = Physics2D.OverlapAreaAll(attackPoint.position, endPoint.position);
         nextMel = Time.time + cd;
 
@@ -54,11 +56,12 @@ public class PlayerMelee : MonoBehaviour {
                 {
                     knb.KnockThis(transform.right, knockBack);
                 }
-            }
-
-
+            }           
         }
+         
     }
-    
-
+    public void AnimBoolFalse()
+    {
+        anim.SetBool("Melee", false);
+    }
 }
