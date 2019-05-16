@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
     UIManager UI;
     public bool canTeleport = true;
     public int record = -1;
+    bool flechas = false;
+    public GameObject enemyPool;
+    public PointAtEnemy enemyArrow;
 
     //Singleton
     private void Awake()
@@ -69,8 +72,25 @@ public class GameManager : MonoBehaviour
         {
             enemyCount--;
             //si era el último, genera una nueva oleada
+            if(enemyCount <= 3 && !flechas)
+            {
+                flechas = true;
+                Transform[] en = new Transform[enemyPool.GetComponentsInChildren<Transform>().Length];
+                en = enemyPool.GetComponentsInChildren<Transform>();
+                for (int i = 0; i<enemyCount; i++)
+                {
+                    PointAtEnemy arrow = Instantiate(enemyArrow, player.transform);
+                    arrow.SetTarget(en[i]);
+                }
+            }
             if (enemyCount <= 0)
             {
+                flechas = false;
+                GameObject[] arrows = new GameObject[player.GetComponentsInChildren<PointAtEnemy>().Length];
+                for (int i =0; i<arrows.Length; i++)
+                {
+                    Destroy(arrows[i]);
+                }
                 if ((oleadaActual - cientifico.primeraAparicion) % cientifico.cadaX == 0)
                 {
                     //aquí van las visitas del CIENTEFRICO

@@ -31,6 +31,10 @@ public class Portal : MonoBehaviour {
     }
     private void OnDestroy()
     {
+        PointAtPortal[] arrows = new PointAtPortal[GameManager.instance.GetPlayer().GetComponentsInChildren<PointAtPortal>().Length];
+        int i = 0;
+        while (arrows[i].Target != this && i < arrows.Length) i++;
+        Destroy(arrows[i]);
         GameManager.instance.ChangeHealth(healthRecover,GameManager.instance.GetPlayer());
     }
 

@@ -84338,6 +84338,7 @@ MonoBehaviour:
   cd: 0.5
   knockBack: 7
   dmg: 10
+  anim: {fileID: 0}
   attackPoint: {fileID: 975142773}
   endPoint: {fileID: 641045061}
 --- !u!1 &669620765
@@ -85982,7 +85983,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 892882638}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.71, y: -9.73, z: 0}
+  m_LocalPosition: {x: 17.66, y: -9.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -90051,6 +90052,9 @@ MonoBehaviour:
   UI: {fileID: 0}
   canTeleport: 1
   record: -1
+  enemyPool: {fileID: 371339483}
+  enemyArrow: {fileID: 114678981613347454, guid: af5988a800dc9204eb3a0bc9ff55f33f,
+    type: 2}
 --- !u!114 &1518157718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91992,6 +91996,7 @@ MonoBehaviour:
   interactableLayer:
     serializedVersion: 2
     m_Bits: 256
+  anim: {fileID: 0}
 --- !u!61 &1936691966
 BoxCollider2D:
   m_ObjectHideFlags: 0

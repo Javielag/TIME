@@ -14609,6 +14609,7 @@ GameObject:
   m_Component:
   - component: {fileID: 350197719}
   - component: {fileID: 350197718}
+  - component: {fileID: 350197720}
   m_Layer: 0
   m_Name: PortalSpawner
   m_TagString: Untagged
@@ -14665,6 +14666,18 @@ Transform:
   m_Father: {fileID: 2028180153}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &350197720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 350197717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49e66a1b60fe4dc4f827a28a1535c761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portal: {fileID: 114533252707200392, guid: 0b8027504970ca743a10900183067ff4, type: 2}
 --- !u!1 &354272139
 GameObject:
   m_ObjectHideFlags: 0
@@ -90679,6 +90692,9 @@ MonoBehaviour:
   UI: {fileID: 0}
   canTeleport: 1
   record: -1
+  enemyPool: {fileID: 371339483}
+  enemyArrow: {fileID: 114678981613347454, guid: af5988a800dc9204eb3a0bc9ff55f33f,
+    type: 2}
 --- !u!1 &1527864302
 GameObject:
   m_ObjectHideFlags: 0
