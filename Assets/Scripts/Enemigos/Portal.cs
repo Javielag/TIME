@@ -32,9 +32,10 @@ public class Portal : MonoBehaviour {
     private void OnDestroy()
     {
         PointAtPortal[] arrows = new PointAtPortal[GameManager.instance.GetPlayer().GetComponentsInChildren<PointAtPortal>().Length];
+        arrows = GameManager.instance.GetPlayer().GetComponentsInChildren<PointAtPortal>();
         int i = 0;
-        while (arrows[i] != null && i < arrows.Length && arrows[i].Target != this) i++;
-        Destroy(arrows[i]);
+        while (i < arrows.Length - 1 && arrows[i] != null && arrows[i].Target != this) i++;
+        Destroy(arrows[i].gameObject);
         GameManager.instance.enemyCount--;
         GameManager.instance.ChangeHealth(healthRecover,GameManager.instance.GetPlayer());
     }
