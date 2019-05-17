@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 61177195619497052}
   m_Layer: 8
   m_Name: Scientific
-  m_TagString: Untagged
+  m_TagString: Ciencia
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

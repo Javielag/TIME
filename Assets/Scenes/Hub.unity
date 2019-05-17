@@ -19915,7 +19915,8 @@ MonoBehaviour:
   canTeleport: 1
   record: -1
   enemyPool: {fileID: 0}
-  enemyArrow: {fileID: 0}
+  enemyArrow: {fileID: 114678981613347454, guid: af5988a800dc9204eb3a0bc9ff55f33f,
+    type: 2}
   en: []
   arrow: []
 --- !u!1 &1538056318

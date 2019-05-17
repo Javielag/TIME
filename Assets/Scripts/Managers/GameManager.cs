@@ -313,4 +313,18 @@ public class GameManager : MonoBehaviour
     {
         vc.SaveVolume();
     }
+    private void OnLevelWasLoaded(int level)
+    {
+        if (level == 3)
+        {
+            enemyPool = GameObject.FindGameObjectWithTag("EnemyPool");
+        }
+    }
+    public void SetWarningPoints(Transform[] points)
+    {
+        a = points[1].gameObject;
+        b = points[2].gameObject;
+        c = points[3].gameObject;
+        d = points[4].gameObject;
+    }
 }

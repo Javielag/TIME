@@ -13,6 +13,7 @@ TagManager:
   - SpawnPoint
   - EnemyPool
   - SpawnPoint
+  - Ciencia
   layers:
   - Default
   - TransparentFX
