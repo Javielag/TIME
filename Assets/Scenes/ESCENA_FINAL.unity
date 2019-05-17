@@ -87766,7 +87766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1dc4accee591e4439aaeaece16082ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1274953256828738, guid: 2e5e70ddbf6620940b94e27e97283ae2,
+  enemyPrefab: {fileID: 1274953256828738, guid: 0c596c31c68e6cb449192c8171e2eabf,
     type: 2}
   maxEnemies: 7
   minEnemies: 3

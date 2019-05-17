@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4449346525074746}
   - component: {fileID: 212140996580048658}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pompa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,11 +41,11 @@ GameObject:
   - component: {fileID: 61072342710954300}
   - component: {fileID: 114688628897056148}
   - component: {fileID: 114234168180527246}
-  - component: {fileID: 114710145285877888}
-  - component: {fileID: 95710209410184646}
-  - component: {fileID: 114920423134965106}
+  - component: {fileID: 114202960519977166}
+  - component: {fileID: 95513279628607106}
+  - component: {fileID: 114333410394610090}
   m_Layer: 11
-  m_Name: Inv Barrera
+  m_Name: InvBarrera
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1274953256828738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.30945936, y: -1.6091883, z: 0}
+  m_LocalPosition: {x: 9.66, y: -3.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4449346525074746}
@@ -72,8 +72,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1113013653724522}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01, y: -0.05, z: 0}
-  m_LocalScale: {x: 0.481, y: 0.445, z: 1}
+  m_LocalPosition: {x: -0.3, y: -0.2, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 4382273046042346}
   m_RootOrder: 0
@@ -114,16 +114,16 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3.59375, y: 3.03125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
---- !u!95 &95710209410184646
+--- !u!95 &95513279628607106
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -132,7 +132,7 @@ Animator:
   m_GameObject: {fileID: 1274953256828738}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 19b52c01b1c618a4d9f60ef8c0668e55, type: 2}
+  m_Controller: {fileID: 9100000, guid: 335b19b391071824a93df88cc201d3f0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -141,6 +141,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114202960519977166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1274953256828738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b77731b6aa0fd48aa3205131ca6a25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sala: 4
+  wp: 12
+  corners:
+  - {x: 3.006842, y: -2.1282237, z: 0}
+  - {x: 3.006842, y: -3.1282237, z: 0}
+  - {x: 2.006842, y: -2.1282237, z: 0}
+  - {x: 2.006842, y: -3.1282237, z: 0}
+  hit:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114234168180527246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,42 +177,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acc: 3
   maxspeed: 5
-  attackrange: 1
+  attackrange: 2
   attackTime: 3
-  casttime: 0
+  casttime: 1
   damage: 10
-  anim: {fileID: 95710209410184646}
---- !u!114 &114688628897056148
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1274953256828738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d9f633c14b321f4ba13d676d62fe524, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114710145285877888
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1274953256828738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0b77731b6aa0fd48aa3205131ca6a25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sala: -1
-  wp: -1
-  corners: []
-  hit:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
---- !u!114 &114920423134965106
+  anim: {fileID: 95513279628607106}
+--- !u!114 &114333410394610090
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,10 +194,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  health: 0
+  health: 100
+  invencible: 0
   fbTime: 1
   fbRate: 0.15
   fbColor: {r: 0.59607846, g: 0.13932894, b: 0.13932894, a: 1}
+--- !u!114 &114688628897056148
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1274953256828738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9f633c14b321f4ba13d676d62fe524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114996126607235808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -255,7 +260,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 52b726ae46b70aa469396aabfbe76f49, type: 3}
-  m_Color: {r: 0.7924528, g: 0.5982606, b: 0.048593827, a: 0.62352943}
+  m_Color: {r: 0.7264151, g: 0.32956395, b: 0.11307406, a: 0.8235294}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -300,8 +305,8 @@ SpriteRenderer:
   m_SortingLayerID: 813792163
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 324809eb1438c4b278f031c80ca02b12, type: 3}
-  m_Color: {r: 0.07941661, g: 0, b: 0.8862745, a: 1}
+  m_Sprite: {fileID: 21300088, guid: f5873c60528e9954fadb4f7e9cd55676, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
